@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 84 17% 97%;
+    --foreground: 70 20% 8%;
+    --border: 80 8% 90%;
+    --input: 80 8% 90%;
+    --ring: 129 54% 27%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-dalda-off-white text-dalda-gray-600 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-dalda-gray-900 font-semibold;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply min-h-screen bg-dalda-off-white;
+  }
+
+  .page-content {
+    @apply mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8;
+  }
+
+  .surface-card {
+    @apply rounded-xl border border-dalda-gray-100 bg-white shadow-card;
+  }
+
+  .field-label {
+    @apply text-xs font-medium uppercase tracking-wide text-dalda-gray-400;
+  }
+}

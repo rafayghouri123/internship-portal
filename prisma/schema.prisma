@@ -1,0 +1,188 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum InternStatus {
+  ACTIVE
+  EXTENDED
+  COMPLETED
+  TERMINATED
+}
+
+enum InternshipType {
+  PROJECT_BASED
+  ONGOING
+}
+
+enum UserRole {
+  HR
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  password     String
+  role         UserRole @default(HR)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  internsAdded Intern[]       @relation("AddedBy")
+  extensions   ExtensionLog[] @relation("ExtendedBy")
+  evaluations  Evaluation[]   @relation("EvaluatedBy")
+  accounts     Account[]
+  sessions     Session[]
+
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model Department {
+  id          String       @id @default(cuid())
+  name        String       @unique
+  createdAt   DateTime     @default(now())
+  supervisors Supervisor[]
+  interns     Intern[]
+
+  @@map("departments")
+}
+
+model Supervisor {
+  id            String     @id @default(cuid())
+  name          String
+  email         String?    @unique
+  contactNumber String?
+  departmentId  String
+  department    Department @relation(fields: [departmentId], references: [id])
+  interns       Intern[]
+
+  @@map("supervisors")
+}
+
+model Intern {
+  id              String       @id @default(cuid())
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  fullName        String
+  fatherName      String
+  cnicNumber      String       @unique
+  contactNumber   String
+  email           String
+  city            String
+  address         String
+  university      String
+  officeLocation  String?
+  degree          String
+  major           String?
+  currentSemester Int
+  graduationYear  Int
+  departmentId    String
+  durationWeeks   Int
+  referralSource  String?
+  internshipType  InternshipType @default(PROJECT_BASED)
+  applicationSource String?
+  knownEmployee   String?
+  previousIntern  Boolean      @default(false)
+  comments        String?
+  reference       String?
+  testScore       Float?
+  testDate        DateTime?
+  supervisorName  String?
+  supervisorEmail String?
+  supervisorId    String?
+  joiningDate     DateTime
+  endDate         DateTime
+  status          InternStatus @default(ACTIVE)
+  extraNotes      String?
+  cvFile          Json?
+  certificateFile Json?
+  reportFile      Json?
+  department      Department   @relation(fields: [departmentId], references: [id])
+  supervisor      Supervisor?  @relation(fields: [supervisorId], references: [id])
+  addedById       String
+  addedBy         User         @relation("AddedBy", fields: [addedById], references: [id])
+  extensionLogs   ExtensionLog[]
+  evaluation      Evaluation?
+
+  @@index([status])
+  @@index([endDate])
+  @@index([departmentId])
+  @@index([joiningDate])
+  @@map("interns")
+}
+
+model ExtensionLog {
+  id              String   @id @default(cuid())
+  internId        String
+  extendedById    String
+  previousEndDate DateTime
+  newEndDate      DateTime
+  reason          String?
+  createdAt       DateTime @default(now())
+  intern          Intern   @relation(fields: [internId], references: [id], onDelete: Cascade)
+  extendedBy      User     @relation("ExtendedBy", fields: [extendedById], references: [id])
+
+  @@index([internId])
+  @@map("extension_logs")
+}
+
+model Evaluation {
+  id              String   @id @default(cuid())
+  internId        String   @unique
+  evaluatedById   String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  punctuality     Int
+  technicalSkills Int
+  communication   Int
+  teamwork        Int
+  initiative      Int
+  overallScore    Float
+  remarks         String?
+  intern          Intern   @relation(fields: [internId], references: [id], onDelete: Cascade)
+  evaluatedBy     User     @relation("EvaluatedBy", fields: [evaluatedById], references: [id])
+
+  @@map("evaluations")
+}
