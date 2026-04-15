@@ -5,8 +5,13 @@ import { mockDepartments, mockInterns, mockSupervisors } from "@/lib/mock-data";
 import { internshipOfficeOptions } from "@/lib/intern-options";
 
 type InternListFilters = {
-  q?: string;
-  status?: string;
+  q?: string | string[];
+  status?: string | string[];
+};
+
+type DashboardFilterRange = {
+  fromYear?: number;
+  toYear?: number;
 };
 
 async function withFallback<T>(query: () => Promise<T>, fallback: T): Promise<T> {
@@ -158,6 +163,143 @@ export async function getDashboardData() {
   );
 }
 
+export async function getDashboardDataByRange(range: DashboardFilterRange = {}) {
+  const completingSoonDate = addDays(new Date(), 7);
+  const startYear = range.fromYear && range.toYear ? Math.min(range.fromYear, range.toYear) : undefined;
+  const endYear = range.fromYear && range.toYear ? Math.max(range.fromYear, range.toYear) : undefined;
+  const dateRangeFilter =
+    startYear && endYear
+      ? {
+          gte: new Date(startYear, 0, 1),
+          lte: new Date(endYear, 11, 31, 23, 59, 59, 999)
+        }
+      : undefined;
+
+  return withFallback(
+    async () => {
+      const [total, active, completed, completingSoon, departmentBreakdown, universityGroups, officeGroups, allYears] =
+        await Promise.all([
+          prisma.intern.count({
+            where: dateRangeFilter ? { endDate: dateRangeFilter } : undefined
+          }),
+          prisma.intern.count({
+            where: {
+              ...(dateRangeFilter ? { endDate: dateRangeFilter } : {}),
+              status: {
+                in: [InternStatus.ACTIVE, InternStatus.EXTENDED]
+              }
+            }
+          }),
+          prisma.intern.count({
+            where: {
+              ...(dateRangeFilter ? { endDate: dateRangeFilter } : {}),
+              status: InternStatus.COMPLETED
+            }
+          }),
+          prisma.intern.findMany({
+            where: {
+              ...(dateRangeFilter ? { endDate: dateRangeFilter } : {}),
+              status: { in: [InternStatus.ACTIVE, InternStatus.EXTENDED] },
+              endDate: { ...(dateRangeFilter ?? {}), lte: completingSoonDate }
+            },
+            orderBy: { endDate: "asc" },
+            include: { department: true }
+          }),
+          prisma.department.findMany({
+            include: {
+              _count: {
+                select: {
+                  interns: dateRangeFilter ? { where: { endDate: dateRangeFilter } } : true
+                }
+              }
+            },
+            orderBy: { name: "asc" }
+          }),
+          prisma.intern.groupBy({
+            by: ["university"],
+            where: dateRangeFilter ? { endDate: dateRangeFilter } : undefined,
+            _count: { _all: true }
+          }),
+          prisma.intern.groupBy({
+            by: ["officeLocation"],
+            where: dateRangeFilter ? { endDate: dateRangeFilter } : undefined,
+            _count: { _all: true }
+          }),
+          prisma.intern.findMany({
+            select: { endDate: true }
+          })
+        ]);
+
+      const universityBreakdown = buildUniversityBreakdown(universityGroups);
+      const officeBreakdown = buildOfficeBreakdown(officeGroups);
+      const availableYears = Array.from(new Set(allYears.map((entry) => entry.endDate.getFullYear()))).sort(
+        (a, b) => a - b
+      );
+
+      return {
+        stats: {
+          total,
+          active,
+          completingSoon: completingSoon.length,
+          completed
+        },
+        completingSoon,
+        departmentBreakdown: departmentBreakdown.map((department) => ({
+          name: department.name,
+          total: department._count.interns
+        })),
+        universityBreakdown,
+        officeBreakdown,
+        availableYears
+      };
+    },
+    (() => {
+      const filteredInterns =
+        startYear && endYear
+          ? mockInterns.filter((intern) => {
+              const year = intern.endDate.getFullYear();
+              return year >= startYear && year <= endYear;
+            })
+          : mockInterns;
+
+      const availableYears = Array.from(new Set(mockInterns.map((intern) => intern.endDate.getFullYear()))).sort(
+        (a, b) => a - b
+      );
+
+      const departmentBreakdown = mockDepartments.map((department) => ({
+        name: department.name,
+        total: filteredInterns.filter((intern) => intern.departmentId === department.id).length
+      }));
+
+      const completingSoon = filteredInterns.filter(
+        (intern) =>
+          (intern.status === InternStatus.ACTIVE || intern.status === InternStatus.EXTENDED) &&
+          intern.endDate <= completingSoonDate
+      );
+
+      return {
+        stats: {
+          total: filteredInterns.length,
+          active: filteredInterns.filter(
+            (intern) => intern.status === InternStatus.ACTIVE || intern.status === InternStatus.EXTENDED
+          ).length,
+          completingSoon: completingSoon.length,
+          completed: filteredInterns.filter((intern) => intern.status === InternStatus.COMPLETED).length
+        },
+        completingSoon,
+        departmentBreakdown,
+        universityBreakdown: buildUniversityBreakdown(
+          aggregateUniversityCounts(filteredInterns, (intern) => intern.university)
+        ),
+        officeBreakdown: buildOfficeBreakdown(
+          aggregateOfficeCounts(filteredInterns, (intern) => intern.officeLocation ?? "Unspecified")
+        ),
+        availableYears
+      };
+    })() as any
+  );
+}
+
 function buildUniversityBreakdown(groups: Array<{ university: string; _count: { _all: number } }>) {
   const sorted = [...groups]
     .filter((group) => group.university)
@@ -240,26 +382,33 @@ function buildYearlyBreakdown(endDates: Date[]) {
 }
 
 export async function getInterns(filters: InternListFilters = {}) {
-  const search = filters.q?.trim();
+  const qValue = Array.isArray(filters.q) ? filters.q[0] : filters.q;
+  const statusValue = Array.isArray(filters.status) ? filters.status[0] : filters.status;
+  const search = qValue?.trim();
 
   return withFallback(
     () =>
       prisma.intern.findMany({
         where: {
-          ...(filters.status && filters.status !== "ALL"
-            ? filters.status === "COMPLETING_SOON"
+          ...(statusValue && statusValue !== "ALL"
+            ? statusValue === "COMPLETING_SOON"
               ? {
                   status: { in: [InternStatus.ACTIVE, InternStatus.EXTENDED] },
                   endDate: { lte: addDays(new Date(), 7) }
                 }
-              : { status: filters.status as InternStatus }
+              : { status: statusValue as InternStatus }
             : {}),
           ...(search
             ? {
                 OR: [
                   { fullName: { contains: search, mode: Prisma.QueryMode.insensitive } },
                   { cnicNumber: { contains: search, mode: Prisma.QueryMode.insensitive } },
-                  { university: { contains: search, mode: Prisma.QueryMode.insensitive } }
+                  { university: { contains: search, mode: Prisma.QueryMode.insensitive } },
+                  { major: { contains: search, mode: Prisma.QueryMode.insensitive } },
+                  { officeLocation: { contains: search, mode: Prisma.QueryMode.insensitive } },
+                  { supervisorName: { contains: search, mode: Prisma.QueryMode.insensitive } },
+                  { email: { contains: search, mode: Prisma.QueryMode.insensitive } },
+                  { department: { name: { contains: search, mode: Prisma.QueryMode.insensitive } } }
                 ]
               }
             : {})
@@ -271,14 +420,15 @@ export async function getInterns(filters: InternListFilters = {}) {
       }),
     mockInterns.filter((intern) => {
       const matchesStatus =
-        !filters.status ||
-        filters.status === "ALL" ||
-        (filters.status === "COMPLETING_SOON"
+        !statusValue ||
+        statusValue === "ALL" ||
+        (statusValue === "COMPLETING_SOON"
           ? (intern.status === InternStatus.ACTIVE || intern.status === InternStatus.EXTENDED) &&
             intern.endDate <= addDays(new Date(), 7)
-          : intern.status === filters.status);
+          : intern.status === statusValue);
 
-      const haystack = `${intern.fullName} ${intern.cnicNumber} ${intern.university}`.toLowerCase();
+      const haystack =
+        `${intern.fullName} ${intern.cnicNumber} ${intern.university} ${intern.major ?? ""} ${intern.officeLocation ?? ""} ${intern.supervisorName ?? ""} ${intern.email ?? ""} ${intern.department?.name ?? ""}`.toLowerCase();
       const matchesSearch = !search || haystack.includes(search.toLowerCase());
 
       return matchesStatus && matchesSearch;

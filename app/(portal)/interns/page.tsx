@@ -8,9 +8,14 @@ import { getInterns } from "@/lib/data";
 export default async function InternsPage({
   searchParams
 }: {
-  searchParams: { q?: string; status?: string };
+  searchParams?: Promise<{ q?: string | string[]; status?: string | string[] }>;
 }) {
-  const interns: any[] = await getInterns(searchParams);
+  const rawParams = (await searchParams) ?? {};
+  const params = {
+    q: Array.isArray(rawParams.q) ? rawParams.q[0] : rawParams.q,
+    status: Array.isArray(rawParams.status) ? rawParams.status[0] : rawParams.status
+  };
+  const interns: any[] = await getInterns(params);
   const rows = interns.map((intern) => ({
     id: intern.id,
     fullName: intern.fullName,
@@ -34,7 +39,7 @@ export default async function InternsPage({
         </div>
         <div className="flex gap-3">
           <Button asChild variant="secondary">
-            <Link href={`/api/interns/export?status=${searchParams.status ?? "ALL"}&q=${searchParams.q ?? ""}`}>
+            <Link href={`/api/interns/export?status=${params.status ?? "ALL"}&q=${params.q ?? ""}`}>
               Export CSV
             </Link>
           </Button>
@@ -49,13 +54,13 @@ export default async function InternsPage({
           <form className="flex flex-wrap gap-3" method="GET">
             <input
               className="h-10 rounded-md border border-dalda-gray-100 px-3 text-sm"
-              defaultValue={searchParams.q}
+              defaultValue={params.q}
               name="q"
               placeholder="Search by name, CNIC, or university"
             />
             <select
               className="h-10 rounded-md border border-dalda-gray-100 px-3 text-sm"
-              defaultValue={searchParams.status ?? "ALL"}
+              defaultValue={params.status ?? "ALL"}
               name="status"
             >
               {statuses.map((status) => (

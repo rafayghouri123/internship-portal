@@ -129,6 +129,7 @@ export function AddInternForm({ departments }: AddInternFormProps) {
             router.refresh();
           } catch (error) {
             if (error instanceof ZodError) {
+
               const nextErrors: FieldErrors = {};
 
               for (const issue of error.issues) {
@@ -194,7 +195,7 @@ export function AddInternForm({ departments }: AddInternFormProps) {
             error={fieldErrors.contactNumber}
             label="Contact number"
             name="contactNumber"
-            placeholder="03XXXXXXXXX or +92XXXXXXXXXX"
+            placeholder="03XXXXXXXXX"
           />
           <Field error={fieldErrors.email} label="Email" name="email" type="email" />
           <Field error={fieldErrors.city} label="City" name="city" />
