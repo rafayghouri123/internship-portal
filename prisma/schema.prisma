@@ -35,6 +35,7 @@ model User {
   internsAdded Intern[]       @relation("AddedBy")
   extensions   ExtensionLog[] @relation("ExtendedBy")
   evaluations  Evaluation[]   @relation("EvaluatedBy")
+  testLinks    TestLink[]     @relation("CreatedTestLinks")
   accounts     Account[]
   sessions     Session[]
 
@@ -185,4 +186,54 @@ model Evaluation {
   evaluatedBy     User     @relation("EvaluatedBy", fields: [evaluatedById], references: [id])
 
   @@map("evaluations")
+}
+
+model TestSubmission {
+  id              String   @id @default(cuid())
+  sessionTokenHash String  @unique
+  fullName        String
+  fatherName      String
+  university      String
+  department      String
+  score           Int
+  totalQuestions  Int
+  timeTaken       Int
+  answers         Json?
+  submittedAt     DateTime @default(now())
+
+  @@index([department])
+  @@index([submittedAt])
+  @@map("test_submissions")
+}
+
+model TestQuestion {
+  id            String   @id @default(cuid())
+  section       String
+  department    String?
+  question      String
+  optionA       String
+  optionB       String
+  optionC       String
+  optionD       String
+  correctOption String
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([section])
+  @@index([department])
+  @@index([section, department])
+  @@map("test_questions")
+}
+
+model TestLink {
+  id          String   @id @default(cuid())
+  token       String   @unique
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  createdById String?
+  createdBy   User?    @relation("CreatedTestLinks", fields: [createdById], references: [id], onDelete: SetNull)
+
+  @@index([isActive])
+  @@map("test_links")
 }

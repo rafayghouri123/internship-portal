@@ -112,6 +112,22 @@ export default async function DashboardPage({
           <DepartmentChart data={data.officeBreakdown} barColor="#2D8A41" />
         </CardContent>
       </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Assessment Results</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-dalda-gray-600">
+            View candidate test submissions, filter by department, sort by score/date, and export CSV.
+          </p>
+          <a
+            className="mt-3 inline-flex h-10 items-center rounded-md bg-dalda-green px-4 text-sm font-medium text-white transition hover:bg-dalda-green-dark"
+            href="/dashboard/test-results"
+          >
+            Open test results
+          </a>
+        </CardContent>
+      </Card>
     </div>
   );
 }

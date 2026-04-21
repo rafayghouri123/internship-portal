@@ -1,0 +1,3556 @@
+{
+  "functional": {
+    "FINANCE": [],
+    "IT": [
+      {
+        "id": "it-1",
+        "question": "A startup is designing a system to store customer and order data. They want to ensure that all data is represented in a structured format using tables with rows and columns. Which type of database management system should they implement...",
+        "options": [
+          "Network DBMS",
+          "Hierarchical DBMS",
+          "Relational DBMS",
+          "Object Oriented DBMS"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "it-2",
+        "question": "A data analyst is generating a sales report. To make the report easier to read, they need the results to be sorted alphabetically by the \"Product Name.\" Which SQL keyword should they use...",
+        "options": [
+          "Group",
+          "Order",
+          "Group By",
+          "Order By"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "it-3",
+        "question": "An HR administrator realizes that an employee's last name was entered incorrectly as \"Thomas\" and needs to be changed to \"Michel\" in the \"Users\" table. Which command will correctly perform this update...",
+        "options": [
+          "UPDATE User SET LastName = 'Thomas' INTO LastName = 'Michel'",
+          "MODIFY Users SET LastName = 'Michel' WHERE LastName = 'Thomas'",
+          "MODIFY Users SET LastName = 'Thomas' INTO LastName = 'Michel'",
+          "UPDATE Users SET LastName = 'Michel' WHERE LastName = 'Thomas'"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "it-4",
+        "question": "A developer needs to create a list that combines information from \"Orders\" (Table1) and \"Customers\" (Table2) only where there is a matching ID in both tables. What is the correct syntax for this INNER JOIN...",
+        "options": [
+          "SELECT column_list FROM table1 INNER JOIN table2 ON table1.column = table2.column;",
+          "SELECT column_list FROM table1 INNER JOIN table2;",
+          "SELECT column_list FROM table1 ON table1.column = table2.column INNER JOIN table2;",
+          "SELECT column_list FROM table1 INNER JOIN table2 table1.column = table2.column;"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "it-5",
+        "question": "A teacher wants to retrieve a list of all students from the database whose names start with the letter \"P\". Which SQL statement should be used...",
+        "options": [
+          "SELECT * FROM student WHERE name LIKE '%p%';",
+          "SELECT * FROM student WHERE name LIKE 'p%';",
+          "SELECT * FROM student WHERE name LIKE '_p%';",
+          "SELECT * FROM student WHERE name LIKE '%p';"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "it-6",
+        "question": "A software engineer is designing a banking application. They want to bundle the \"account balance\" data and the \"withdraw\" methods together, ensuring that the balance cannot be modified directly from outside the class. Which OOP concept is being applied...",
+        "options": [
+          "Polymorphism",
+          "Inheritance",
+          "Abstraction",
+          "Encapsulation"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "it-7",
+        "question": "A junior developer is writing a C++ program and needs to define a class. Which of the following class definitions is written with incorrect syntax...",
+        "options": [
+          "student { int marks; }",
+          "class student { int marks; };",
+          "class student { int marks; } s;",
+          "class { int marks; };"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "it-8",
+        "question": "In a graphics application, both \"Circle\" and \"Square\" classes have a method called draw(). Even though the method name is the same, the actual drawing logic is different for each. Which OOP feature allows this...",
+        "options": [
+          "Encapsulation",
+          "Polymorphism",
+          "Data Hiding",
+          "Objects"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "it-9",
+        "question": "You are creating a base class called Animal. You want this class to act as a general template for Dog and Cat, but you want to prevent anyone from creating an actual object of the Animal class itself. What is this called...",
+        "options": [
+          "Abstract Class",
+          "Anonymous Class",
+          "Final Class",
+          "Wrapper Class"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "it-10",
+        "question": "Review the following code structure where a topper class is created to extend the functionality of the student class. Which OOP principles are clearly demonstrated... C++ class student { int marks; }; class topper: public student { int age; };",
+        "options": [
+          "Encapsulation only",
+          "Inheritance only",
+          "Both Encapsulation and Inheritance",
+          "Polymorphism"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "it-11",
+        "question": "What is the output of the following C++ code... C++ #include<iostream> using namespace std; int main() { int i = 0; i = i++ + i; cout << i; return 0; }",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "it-12",
+        "question": "Which of the following is the correct way to declare a pointer to an integer in C++...",
+        "options": [
+          "int ptr*;",
+          "int *ptr;",
+          "*int ptr;",
+          "ptr int*;"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "it-13",
+        "question": "What is the purpose of the 'new' operator in C++...",
+        "options": [
+          "To declare a new variable",
+          "To allocate memory dynamically on the heap",
+          "To create a new function",
+          "To include a new header file"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "it-14",
+        "question": "Which of the following is NOT a fundamental data type in C++...",
+        "options": [
+          "int",
+          "float",
+          "string",
+          "char"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "it-15",
+        "question": "What will be the output of the following C++ code... C++ #include<iostream> using namespace std; int main() { int a = 5, b = 10; if (a > 0 && b < 20) { cout << \"Condition is true\"; } else { cout << \"Condition is false\"; } return 0; }",
+        "options": [
+          "Condition is true",
+          "Condition is false",
+          "Compilation Error",
+          "No output"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "it-16",
+        "question": "You are teaching a class on computer hardware and want to identify the smallest possible unit of data that a computer can process. What is it...",
+        "options": [
+          "Byte",
+          "Bit",
+          "Nibble",
+          "Word"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "it-17",
+        "question": "A systems architect is reviewing how data is represented within the CPU. Which of the following is NOT a standard type of computer code used for this purpose...",
+        "options": [
+          "EBCDIC",
+          "ASCII",
+          "Binary",
+          "EDIC"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "it-18",
+        "question": "A business wants to speed up their data entry process by automatically reading information directly from paper forms into their computer system. Which type of device should they use...",
+        "options": [
+          "Keyboard",
+          "Mouse",
+          "Data-entry Input Device (e.g., Scanner/OMR)",
+          "Monitor"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "it-19",
+        "question": "A network administrator is configuring a system that primarily serves web pages and communicates using the HTTP protocol. What is this system commonly called...",
+        "options": [
+          "Database System",
+          "Web System",
+          "Operating System",
+          "File System"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "it-20",
+        "question": "In the OSI model, data is passed down from one layer to another. When the Data Link Layer receives a \"Packet\" and prepares to wrap it into a \"Frame,\" which layer did that packet come from...",
+        "options": [
+          "Physical Layer",
+          "Network Layer",
+          "Transport Layer",
+          "Application Layer"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "it-21",
+        "question": "A small office is setting up a local network. They need to assign unique addresses to 20 different computers so they can communicate with each other over the internet. Which protocol is responsible for providing these unique addresses...",
+        "options": [
+          "DNS (Domain Name System)",
+          "IP (Internet Protocol)",
+          "HTTP (Hypertext Transfer Protocol)",
+          "SMTP (Simple Mail Transfer Protocol)"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "it-22",
+        "question": "A software developer is writing a loop that needs to execute at least once, regardless of whether the condition is met at the start. Which control structure is the best fit for this scenario...",
+        "options": [
+          "For loop",
+          "While loop",
+          "Do-While loop",
+          "If-Else statement"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "it-23",
+        "question": "You are building a secure login system. You want to ensure that even if someone gains access to the database, they cannot read the actual passwords. Which process should you use to convert the passwords into an unreadable string...",
+        "options": [
+          "Compression",
+          "Hashing",
+          "Compilation",
+          "Fragmentation"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "it-24",
+        "question": "A graphic designer complains that their computer is running very slowly when they open multiple large design files at once. A technician suggests that the computer needs more \"short-term memory\" to handle active tasks. Which component needs an upgrade...",
+        "options": [
+          "HDD (Hard Disk Drive)",
+          "SSD (Solid State Drive)",
+          "RAM (Random Access Memory)",
+          "ROM (Read-Only Memory)"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "it-25",
+        "question": "A company’s website suddenly stops working. The IT team discovers that the \"Server\" is overwhelmed by a massive amount of fake traffic designed to crash the system. What type of cybersecurity attack is this...",
+        "options": [
+          "Phishing",
+          "Malware",
+          "DDoS (Distributed Denial of Service)",
+          "SQL Injection"
+        ],
+        "answer": "C"
+      }
+    ],
+    "MARKETING": [
+      {
+        "id": "marketing-1",
+        "question": "A brand’s recent Instagram post receives a high-engagement but mostly negative comment regarding a product flaw. How should the social media intern respond...",
+        "options": [
+          "Delete the comments immediately to protect the brand image.",
+          "Ignore the comments; responding only gives them more visibility.",
+          "Acknowledge the feedback publicly and offer a direct channel (DM/Email) to resolve the issue.",
+          "Argue with the commenters to prove the product is high quality."
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "marketing-2",
+        "question": "You are running a Facebook Ad campaign. The \"Click-Through Rate\" (CTR) is very high, but the \"Conversion Rate\" on the website is almost zero. What is the most likely problem...",
+        "options": [
+          "The ad creative is boring and needs more color.",
+          "The ad is misleading, or the landing page is difficult to navigate/irrelevant.",
+          "You aren't spending enough money on the ads.",
+          "Facebook’s servers are down."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-3",
+        "question": "You are asked to write a \"Meta Description\" for a new blog post about eco-friendly packaging. What is your primary goal...",
+        "options": [
+          "To fit as many keywords as possible until the character limit is reached.",
+          "To write a compelling summary that encourages users to click from the search results.",
+          "To explain the entire history of the company.",
+          "To write something poetic that doesn't mention the product."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-4",
+        "question": "A local coffee shop wants to target Gen Z customers. Which platform and content style would you recommend...",
+        "options": [
+          "Long-form articles on LinkedIn about coffee beans.",
+          "Short-form, \"behind-the-scenes\" vertical videos on TikTok or Reels.",
+          "Daily static image posts on Facebook with long captions.",
+          "Local newspaper print advertisements."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-5",
+        "question": "You are choosing an influencer for a niche \"Indie Skincare\" brand. Who is the better choice for high engagement...",
+        "options": [
+          "A celebrity with 5 million followers who posts about everything.",
+          "A \"Micro-influencer\" with 15k followers who specifically reviews organic skincare.",
+          "A parody account with 500k followers that makes jokes about makeup.",
+          "An account with 1 million followers that has disabled comments."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-6",
+        "question": "You notice that 70% of users are adding items to their cart on your e-commerce site but leaving before paying. What marketing tactic should you implement...",
+        "options": [
+          "Post more photos on Instagram.",
+          "Send an automated \"Abandoned Cart\" email with a small discount or reminder.",
+          "Call every customer individually on their mobile phone.",
+          "Increase the prices to make the products feel more \"premium.\""
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-7",
+        "question": "A competitor just lowered their prices by 20%. Your manager asks you how to respond without lowering your prices. What is a valid marketing strategy...",
+        "options": [
+          "Send an email blast telling customers the competitor is bad.",
+          "Emphasize your brand’s \"Unique Value Proposition\" (quality, service, or ethics).",
+          "Stop all advertising until the competitor raises their prices again.",
+          "Buy the competitor's products and hide them."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-8",
+        "question": "You are A/B testing two email subject lines. Line A: \"Flash Sale: 50% Off!\" Line B: \"Your exclusive discount is waiting...\" After two hours, Line A has a 10% open rate and Line B has a 25% open rate. What do you do...",
+        "options": [
+          "Send the rest of the emails using Line A.",
+          "Send the rest of the emails using Line B.",
+          "Delete the entire email campaign.",
+          "Wait another 48 hours before doing anything."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-9",
+        "question": "When creating a \"Customer Persona,\" which information is the most useful for targeting ads...",
+        "options": [
+          "The customer’s favorite childhood pet.",
+          "Demographic data, interests, pain points, and buying habits.",
+          "The customer's high school graduation year only.",
+          "The name of the customer’s local grocery store."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-10",
+        "question": "You are launching a new energy drink. You want to create \"Brand Awareness\" rather than immediate sales. Which metric should you focus on...",
+        "options": [
+          "Return on Ad Spend (ROAS)",
+          "Total Reach and Impressions",
+          "Number of items returned",
+          "Average order value"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-11",
+        "question": "A luxury watch brand uses very minimal text and high-end photography in its ads. Why...",
+        "options": [
+          "They are trying to save money on copywriters.",
+          "To create an \"Aspiritual\" and \"Exclusive\" brand image.",
+          "Because they forgot to write the descriptions.",
+          "Because the watches don't actually work."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-12",
+        "question": "You are asked to perform a \"SWOT Analysis\" for a new startup. What does the \"O\" stand for...",
+        "options": [
+          "Operations",
+          "Opportunities",
+          "Obstacles",
+          "Objectives"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-13",
+        "question": "Your \"Organic\" reach on Facebook has dropped significantly. What is the most likely reason...",
+        "options": [
+          "People have stopped using the internet.",
+          "Platform algorithm changes favoring \"Paid\" content or high-engagement video.",
+          "Your posts are too high quality.",
+          "You haven't posted in the last 2 hours."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-14",
+        "question": "A SaaS (Software as a Service) company wants to get \"High Quality Leads.\" Which platform is generally best for B2B (Business to Business) marketing...",
+        "options": [
+          "Snapchat",
+          "LinkedIn",
+          "Pinterest",
+          "YouTube Kids"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-15",
+        "question": "You are designing a \"Call to Action\" (CTA) button for a newsletter. Which text is most likely to get clicks...",
+        "options": [
+          "\"Submit Information Here\"",
+          "\"Click if you want\"",
+          "\"Get My Free Guide\"",
+          "\"Terms and Conditions\""
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "marketing-16",
+        "question": "A brand uses a \"Freemium\" model (Basic service is free, features cost money). What is the primary marketing goal of the \"Free\" version...",
+        "options": [
+          "To lose as much money as possible.",
+          "To lower the \"Barrier to Entry\" and build a user base for future conversion.",
+          "To trick customers into giving their home addresses.",
+          "To show that the paid version isn't necessary."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-17",
+        "question": "You are looking at a \"Heatmap\" of your website. It shows that users are clicking on a non-clickable image of a dog. What should you do...",
+        "options": [
+          "Remove the dog image.",
+          "Make the dog image a link to a relevant product or page.",
+          "Ignore it; users are just confused.",
+          "Change the dog to a cat."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-18",
+        "question": "A \"Viral\" marketing campaign is successful, but the traffic it brings doesn't buy anything. Was the campaign successful...",
+        "options": [
+          "Yes, because it was funny.",
+          "No, because the \"Targeting\" was likely too broad and didn't attract potential buyers.",
+          "Yes, because more followers always equals more money.",
+          "No, because the video was too short."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-19",
+        "question": "You are managing a budget of $1,000. You spend $500 on Google Ads and get 10 sales. You spend $500 on TikTok Ads and get 2 sales. Where should you move the remaining budget...",
+        "options": [
+          "TikTok Ads, because they are more \"trendy.\"",
+          "Split it evenly again to be fair.",
+          "Google Ads, as they show a higher \"ROI\" (Return on Investment).",
+          "Save the money and don't spend it."
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "marketing-20",
+        "question": "A customer leaves a 5-star review but mentions the packaging was hard to open. How should Marketing use this...",
+        "options": [
+          "Hide the review so no one sees the negative part.",
+          "Use the \"5-star\" part in an ad and pass the feedback to the Product Development team.",
+          "Reply and tell the customer they opened it wrong.",
+          "Delete the review."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-21",
+        "question": "What is the main benefit of \"Content Marketing\" (blogs, videos, podcasts) over traditional ads...",
+        "options": [
+          "It is always 100% free.",
+          "It builds \"Authority\" and \"Trust\" with the audience over time.",
+          "It works instantly the second you post it.",
+          "It doesn't require any creativity."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-22",
+        "question": "You are asked to \"Segment\" an email list for a clothing brand. Which segments make the most sense...",
+        "options": [
+          "People who like blue vs. people who like red.",
+          "Men's wear buyers, Women's wear buyers, and High-spenders.",
+          "People who use Gmail vs. people who use Outlook.",
+          "People who live in houses vs. people who live in apartments."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-23",
+        "question": "A video ad has a \"Hook,\" a \"Body,\" and a \"CTA.\" If people are scrolling past the video in the first 2 seconds, which part needs to be fixed...",
+        "options": [
+          "The Call to Action",
+          "The Hook",
+          "The Body",
+          "The background music"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-24",
+        "question": "Your brand is accused of \"Greenwashing.\" What does this mean...",
+        "options": [
+          "You are using too much green in your logo.",
+          "You are making misleading claims about how environmentally friendly your products are.",
+          "You are giving away free plants to customers.",
+          "Your website is powered by solar energy."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "marketing-25",
+        "question": "In the \"Marketing Funnel,\" which stage comes after \"Awareness\"...",
+        "options": [
+          "Purchase",
+          "Consideration/Interest",
+          "Retention",
+          "Advocacy"
+        ],
+        "answer": "B"
+      }
+    ],
+    "SUPPLY_CHAIN": [
+      {
+        "id": "supply_chain-1",
+        "question": "A sudden viral trend causes orders for a specific SKU to jump by 400% in one day. Your warehouse is nearly empty. What is your first priority...",
+        "options": [
+          "Update the website to say \"Out of Stock\" and stop all operations.",
+          "Contact the supplier to negotiate an \"expedited lead time\" and notify the marketing team.",
+          "Ship partial orders to every customer to keep them happy.",
+          "Wait for the weekly automated reorder system to trigger."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-2",
+        "question": "Your company uses a Just-In-Time (JIT) system. A port strike has delayed your raw materials by two weeks. What is the most likely immediate impact...",
+        "options": [
+          "Warehouse storage costs will increase significantly.",
+          "The production line will likely stop due to a \"stockout.\"",
+          "Profit margins will increase because of lower inventory.",
+          "Lead time to the end customer will decrease."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-3",
+        "question": "You are comparing two suppliers for a component. Supplier A is 20% cheaper but has a 30-day lead time. Supplier B is more expensive but can deliver in 3 days. When should you choose Supplier B...",
+        "options": [
+          "When the product is a slow-moving \"C\" item.",
+          "When you have massive amounts of safety stock.",
+          "During an emergency shortage or a high-demand peak.",
+          "Always, because speed is the only thing that matters."
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "supply_chain-4",
+        "question": "A warehouse manager reports that \"dead stock\" (items not sold in 12 months) is taking up 15% of the rack space. What should you recommend...",
+        "options": [
+          "Increase the price to recover the cost of storage.",
+          "Move the items to the most accessible \"Golden Zone\" in the warehouse.",
+          "Liquidate the stock or donate it to free up space for high-velocity items.",
+          "Buy more of the item to see if a larger display helps sales."
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "supply_chain-5",
+        "question": "You notice that your retail stores are ordering small amounts frequently, while the factory is producing massive batches infrequently. This is causing huge inventory swings. What is this called...",
+        "options": [
+          "The Domino Effect",
+          "The Bullwhip Effect",
+          "Linear Progression",
+          "The Butterfly Effect"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-6",
+        "question": "A pharmaceutical company needs to ship vaccines that must stay between 2°C and 8°C. The shipment is going from the UK to Australia. Which logistics solution is required...",
+        "options": [
+          "Standard Dry Van Trucking",
+          "Intermodal Rail with open containers",
+          "Cold Chain Logistics with active temperature monitoring",
+          "Reverse Logistics"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "supply_chain-7",
+        "question": "You are in charge of \"Procurement.\" You find a supplier offering a massive discount for a \"Bulk Buy,\" but your warehouse is already at 90% capacity. What hidden cost are you most worried about...",
+        "options": [
+          "Marketing costs",
+          "Inventory carrying/holding costs",
+          "Manufacturing labor costs",
+          "Customer acquisition costs"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-8",
+        "question": "A customer receives a shattered glass vase and wants a refund. The process of getting that broken item back to the warehouse is known as:",
+        "options": [
+          "Last-mile delivery",
+          "Inbound logistics",
+          "Reverse logistics",
+          "Procurement sourcing"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "supply_chain-9",
+        "question": "You are analyzing the \"ABC Analysis\" for a furniture company. Luxury sofas represent 70% of the company's revenue but only 10% of the total units sold. Which category do they fall into...",
+        "options": [
+          "Category A",
+          "Category B",
+          "Category C",
+          "Category D"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "supply_chain-10",
+        "question": "A truck driver is stuck in traffic and will miss their delivery window at a major retail DC (Distribution Center). If the DC uses \"Cross-docking,\" why is this delay especially critical...",
+        "options": [
+          "Because the goods were meant to be stored for months.",
+          "Because outbound trucks are already waiting to be loaded directly from that incoming truck.",
+          "Because the driver needs to pay the warehouse rent.",
+          "Because the items are likely to expire in the truck."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-11",
+        "question": "Your company wants to reduce its carbon footprint. You currently ship 100 small packages daily via air. What change would be most \"Green\"...",
+        "options": [
+          "Using more plastic wrap to secure the boxes.",
+          "Consolidating orders into one weekly shipment via sea or rail.",
+          "Increasing the speed of the airplanes.",
+          "Printing the invoices on colored paper."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-12",
+        "question": "An ERP system alert shows a \"Negative Inventory\" balance for a popular item, but the warehouse floor says they have 50 units. What is the most likely problem...",
+        "options": [
+          "The items were sold for too much money.",
+          "Data entry error or a failure in \"Inventory Accuracy.\"",
+          "The supplier sent too many items.",
+          "The items have physically shrunk."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-13",
+        "question": "A global electronics firm sources all its microchips from a single factory in a region prone to earthquakes. What is the biggest risk here...",
+        "options": [
+          "High transportation costs",
+          "Lack of \"Supply Chain Resilience\" due to single-sourcing",
+          "Too much competition",
+          "The chips becoming obsolete too fast"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-14",
+        "question": "You are calculating the \"Total Cost of Ownership\" (TCO) for a new piece of warehouse machinery. Which of these must be included...",
+        "options": [
+          "Only the initial purchase price",
+          "Purchase price, maintenance, energy use, and operator training",
+          "The CEO's annual salary",
+          "The price the competitor paid for their machine"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-15",
+        "question": "A grocery chain wants to ensure that milk with the earliest expiration date is sold first. Which inventory flow method should they use...",
+        "options": [
+          "LIFO (Last-In, First-Out)",
+          "FEFO (First-Expired, First-Out)",
+          "Random Slotting",
+          "Bulk Stacking"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-16",
+        "question": "You are managing \"Last-Mile Delivery\" in a crowded city. Customers are complaining about late packages. Which technology would help most...",
+        "options": [
+          "Heavy-duty long-haul trucks",
+          "Route optimization software",
+          "Bigger shipping containers",
+          "Automated assembly lines"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-17",
+        "question": "A supplier offers to manage your inventory levels for you, refilling your shelves automatically without you placing a PO. This is called:",
+        "options": [
+          "Hostile Takeover",
+          "Vendor Managed Inventory (VMI)",
+          "Outsourced Marketing",
+          "Blind Sourcing"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-18",
+        "question": "During a \"Peak Season\" (like Black Friday), your 3PL (Third-Party Logistics) provider says they cannot handle your volume. What should have been in your contract...",
+        "options": [
+          "A clause for \"Scalability\" or \"Guaranteed Capacity\"",
+          "A requirement for the 3PL to hire your family",
+          "A permanent price increase",
+          "No action; this is expected"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "supply_chain-19",
+        "question": "You are designing a warehouse layout. You want to minimize the distance workers walk to pick the most popular items. Where do you put them...",
+        "options": [
+          "In the very back, furthest from the shipping docks",
+          "On the highest possible shelves",
+          "Near the shipping/receiving docks at eye level",
+          "In a separate building"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "supply_chain-20",
+        "question": "A fashion brand realizes their \"Lead Time\" from design to store is 6 months, but trends change every 2 months. What is their main supply chain problem...",
+        "options": [
+          "High quality",
+          "Lack of \"Agility\"",
+          "Too many colors",
+          "Low shipping costs"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-21",
+        "question": "You receive a \"Bill of Lading\" (BoL) from a carrier. What is the primary purpose of this document...",
+        "options": [
+          "To act as a receipt of goods and a contract of carriage",
+          "To tell the factory how to make the product",
+          "To advertise the product to the driver",
+          "To list the names of the warehouse employees"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "supply_chain-22",
+        "question": "A company switches from wooden pallets to \"Plastic Pallets\" that are RFID-enabled. What is the primary benefit of the RFID...",
+        "options": [
+          "It makes the pallet look more modern.",
+          "It allows for real-time tracking and \"Visibility\" of the load.",
+          "It makes the pallet weigh less.",
+          "It prevents the pallet from ever breaking."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-23",
+        "question": "Your boss asks you to improve the \"Perfect Order Rate.\" Which of these would help...",
+        "options": [
+          "Shipping orders only when you feel like it.",
+          "Ensuring the right product is delivered on time, undamaged, with the correct invoice.",
+          "Only selling one type of product.",
+          "Increasing the price of every order."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-24",
+        "question": "A \"Container Shortage\" occurs globally. Sea freight prices triple. What is the likely result for a low-margin toy company...",
+        "options": [
+          "They will switch to Air Freight (even though it's more expensive).",
+          "They may experience \"Profit Margin Erosion\" or need to raise prices.",
+          "They will stop using containers and use envelopes.",
+          "Nothing; sea freight costs don't affect retail prices."
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "supply_chain-25",
+        "question": "You are an intern in \"Sourcing.\" You find out your main supplier is using unethical labor practices. What is the \"Sustainable SCM\" response...",
+        "options": [
+          "Ignore it as long as the price is low.",
+          "Immediately look for an ethical alternative and conduct a supplier audit.",
+          "Tell the marketing team to hide the information.",
+          "Ask the supplier for a further discount to stay quiet."
+        ],
+        "answer": "B"
+      }
+    ],
+    "ELECTRONICS": [
+      {
+        "id": "electronics-1",
+        "question": "A power electronics engineer is bench-testing an unregulated DC power supply by gradually connecting additional resistive loads, drawing progressively higher current from the supply. The engineer monitors the output voltage on a multimeter throughout the test. In an unregulated power supply, if load current increases, the output voltage ………… Remains the same Decreases Increases None of the above",
+        "options": [
+          "Remains the same",
+          "Decreases",
+          "Increases",
+          "None of the above"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "electronics-2",
+        "question": "Q2. An instrumentation engineer is reviewing the components in a process control loop and identifies a device at the input stage that converts a physical quantity such as temperature, pressure, or light into a corresponding electrical signal. A sensing device is also called Transistor Thermistor Amplifier Transducer",
+        "options": [
+          "Transistor",
+          "Thermistor",
+          "Amplifier",
+          "Transducer"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "electronics-3",
+        "question": "Q3. An electronics engineer is designing a simple low-cost voltage regulator circuit and selects a Zener diode as the reference element. The engineer reviews which operating region of the diode is exploited for the regulation function. A Zener diode utilises ………… characteristic for voltage regulation. Forward Reverse Both forward and reverse None of the above",
+        "options": [
+          "Forward",
+          "Reverse",
+          "Both forward and reverse",
+          "None of the above"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "electronics-4",
+        "question": "Q4. A lab technician is evaluating an unregulated DC power supply by progressively connecting more resistive loads to the output terminals, increasing the current drawn from the supply. The technician observes what happens to the output voltage on an oscilloscope. If the load current drawn by an unregulated power supply increases, the d.c. output voltage ………… Increases Decreases Stays the same None of the above",
+        "options": [
+          "Increases",
+          "Decreases",
+          "Stays the same",
+          "None of the above"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "electronics-5",
+        "question": "Q5. A circuit design engineer is analyzing the current distribution in a Zener diode voltage regulator under varying load conditions. The engineer determines under which specific load condition the Zener diode carries the least current. The Zener current will be minimum when ………… Load current is maximum Load current is minimum Load current is zero None of the above",
+        "options": [
+          "Load current is maximum",
+          "Load current is minimum",
+          "Load current is zero",
+          "None of the above"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "electronics-6",
+        "question": "Q6. An electronics instructor is conducting a classification exercise with students, asking them to distinguish between analog and digital devices. The students must identify which of the following does NOT operate as an analog device. Audio microphone Light switch Current flow in a circuit Thermocouple",
+        "options": [
+          "Audio microphone",
+          "Light switch",
+          "Current flow in a circuit",
+          "Thermocouple"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "electronics-7",
+        "question": "Q7. A digital electronics student is reviewing logic gate truth tables and is asked to identify which logic gate produces an output that is the exact complement of an OR gate for every possible combination of inputs. Which of the following gates has the exact inverse output of the OR gate for all possible input combinations... AND NOT NOR NAND",
+        "options": [
+          "AND",
+          "NOT",
+          "NOR",
+          "NAND"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "electronics-8",
+        "question": "Q8. A control systems engineer is designing an interface between a microcontroller's digital output and an analog actuator that requires a continuous voltage signal. The engineer selects a DAC for this purpose. A DAC changes _____ Digital data into an amplified signal An analog signal into digital data Digital data into an analog signal All of the above",
+        "options": [
+          "Digital data into an amplified signal",
+          "An analog signal into digital data",
+          "Digital data into an analog signal",
+          "All of the above"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "electronics-9",
+        "question": "Q9. An electrician is explaining to an apprentice why connecting a battery across an open circuit produces no measurable current, even though a voltage is present. The electrician emphasizes the circuit condition required for voltage to drive current. A voltage will influence current only if the circuit is: open insulated high resistance closed",
+        "options": [
+          "open",
+          "insulated",
+          "high resistance",
+          "closed"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "electronics-10",
+        "question": "Q10. A temperature measurement engineer is selecting a passive electronic component for a thermal protection circuit. The component must change its resistance significantly in response to temperature variations. Which resistive component is designed to be temperature sensitive... Thermistor Rheostat Potentiometer Photoconductive cell",
+        "options": [
+          "Thermistor",
+          "Rheostat",
+          "Potentiometer",
+          "Photoconductive cell"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "electronics-11",
+        "question": "Q11. An electrical technician is reviewing a wiring diagram for a circuit that contains a switch with a single input pole and two selectable output positions, allowing the circuit to be directed to one of two paths. What type of switch is this... push button SPST DPDT SPDT",
+        "options": [
+          "push button",
+          "SPST",
+          "DPDT",
+          "SPDT"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "electronics-12",
+        "question": "A field engineer is using a battery-powered measurement instrument in a remote location and notices that the voltage reading on the instrument display drops gradually as the instrument continues to operate under load. In practical applications, battery voltage: is restored as soon as disconnect occurs is lowered as the load increases may be stored indefinitely will be reduced to zero as power is drawn",
+        "options": [
+          "is restored as soon as disconnect occurs",
+          "is lowered as the load increases",
+          "may be stored indefinitely",
+          "will be reduced to zero as power is drawn"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "electronics-13",
+        "question": "An electronics trainee is about to measure the voltage drop across a resistor in a live circuit and asks the instructor how the voltmeter should be connected. The instructor explains both the purpose and the correct connection method. A voltmeter is used: to measure current in series with the circuit in parallel with the circuit to measure coulombs",
+        "options": [
+          "to measure current",
+          "in series with the circuit",
+          "in parallel with the circuit",
+          "to measure coulombs"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "electronics-14",
+        "question": "A physics instructor is leading a classroom discussion on different forms of energy and asks students to identify which of the following represents stored potential energy rather than energy in an active or kinetic form. An example of potential energy is: tea-kettle steam a moving vehicle the sun a battery",
+        "options": [
+          "tea-kettle steam",
+          "a moving vehicle",
+          "the sun",
+          "a battery"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "electronics-15",
+        "question": "Q15. An electrician is introducing basic circuit control components to new apprentices and asks them to describe the fundamental purpose of a switch in an electrical circuit. A switch is a device that: short circuits complex circuits holds a fuse has double poles opens or completes a current path",
+        "options": [
+          "short circuits complex circuits",
+          "holds a fuse",
+          "has double poles",
+          "opens or completes a current path"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "electronics-16",
+        "question": "A lab technician is performing an Ohm's Law verification experiment, keeping the DC supply voltage constant while gradually increasing the total circuit resistance using a variable rheostat. The technician records the ammeter reading at each step. If the resistance in a circuit with constant voltage increases, the current will: increase decrease stay the same Not enough information",
+        "options": [
+          "increase",
+          "decrease",
+          "stay the same",
+          "Not enough information"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "electronics-17",
+        "question": "A power electronics engineer is specifying a regulated power supply for a sensitive analog measurement system where even small fluctuations in supply voltage could corrupt readings. The engineer explains why regulation is necessary. Power supplies are regulated to prevent the output voltage from changing due to changes in the line voltage supply load frequency both line voltage and supply load",
+        "options": [
+          "line voltage",
+          "supply load",
+          "frequency",
+          "both line voltage and supply load"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "electronics-18",
+        "question": "An electronics student is studying fundamental circuit theory and is asked by the instructor to correctly state Ohm's Law in terms of the three electrical quantities it relates. Ohm's law is a relationship between voltage, current, and time power, current, and resistance resistance, time, and current voltage, current, and resistance",
+        "options": [
+          "voltage, current, and time",
+          "power, current, and resistance",
+          "resistance, time, and current",
+          "voltage, current, and resistance"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "electronics-19",
+        "question": "An electronics engineer is testing an op-amp comparator circuit in the lab by connecting a sine wave signal generator at the input and observing the resulting waveform on an oscilloscope at the output. If the input to a comparator is a sine wave, the output is a ramp voltage sine wave rectangular wave sawtooth wave",
+        "options": [
+          "ramp voltage",
+          "sine wave",
+          "rectangular wave",
+          "sawtooth wave"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "electronics-20",
+        "question": "An electronics instructor is categorizing different operational amplifier circuits for students and asks the class to correctly classify a comparator circuit based on its input-output relationship. A comparator is an example of a(n) active filter current source linear circuit nonlinear circuit",
+        "options": [
+          "active filter",
+          "current source",
+          "linear circuit",
+          "nonlinear circuit"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "electronics-21",
+        "question": "A circuit protection engineer is reviewing surge protection components for an electronic control panel and encounters a varistor listed in the component catalog. The engineer needs to confirm what a varistor is before specifying it. What is a varistor... a voltage-dependent resistor a voltage-dependent diode a current-dependent resistor a current-dependent diode",
+        "options": [
+          "a voltage-dependent resistor",
+          "a voltage-dependent diode",
+          "a current-dependent resistor",
+          "a current-dependent diode"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "electronics-22",
+        "question": "A power supply design engineer is designing a full-wave rectifier circuit and needs to select the correct transformer configuration that will provide two input signals that are 180 degrees out of phase for the rectifier stage. Which type of transformer is required to create a 180 degree input to a rectifier... center-tapped secondary step-down secondary stepped-up secondary split winding primary",
+        "options": [
+          "center-tapped secondary",
+          "step-down secondary",
+          "stepped-up secondary",
+          "split winding primary"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "electronics-23",
+        "question": "A power electronics engineer is calculating the current ratings for the diodes in a bridge rectifier used in an industrial DC power supply to ensure the components are not under-rated. The dc current through each diode in a bridge rectifier equals: the load current half the dc load current twice the dc load current one-fourth the dc load current",
+        "options": [
+          "the load current",
+          "half the dc load current",
+          "twice the dc load current",
+          "one-fourth the dc load current"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "electronics-24",
+        "question": "An instrumentation engineer is selecting a temperature sensing element for a medical monitoring device. The engineer needs a sensor that behaves similarly to an RTD but exhibits decreasing resistance as temperature rises. What device is similar to an RTD but has a negative temperature coefficient... Strain gauge Thermistor Negative-type RTD Thermocouple",
+        "options": [
+          "Strain gauge",
+          "Thermistor",
+          "Negative-type RTD",
+          "Thermocouple"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "electronics-25",
+        "question": "An instrumentation technician is calibrating a thermocouple-based temperature transmitter and needs to verify the expected output voltage range directly from the thermocouple sensing element before signal conditioning. The output voltage of a typical thermocouple is less than 100 mV greater than 1 V Thermocouples vary resistance, not voltage. None of the above",
+        "options": [
+          "less than 100 mV",
+          "greater than 1 V",
+          "Thermocouples vary resistance, not voltage.",
+          "None of the above"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "electronics-26",
+        "question": "An electrical engineering student is studying electromagnetic induction in the laboratory and is asked to identify the specific condition under which a wire can generate an electromotive force and produce electricity. Electricity may be generated by a wire: carrying current wrapped as a coil that has neutral domains passing through a flux field",
+        "options": [
+          "carrying current",
+          "wrapped as a coil",
+          "that has neutral domains",
+          "passing through a flux field"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "electronics-27",
+        "question": "A physics instructor is demonstrating the relationship between electricity and magnetism by passing current through a straight conductor and using a compass to show the effect around it. As current travels within a conductor: the magnetic field aids the current a magnetic field is developed around it the wire tries to point north an electrostatic field opposes the current",
+        "options": [
+          "the magnetic field aids the current",
+          "a magnetic field is developed around it",
+          "the wire tries to point north",
+          "an electrostatic field opposes the current"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "electronics-28",
+        "question": "A maintenance engineer is reviewing the protection coordination for magnetic circuit breakers installed in a control panel at a manufacturing facility and needs to confirm the exact condition that triggers the breaker to open. A magnetic circuit breaker will open to protect equipment only when: voltage is exceeded an open is in the equipment the equipment is operating properly current is exceeded",
+        "options": [
+          "voltage is exceeded",
+          "an open is in the equipment",
+          "the equipment is operating properly",
+          "current is exceeded"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "electronics-29",
+        "question": "An electrical engineer is characterizing the impedance of an inductive coil by measuring its reactance at different AC supply frequencies during a laboratory experiment. The engineer records how reactance changes with frequency. Reactance in an inductive circuit will: increase with frequency decrease with frequency be independent from frequency depend on the value of XC",
+        "options": [
+          "increase with frequency",
+          "decrease with frequency",
+          "be independent from frequency",
+          "depend on the value of XC"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "electronics-30",
+        "question": "A digital electronics engineer is reviewing the switching behavior of transistors used as logic elements in a microcontroller circuit and explains to a trainee in which operating regions the transistors spend most of their time. When transistors are used in digital circuits they usually operate in the: active region breakdown region saturation and cutoff regions linear region Question No. Answer Q1 b Q2 d Q3 b Q4 b Q5 a Q6 b Q7 c Q8 c Q9 d Q10 a Q11 d Q12 b Q13 c Q14 d Q15 d Q16 b Q17 d Q18 d Q19 c Q20 d Q21 a Q22 a Q23 b Q24 b Q25 a Q26 d Q27 b Q28 d Q29 a Q30 c",
+        "options": [
+          "active region",
+          "breakdown region",
+          "saturation and cutoff regions",
+          "linear region"
+        ],
+        "answer": "C"
+      }
+    ],
+    "MECHANICAL": [
+      {
+        "id": "mechanical-1",
+        "question": "A mechanical engineer is selecting a power transmission system for an industrial conveyor and is comparing belt drives, gear drives, and chain drives based on their operating range. A chain drive is used for",
+        "options": [
+          "Short distance",
+          "Long-distance",
+          "Medium distance",
+          "Distance is no criterion for chain drive"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "mechanical-2",
+        "question": "A motorcycle technician is performing routine maintenance and needs to replace the worn drive chain on a standard commuter motorcycle. After consulting the service manual, the technician confirms which type of chain is standard. The type of chain used in a motorcycle is",
+        "options": [
+          "Roller",
+          "Silent",
+          "Link",
+          "Ewast"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "mechanical-3",
+        "question": "A diesel engine technician is explaining the engine valve train to a group of apprentices during a workshop session. The technician is asked to describe the primary role of the valve gear mechanism. The function of the valve gear mechanism is,",
+        "options": [
+          "To rotate the cam",
+          "To reduce the speed of the crankshaft",
+          "To transmit the power",
+          "Open and close inlet and exhaust valve"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "mechanical-4",
+        "question": "A manufacturing engineer is reviewing the material specification for the production of internal combustion engine cylinders at an automotive components factory. The engineer confirms the material selection. An I.C. engine cylinder is made of,",
+        "options": [
+          "Cast iron",
+          "Plain carbon steel",
+          "Alloy steel",
+          "Copper"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "mechanical-5",
+        "question": "A pressure vessel design engineer is performing wall thickness calculations for an IC engine cylinder to ensure it can withstand the internal combustion pressure safely. Cylinder thickness is calculated on the basis of,",
+        "options": [
+          "Radial stress",
+          "Residual stress",
+          "Whipping stress",
+          "Circumferential hoop stress"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "mechanical-6",
+        "question": "A mechanical design engineer is selecting components for a single-cylinder reciprocating engine to ensure smooth and consistent rotational output during the power cycle. The engineer specifies a flywheel. A flywheel is used,",
+        "options": [
+          "To store and release energy when required during the work cycle",
+          "To reduce the power capacity of electric motor",
+          "To reduce the amplitude of speed fluctuations",
+          "Any one of the above functions"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "mechanical-7",
+        "question": "A machine assembly engineer is reviewing different key types for a shaft-hub connection on a low-torque application. The engineer selects a key that fits only in the keyway of the hub without requiring a keyway on the shaft. The key which fits in the keyway of the hub only is called,",
+        "options": [
+          "Saddle key",
+          "Feather key",
+          "Woodruff key",
+          "Kennedy key"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "mechanical-8",
+        "question": "A fabrication technician is preparing structural steel plates for a riveted joint in the construction of a pressure vessel. The supervisor asks about the correct method for making the holes in the plates. The holes in the plates for a riveted joint are made by",
+        "options": [
+          "Flame cutting",
+          "Turning",
+          "Punching and drilling",
+          "Reaming"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "mechanical-9",
+        "question": "A welding engineer is conducting a technical review of different welding processes for joining structural steel members in a process plant. The engineer explains how fusion welding achieves the bond between materials. In a fusion welding process",
+        "options": [
+          "Only heat is used",
+          "Only pressure is used",
+          "Combination of heat and pressure is used",
+          "All three methods are used"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "mechanical-10",
+        "question": "A refrigeration technician is tracing the path of refrigerant through a vapor compression refrigeration system during a troubleshooting exercise. The technician identifies which component is responsible for regulating refrigerant flow. In a refrigeration cycle, the flow of refrigerant is controlled by",
+        "options": [
+          "Compressor",
+          "Condenser",
+          "Evaporator",
+          "Expansion valve"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "mechanical-11",
+        "question": "An HVAC engineer is taking psychrometric measurements at a site and uses two thermometers — one exposed to ambient air and one covered with a wet wick — to record two different temperature values. The temperature of air recorded by a thermometer when it is not affected by the moisture present in the air is called",
+        "options": [
+          "Wet bulb temperature",
+          "Dry bulb temperature",
+          "Dew point temperature",
+          "None of these"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "mechanical-12",
+        "question": "A power plant engineer is presenting the industrial applications of steam turbines to a group of mechanical engineering interns during a plant tour. The engineer lists the common uses. Steam turbines are used for",
+        "options": [
+          "Large marine propulsion",
+          "Electric power generation",
+          "Direct drive of fans, compressors, pumps",
+          "All of these"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "mechanical-13",
+        "question": "A turbine engineer is explaining the thermodynamic working principle of a steam nozzle fitted at the inlet of a steam turbine stage to a group of trainees. A steam nozzle converts",
+        "options": [
+          "Heat energy of steam into kinetic energy",
+          "Kinetic energy into heat energy of steam",
+          "Heat energy of steam into potential energy",
+          "Potential energy into heat energy of steam"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "mechanical-14",
+        "question": "A sheet metal fabricator at a manufacturing plant receives a batch of curved metal sheets that must be flattened before they can be used in the pressing process. The supervisor asks the trainee to identify this operation. The operation of straightening a curved sheet metal is known as",
+        "options": [
+          "Drawing",
+          "Squeezing",
+          "Coining",
+          "Planishing"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "mechanical-15",
+        "question": "A maintenance technician is demonstrating the correct technique for using a hacksaw to cut a metal pipe to a new apprentice. The technician emphasizes which stroke actually performs the cutting action. A hacksaw blade cuts on the",
+        "options": [
+          "Forward stroke",
+          "Return stroke",
+          "Both forward and return strokes",
+          "Cutting depends upon the direction of force"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "mechanical-16",
+        "question": "A mechanical engineer is selecting bearings for a vertical pump shaft where the primary load is generated by the weight of the rotating assembly acting along the shaft axis. In thrust bearings, the load acts",
+        "options": [
+          "Along the axis of rotation",
+          "Perpendicular to the axis of rotation",
+          "Parallel to the axis of rotation",
+          "Both (A) and (C) above"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "mechanical-17",
+        "question": "A gearbox design engineer is selecting the appropriate bearing type for a bevel gear shaft that experiences significant forces in both the radial and axial directions simultaneously. Taper roller bearing is used to take",
+        "options": [
+          "Only radial load",
+          "Only axial load",
+          "Only torque",
+          "Both axial and radial loads"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "mechanical-18",
+        "question": "A mechanical design engineer is placing a purchase order for a power screw to be used in a screw jack application and must enter the correct technical specification. A power screw is specified by",
+        "options": [
+          "Major diameter × pitch",
+          "Major diameter × length",
+          "Mean diameter × pitch",
+          "Nominal major diameter"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "mechanical-19",
+        "question": "An automotive engineering student is studying the braking systems of standard passenger vehicles and is asked to identify the most commonly used brake type during a practical exam. The brake used in most of the automobile vehicles is",
+        "options": [
+          "Internal expanding shoe brake",
+          "Block brake",
+          "Band brake",
+          "Disk brake"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "mechanical-20",
+        "question": "A mechanical seal engineer is reviewing material selections for various elastomeric components in rotating industrial equipment and confirms the versatility of synthetic rubber. Synthetic rubber is used for",
+        "options": [
+          "V-belt",
+          "Gasket",
+          "Seals",
+          "All three parts"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "mechanical-21",
+        "question": "A metallurgical engineer is reviewing the alloying element requirements for steel components that will be subjected to repeated impact loading, such as hammer heads and rail sections. Toughness of steel is increased by adding,",
+        "options": [
+          "Nickel",
+          "Chromium",
+          "Sulphur",
+          "Tungsten"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "mechanical-22",
+        "question": "A mechanical design engineer is preparing material specifications for helical compression springs used in a heavy-duty valve assembly that requires high fatigue strength and resistance to permanent set. Steels used for helical springs are",
+        "options": [
+          "Medium carbon steel",
+          "Mild steel",
+          "High carbon steel",
+          "Alloy steel"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "mechanical-23",
+        "question": "A maintenance technician is selecting the correct washer size from a storage bin to use with a standard bolt-and-nut fastener assembly. The inner diameter of a washer is",
+        "options": [
+          "Equal to the nut size",
+          "More than the nut size",
+          "Less than the nut size",
+          "Independent of the nut size"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "mechanical-24",
+        "question": "A plant engineer is investigating why a flat belt drive system on a production line is consistently failing to transmit full power to the driven pulley, resulting in speed loss. The engineer identifies the possible causes of belt slip. Belt slip occurs due to",
+        "options": [
+          "Heavy load",
+          "Loose belt",
+          "Driving pulley too small",
+          "Any one of the above"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "mechanical-25",
+        "question": "A mechanical engineer is selecting fasteners for a flanged pipe joint on a pressure vessel where the joint must be opened and closed regularly for maintenance. Studs are chosen over standard bolts for this purpose. A stud is",
+        "options": [
+          "Screw with long threads",
+          "Screw with circular head",
+          "Screw with hexagonal head",
+          "Headless screw with threads on both side"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "mechanical-26",
+        "question": "A pressure vessel fabrication engineer is designing the end closures for road tankers that will be used to transport milk, petrol, and diesel. The engineer reviews the standard end-closure shape used for such tankers. The end-closure for tankers of milk, petrol or diesel is",
+        "options": [
+          "Hemispherical head",
+          "Conical head",
+          "Torispherical head",
+          "Flat head"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "mechanical-27",
+        "question": "An HVAC engineer is analyzing the performance of an air conditioning system by plotting conditions on a psychrometric chart. The engineer needs to locate lines of constant relative humidity on the chart. The relative humidity lines on a psychrometric chart are",
+        "options": [
+          "Vertical and uniformly spaced",
+          "Horizontal and uniformly spaced",
+          "Horizontal and non-uniformly spaced",
+          "Curved lines"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "mechanical-28",
+        "question": "A machine design engineer is assessing the structural impact of cutting a keyway into a steel shaft to accommodate a gear mounting. The engineer reviews all the effects on the shaft. The keyway,",
+        "options": [
+          "Reduces strength of shaft",
+          "Reduces rigidity of shaft",
+          "Increases stress concentration",
+          "All of above"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "mechanical-29",
+        "question": "A gear design engineer is reviewing gear tooth geometry terminology during a technical training session for junior engineers. The engineer points to the area of the tooth below the pitch circle. The portion of the gear tooth between the pitch circle and dedendum circle is called",
+        "options": [
+          "Top land",
+          "Face",
+          "Flank",
+          "Bottom land"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "mechanical-30",
+        "question": "A mechanical engineer is designing a precision timing mechanism for a textile machine where exact synchronization between the driver and driven shafts is critical and absolutely no slip can be tolerated. Which of the following is a positive drive...",
+        "options": [
+          "Flat belt drive",
+          "V-belt drive",
+          "Crossed belt drive",
+          "Timing belt"
+        ],
+        "answer": "D"
+      }
+    ],
+    "QUALITY_ASSURANCE": [
+      {
+        "id": "quality_assurance-1",
+        "question": "A quality manager is conducting an onboarding training session for new QA staff at a food manufacturing company. As part of the session, the trainees are asked to correctly sequence the steps of Quality Assurance from start to finish. Arrange the steps of Quality Assurance in the correct ascending order:",
+        "options": [
+          "Customer need, material control, design development, process control, and marketing",
+          "Material control, process control, customer need, design development, finished goods",
+          "Customer need, design development, material control, process control, finished goods",
+          "Material control, servicing, process control, material control, design development"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "quality_assurance-2",
+        "question": "A quality cost analyst is preparing a Cost of Quality report for senior management at a manufacturing plant. The analyst is categorizing failure costs into internal and external categories. Which of the following is NOT classified as an external failure cost...",
+        "options": [
+          "Testing",
+          "Supplier",
+          "Customer",
+          "Complaint resolution"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "quality_assurance-3",
+        "question": "A quality inspector at a food processing plant is evaluating how closely the production line adheres to the approved product design specifications. The inspector measures the gap between actual production output and the defined specifications. This degree to which design specifications are being followed in manufacturing of a product is called",
+        "options": [
+          "Quality control",
+          "Quality of conformance",
+          "Quality Assurance",
+          "None of the above"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "quality_assurance-4",
+        "question": "A quality manager is training a new team on the difference between Quality Assurance and Quality Control activities. The manager asks the trainees to identify which activities fall under QA. Which of the following is an example of QA...",
+        "options": [
+          "Verification",
+          "Testing",
+          "Validation",
+          "Documentation"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "quality_assurance-5",
+        "question": "A process quality engineer is setting up a Statistical Process Control (SPC) chart for a bottling production line to monitor fill volumes. The engineer needs to establish the control limits for the chart. Control limits are",
+        "options": [
+          "Limits defined by customer",
+          "Limits driven by natural variability of process",
+          "Limits driven by inherent variability of process",
+          "Statistical limits"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "quality_assurance-6",
+        "question": "A manufacturing company is seeking ISO 9001 certification for the first time. During a management briefing, the quality director is asked to explain the scope of the standard. ISO 9001 defines",
+        "options": [
+          "Improve process for achieving customer quality",
+          "Manpower requirement for quality improvement",
+          "Action to be taken for process improvement",
+          "Premises requirement for process improvement"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "quality_assurance-7",
+        "question": "A laboratory technician at a food testing facility is reviewing the calibration certificates for the analytical instruments. The technician encounters the abbreviation LOD in the calibration report and is asked to explain it. LOD in calibration is defined as",
+        "options": [
+          "Limit of detection",
+          "Loss on drying",
+          "Loss on product",
+          "None of above"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "quality_assurance-8",
+        "question": "A food safety auditor is evaluating the overall compliance and safety management program at a large food processing facility. The auditor assesses all the systems in place to protect consumers. Which of the following plays a major role in the food industry...",
+        "options": [
+          "Product Recall system",
+          "GMP compliance",
+          "Customer requirements",
+          "All of the above"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "quality_assurance-9",
+        "question": "A food scientist is formulating a health-focused product and the marketing team insists on using only natural antioxidants on the ingredient label. The scientist reviews available antioxidant options to identify those that occur naturally. Which of the following is a naturally occurring antioxidant...",
+        "options": [
+          "Hydroquinone",
+          "Vitamin E",
+          "Ascorbic acid",
+          "All of the above"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "quality_assurance-10",
+        "question": "A food processing engineer is designing a new vegetable ghee manufacturing plant and must select the correct catalyst to use in the hydrogenation reactor. The engineer reviews technical literature on industrial oil hydrogenation. Which catalyst is used in hydrogenation of oil...",
+        "options": [
+          "Activated Platinum",
+          "Nickel",
+          "Platinum",
+          "Activated Nickel"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "quality_assurance-11",
+        "question": "A quality chemist at an edible oil refinery is investigating oxidative stability of different oil blends. The chemist needs to identify which fatty acid is most reactive with oxygen, as it directly impacts the shelf life of the product. Which fatty acid has the highest rate of activity towards oxygen... a) Stearic acid",
+        "options": [
+          "Linoleic acid",
+          "Oleic Acid",
+          "Linolenic acid",
+          "None of the above"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "quality_assurance-12",
+        "question": "A product development team at a packaged food company is formulating a new snack item and needs to ensure a 12-month shelf life. The quality manager asks what functional ingredient should be incorporated into the formulation. Which of the following is added to increase the shelf life of a product...",
+        "options": [
+          "Artificial flavor",
+          "Color",
+          "Antioxidant",
+          "Sweeteners"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "quality_assurance-13",
+        "question": "A quality control analyst at a food manufacturing plant is auditing the list of additives used in production. The analyst must correctly classify each substance and identify which one does NOT function as an antioxidant. Which of the following is not an antioxidant...",
+        "options": [
+          "BHT",
+          "BHA",
+          "Sulphur Dioxide",
+          "Sodium Methylate"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "quality_assurance-14",
+        "question": "A food quality engineer is investigating consumer complaints about an off-flavor and unpleasant smell in stored cooking oil. The engineer analyzes the oil sample to identify the chemical compounds responsible for rancidity. Which of the following chemical compounds is responsible for rancidity...",
+        "options": [
+          "Alkalis",
+          "Ketones",
+          "Aldehydes",
+          "Alcohol"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "quality_assurance-15",
+        "question": "A quality control chemist at an edible oil refinery is performing standard characterization tests on a batch of crude oil. One of the tests measures the number of milligrams of KOH required to completely saponify one gram of the oil sample. This value is called the",
+        "options": [
+          "Acid number",
+          "Iodine number",
+          "Saponification number",
+          "Peroxide value"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "quality_assurance-16",
+        "question": "A food safety manager is preparing documentation for an upcoming third-party food safety audit. During a briefing with a new team member, the manager explains the foundational structure of the HACCP system. The two parts of HACCP include:",
+        "options": [
+          "Hazard analysis and critical control points",
+          "Health analysis and critical control points",
+          "Hazard analysis and critical conformation production",
+          "Health analysis and critical conformation production"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "quality_assurance-17",
+        "question": "A warehouse manager at a food distribution company is reviewing inventory accounting methods. The manager wants to ensure that the cost assigned to items sold reflects the most recent purchase prices. The method assigned to control recent inventory cost to items sold is",
+        "options": [
+          "FFPO",
+          "FIFO",
+          "LIFO",
+          "FEFO"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "quality_assurance-18",
+        "question": "A food chemist is comparing the physical properties of fats and oils during a product development session for a new bakery shortening. The chemist reviews how each behaves at room temperature. The melting point of fat is _________ and the melting point of oil is _________.",
+        "options": [
+          "Higher, higher",
+          "Lower, lower",
+          "Higher, lower",
+          "Lower, higher"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "quality_assurance-19",
+        "question": "A food science student is sitting a quality assurance test and is asked to classify common food lipids based on their physical state at room temperature. Which of the following is an example of fats...",
+        "options": [
+          "Glyceryl trioleate",
+          "Vegetable ghee",
+          "Coconut oil",
+          "Groundnut oil"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "quality_assurance-20",
+        "question": "A food chemistry instructor is running a quiz session for engineering interns on the fundamental properties and classification of oils and fats. The interns are asked to identify the wrong statement. Select the incorrect statement from the following options.",
+        "options": [
+          "Oils are saturated triglyceride",
+          "Oils have lower melting points",
+          "Oils are liquid at room temperature",
+          "Examples of oils are Glyceryl trioleate, coconut oil, olive oil, etc"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "quality_assurance-21",
+        "question": "A food processing engineer is asked to explain the industrial production route for vegetable ghee to a group of trainee chemical engineers visiting the plant. Vegetable ghee is manufactured by ____________.",
+        "options": [
+          "Saponification",
+          "Hydrogenation",
+          "Oxidation polymerization",
+          "Reduction polymerization"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "quality_assurance-22",
+        "question": "A laboratory analyst at a food testing facility is preparing to extract oil from a food sample for fat content analysis and must select a solvent that is compatible with oils and fats. The analyst reviews the available solvents. Which of the following is NOT a suitable solvent for oils and fats...",
+        "options": [
+          "Benzene",
+          "CCl4",
+          "CHCl3",
+          "Water"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "quality_assurance-23",
+        "question": "A biochemistry student is performing a lipid extraction experiment and observes that lipids consistently separate from the aqueous phase and do not dissolve in water. The student is asked to explain the scientific reason. Lipids are insoluble in water because they are",
+        "options": [
+          "Hydrophobic",
+          "Hydrophilic",
+          "Zwitter ion",
+          "Neutral"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "quality_assurance-24",
+        "question": "A clinical nutritionist is advising a patient with cardiovascular risk factors and recommends increasing dietary intake of polyunsaturated fatty acids. The nutritionist guides the patient toward the best food sources. The richest source of polyunsaturated fatty acids in the diet is",
+        "options": [
+          "Milk",
+          "Butter",
+          "Vegetable oil",
+          "Eggs"
+        ],
+        "answer": "C"
+      }
+    ],
+    "CHEMICAL": [
+      {
+        "id": "chemical-1",
+        "question": "A refinery uses as much as 25 barrels of water for every barrel of crude processed. A 200,000 barrels a day refinery might use as much as __________________ barrels of water.",
+        "options": [
+          "5,000,000",
+          "8000",
+          "500,000",
+          "25,000,000"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-2",
+        "question": "A process engineer observes that heat is being distributed throughout a furnace chamber as hot fluid rises and cooler fluid sinks, without any direct contact or radiation. This mode of heat transfer occurs by actual ___________________ within a substance.",
+        "options": [
+          "Chemical Movement",
+          "Kinetic energy",
+          "Thermal Movement",
+          "Physical Movement"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "chemical-3",
+        "question": "A plant engineer is monitoring the heat rejection performance of a cooling tower at a petrochemical facility. The tower exposes hot process water to the atmosphere, and a portion of the water is lost to the air. This design allows partial _______________ of the water to take place.",
+        "options": [
+          "Condensation",
+          "Evaporation",
+          "Cooling",
+          "Bubbling"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-4",
+        "question": "During commissioning of a new cooling tower, a process engineer needs to evaluate its thermal efficiency. To do so, the Approach value of the cooling tower must be calculated. Which of the following correctly defines the Approach in a Cooling Tower...",
+        "options": [
+          "Cold Water Temperature – Dry Bulb Temperature",
+          "Hot Water Temperature – Wet Bulb Temperature",
+          "Cold Water Temperature – Wet Bulb Temperature",
+          "Hot Water Temperature – Cold Water Temperature"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "chemical-5",
+        "question": "A meteorologist is analyzing atmospheric data collected during a heavy monsoon season. At one particular data point, the air can no longer hold additional moisture and has become fully saturated. At this point of saturation, the relative humidity of air is ________________ %.",
+        "options": [
+          "90",
+          "100",
+          "50",
+          "0"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-6",
+        "question": "A plant operator is analyzing cooling tower efficiency at a refinery during a weather monitoring exercise. The operator records that at a specific atmospheric condition, the wet bulb and dry bulb temperatures become equal. Under this condition, the cooling tower performance is _______________.",
+        "options": [
+          "Lowest",
+          "Highest",
+          "Moderate",
+          "Constant"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-7",
+        "question": "A maintenance team is inspecting a heat exchanger after a shutdown and discovers significant material damage at narrow bends and restricted passages in the cooling water circuit. Investigation reveals coarse and suspended solids in the water are responsible. This type of damage caused by solids at narrow passages or turns in the flow is called _______________.",
+        "options": [
+          "Erosion",
+          "Corrosion",
+          "Impingement",
+          "Oxidation"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "chemical-8",
+        "question": "A water treatment specialist is reviewing the chemical dosing program for a cooling tower at an oil refinery. The program includes addition of several chemicals including chlorine. Chlorine is added to the cooling tower as a ____________________.",
+        "options": [
+          "Disinfectants",
+          "Corrosion Resistant",
+          "Scale Inhibitor",
+          "Scavenger"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-9",
+        "question": "A process technician is calibrating temperature instruments at a heat exchanger skid. He uses a thermometer to verify temperature readings and notes that thermometers detect and show changes in ______________ heat.",
+        "options": [
+          "Sensible",
+          "Latent",
+          "Atmospheric",
+          "System"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-10",
+        "question": "A laboratory technician is conducting experiments with different liquids in glass capillary tubes. She observes that unlike water, mercury does not spread across or wet the glass surface. The fluid property responsible for this behavior of mercury is",
+        "options": [
+          "Surface Tension",
+          "Viscosity",
+          "Cohesion",
+          "Adhesion"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-11",
+        "question": "A pump selection engineer at a refinery is reviewing the performance characteristics of centrifugal pumps for a new service. When comparing different pumps, the engineer notes that the head developed by a centrifugal pump depends on its",
+        "options": [
+          "Both b and c",
+          "Speed",
+          "Impeller Diameter",
+          "Neither a nor b"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-12",
+        "question": "A plant operator notices unusual vibrations, a crackling noise, and reduced discharge flow from a centrifugal pump. After investigation, the root cause is identified as cavitation. What condition in the pump most likely causes cavitation in a centrifugal pump...",
+        "options": [
+          "Low Suction Pressure",
+          "High Suction Pressure",
+          "Low Barometric Pressure",
+          "High Suction Velocity"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-13",
+        "question": "A fluid mechanics instructor is explaining pressure distribution to engineering students using examples from pipeline flow. The instructor states that the pressure at a point in a fluid is not the same in all directions when the fluid is viscous and",
+        "options": [
+          "Moving",
+          "Static",
+          "Hot",
+          "Cold"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-14",
+        "question": "A field instrumentation technician is selecting pressure measurement devices for different points in a process plant. For one specific measurement point, a manometer is chosen. Manometers are selected because they measure the __________ pressure.",
+        "options": [
+          "Vacuum as well as Atmospheric",
+          "Absolute",
+          "Difference in",
+          "Gauge"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-15",
+        "question": "A process engineer is reviewing the design of a reciprocating pump installation used to transfer fluid over a long distance. The installation includes an air vessel connected to the pump. What is the primary function of the air vessel provided in a reciprocating pump...",
+        "options": [
+          "Smoothens the Flow By Avoiding Pulsations.",
+          "Increases The Volumetric Efficiency of the Pump",
+          "Saves the Pump from the danger of Cavitation",
+          "None Of These"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-16",
+        "question": "A hydraulic engineer is applying Bernoulli’s equation to analyze the flow of a liquid through a converging pipe section in a chemical plant. The engineer applies Bernoulli’s equation because it is fundamentally dependent on the",
+        "options": [
+          "Conservation of Energy",
+          "Conversation of Momentum",
+          "First Law of Thermodynamic",
+          "None of these"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "chemical-17",
+        "question": "A piping engineer is performing a pressure drop analysis for a long-distance fluid transport line operating in turbulent flow. The engineer needs to know how the head loss changes with flow velocity. The head loss in turbulent flow in a pipe varies",
+        "options": [
+          "Directly as the Velocity",
+          "Inversely as the Square of the Velocity",
+          "Inversely as the Square of the Diameter",
+          "Directly as the square of velocity"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-18",
+        "question": "A centrifugal pump designed for handling water (μ = 1 cp) will deliver __________ when pumping a thicker oil (μ = 30 cp).",
+        "options": [
+          "Less Head & Capacity",
+          "More Head",
+          "More Capacity",
+          "Less Head & more Capacity"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-19",
+        "question": "A municipal wastewater treatment plant manager is procuring pumps for a new treatment facility that will handle raw incoming sewage and thickened sludge. Which of the following is the most common pump used for pumping either raw sewage or sludge...",
+        "options": [
+          "Reciprocating Pump",
+          "Electromagnetic Pump",
+          "Centrifugal Pump",
+          "Gear Pump"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "chemical-20",
+        "question": "A centrifugal pump has the following specifications: Power = 4 H.P, Speed = 800 Rpm, Head = 8m, Flow = 1000 Lit/min",
+        "options": [
+          "If its speed is halved, the new discharge will be __________ Lit/min",
+          "200",
+          "500",
+          "1000"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-21",
+        "question": "A process engineer is designing a cooling water return line where backflow could damage upstream equipment. A check valve is specified to prevent reverse flow. A check valve is used for __________ flow.",
+        "options": [
+          "Unidirectional",
+          "Very Precise Control",
+          "Multidirectional",
+          "None of these"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "chemical-22",
+        "question": "A pump station operator notices that every time the centrifugal pump is shut down, the pump loses its prime and must be re-primed before each restart, causing significant downtime. To resolve this issue, foot valves are provided in the suction line of a centrifugal pump to",
+        "options": [
+          "Remove the contaminant present in the liquid",
+          "Avoid priming, every time we start the pump",
+          "Minimize the fluctuation in discharge",
+          "Control the liquid discharge"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-23",
+        "question": "A piping engineer is reviewing material take-off for a high-pressure service and specifies pipes with a higher schedule number for safety. With the increase in the schedule number of a pipe of a particular nominal size, the",
+        "options": [
+          "Wall thickness also increases",
+          "I.D. of the pipe decreases",
+          "O.D. of the pipe remains constant",
+          "All (a), (b) and (c)"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-24",
+        "question": "A newly trained operator is following the startup procedure for a centrifugal pump in a chemical plant. The supervisor emphasizes a critical step regarding the delivery valve. While starting a centrifugal pump, its delivery valve should be kept",
+        "options": [
+          "Closed",
+          "Opened.",
+          "Either Opened or Closed; it does not make any difference",
+          "Either Opened or Closed; depending on the fluid viscosity"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-25",
+        "question": "A valve selection engineer is preparing a valve specification sheet for various services in a process plant. For one particular service that requires continuous throttling and flow regulation, a globe valve is selected. A globe valve is the most suitable for applications in which",
+        "options": [
+          "Fluid Flow Control Required",
+          "Fluid Contains Dispersed Solid Particles.",
+          "Valve is required to be either fully open or fully closed",
+          "Vicious Liquid flow"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "chemical-26",
+        "question": "A fluid mechanics professor demonstrates to students why velocity varies across a pipe cross-section, with zero velocity at the wall and maximum velocity at the center. The existence of a boundary layer in fluid flow is because of the",
+        "options": [
+          "Surface Tension",
+          "Fluid density",
+          "Fluid Viscosity",
+          "Gravity forces"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-27",
+        "question": "A process engineer is troubleshooting a centrifugal pump that is consistently delivering less flow than its design capacity. After systematic inspection, several potential root causes are identified. Delivery of insufficient quantity of liquid by a pump may be caused by",
+        "options": [
+          "Air leak in the inlet",
+          "Low rpm",
+          "Too high a lift",
+          "All (b), (c) and (d)"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-28",
+        "question": "A ventilation engineer is designing a fresh air supply system for a large process building. The system needs to move large volumes of air with minimal pressure rise. Which of the following can be used to create a flow of gas where no significant compression is required...",
+        "options": [
+          "Blower",
+          "Reciprocating Compressor",
+          "Axial Flow Compressor",
+          "Centrifugal Compressor"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "chemical-29",
+        "question": "A pump design engineer is reviewing the hydraulic efficiency of a centrifugal pump. The engineer notes that a key objective during casing design is to recover as much energy as possible from the fluid. The design of the casing of a centrifugal pump should be such as to minimize the",
+        "options": [
+          "Loss of Kinetic Head",
+          "Back Flow-through Impeller",
+          "Loss of Static Head",
+          "None of these"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-30",
+        "question": "A high-pressure reciprocating pump is installed in a chemical plant to inject chemical into a pressurized reactor. A safety engineer requires a relief valve to be installed on the pump discharge. The purpose of a relief valve in a reciprocating pump is to",
+        "options": [
+          "Protect the pump against developing excessive pressure",
+          "Facilitate the unidirectional flow of liquid",
+          "Reduce the discharge pressure",
+          "Control the rate of discharge"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-31",
+        "question": "A process engineer is analyzing flow in a piping network where the pipe diameter changes at several locations. To track the flow at each section, the engineer applies the continuity equation because it",
+        "options": [
+          "Relates Mass Flow Rate along a Stream Tube",
+          "Stipulates that Newton's Second Law of Motion must be satisfied at every point in the Fluid",
+          "Relates Work and Energy",
+          "None of these"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-32",
+        "question": "A corrosion engineer is specifying valves for a pipeline that transports concentrated sulfuric acid in a chemical plant. Diaphragm valves are recommended for this application because they are specifically used for handling __________ fluids.",
+        "options": [
+          "Viscous",
+          "Non-Newtonion",
+          "Corrosive",
+          "Solid Suspended"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-33",
+        "question": "A plant engineer is reviewing a piping isometric drawing and notices that a high-pressure steam line is specified with a high schedule number. The schedule number of a pipe is an indication of its",
+        "options": [
+          "Wall Thickness",
+          "Size",
+          "Roughness",
+          "Material Density"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-34",
+        "question": "A water supply project engineer is planning the installation of a centrifugal pump at a river intake. The engineer must determine how deep below the pump the water source can be located without causing operational problems. The maximum depth from which a centrifugal pump can draw water is",
+        "options": [
+          "150 feet",
+          "Dependent on the Speed of the Pump",
+          "34 feet",
+          "Dependent on the power of the pump"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "chemical-35",
+        "question": "A chemical thermodynamics professor is explaining the Clausius-Clapeyron equation to students with a real-world example about the effect of pressure on phase transitions. The freezing point of a liquid decreases when the pressure is increased if the liquid __________ while freezing.",
+        "options": [
+          "Expands",
+          "Contracts",
+          "Does not change in volume",
+          "either (a), (b) or (c)"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-36",
+        "question": "During a thermodynamics exam, a student is asked to identify the law from which the following statement is derived: \"At absolute zero temperature, the entropy of every perfectly crystalline substance becomes zero.\" This statement follows from the",
+        "options": [
+          "Second Law of Thermodynamics",
+          "Nernst heat theorem",
+          "Third Law of Thermodynamics",
+          "Maxwell's relation"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "chemical-37",
+        "question": "A fluid statics engineer is reviewing the properties of different liquids for a hydrostatic pressure calculation. The engineer uses the specific weight of a substance in the calculation. The specific weight _______________ of a substance",
+        "options": [
+          "Is its mass per unit volume",
+          "Does not change with location",
+          "Is not a convenient property when dealing with fluid statics",
+          "Is its weight per unit volume"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-38",
+        "question": "A chemistry student is observing water rising spontaneously inside a narrow glass tube during a capillarity experiment. The student is asked to explain the phenomenon. The capillary rise in water is on account of",
+        "options": [
+          "Cohesion being greater than Adhesion",
+          "Adhesion being equal to Cohesion",
+          "Vapor Pressure being small",
+          "Adhesion being greater than Cohesion"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "chemical-39",
+        "question": "A process engineer is selecting a fluid for an application that requires maximum resistance to flow. The engineer compares the viscosities of several common fluids. Which of the following is the most viscous fluid...",
+        "options": [
+          "Water",
+          "Glycerine",
+          "Coal tar",
+          "Ethyl Alcohol"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "chemical-40",
+        "question": "During a unit conversion exercise in a fluid mechanics class, a student is asked to convert dynamic viscosity values from Poise to SI units. Poise (P) is the unit of dynamic viscosity, and one Poise is equal to",
+        "options": [
+          "1 N.s/m2",
+          "1 lb/ft.hr",
+          "1 kg/m.s",
+          "1 g/cm.s"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "chemical-41",
+        "question": "A refrigeration engineer is designing a cooling system and reviewing the thermodynamic properties of the refrigerant. When studying how the vapour pressure changes with operating temperature, the engineer notes that the Vapour Pressure of a liquid",
+        "options": [
+          "Remains unaffected with change in temperature",
+          "Increases with increase in temperature",
+          "Decreases with increase in temperature C",
+          "Increases linearly and then decrease temperature"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-42",
+        "question": "A metallurgical engineer needs to measure the temperature inside an electric arc furnace operating at approximately 2000°C. Standard thermometers cannot be used at such extreme temperatures. Which of the following instruments is most suitable to measure a temperature of 2000°C...",
+        "options": [
+          "Radiation pyrometer",
+          "Ordinary mercury-in-glass thermometer",
+          "Platinum resistance thermometer",
+          "Constant-volume hydrogen thermometer"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "chemical-43",
+        "question": "An instrumentation engineer is explaining to a trainee how temperature transmitters generate an electrical signal in a process plant. The engineer describes the thermocouple, which generates a voltage due to a temperature difference. Thermocouples use two",
+        "options": [
+          "Similar Metal Wires",
+          "Dissimilar Metal Wires",
+          "Similar Metal Strips",
+          "Dissimilar Metal Strips"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "chemical-44",
+        "question": "An instrumentation technician is troubleshooting a malfunctioning thermocouple in a heat exchanger temperature loop. During the investigation, the technician reviews how thermocouples generate an electrical signal. The generation of e.m.f. in thermocouples is fundamentally explained by",
+        "options": [
+          "Ohms law",
+          "Seebeck effect",
+          "Stefan-Boltzmans law",
+          "Joule heating effect"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-45",
+        "question": "A materials engineer is selecting corrosion-resistant alloys for a seawater cooling system at a coastal refinery. Monel is proposed as the material of construction for critical components. Monel is an alloy of",
+        "options": [
+          "Ni (69%) and Cr (31%)",
+          "Ni (69%) and Cu (28%)",
+          "Cu (55%) and Sn (45%)",
+          "Fe (90%) and Cr (10%)"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-46",
+        "question": "A chemical engineer is reviewing the production process for hydrogen at an industrial facility using water gas technology. As part of the process, a shift conversion reaction is carried out to increase hydrogen yield. The shift conversion reaction taking place during water gas manufacture is given by",
+        "options": [
+          "CO + H2O ↔ CO2 + H2",
+          "C + H2O ↔ CO + H2",
+          "C + 2H2O ↔ CO2 + 2H2",
+          "None of these"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-47",
+        "question": "A combustion engineer is optimizing a fired heater to reduce fuel consumption and minimize pollutant emissions. To determine the correct excess air level to supply, the engineer must consider that the optimum percentage of excess air for combustion depends upon the __________ of the fuel.",
+        "options": [
+          "Calorific value",
+          "Sulphur content",
+          "Type (solid, liquid or gaseous)",
+          "Ignition temperature"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-48",
+        "question": "A heat exchanger design engineer is reviewing tube specifications for a shell-and-tube exchanger and notices that a lower BWG (Birmingham Wire Gauge) number is specified for the tubes. Lower BWG means __________ of the tube.",
+        "options": [
+          "Lower cross-section",
+          "Lower thickness",
+          "Outer diameter",
+          "Inner diameter"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-49",
+        "question": "A cryogenic engineer is designing a plant to produce liquefied natural gas and is evaluating different gas liquefaction technologies. The Linde process is under consideration. The Linde process of gas liquefaction employs",
+        "options": [
+          "Adiabatic expansion through a throttle valve (Joule-Thomson expansion)",
+          "Exchange of heat with colder stream",
+          "Adiabatic expansion against a piston or in a turbine",
+          "Merely compressing the gas beyond its critical pressure"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-50",
+        "question": "A food processing engineer is working on improving the shelf life of edible cooking oil at a manufacturing plant. The engineer investigates methods to prevent oxidative rancidity. Rancidity of the fatty oil can be reduced by its",
+        "options": [
+          "Decoloration",
+          "Oxidation",
+          "Purification",
+          "Hydrogenation"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "chemical-51",
+        "question": "A petroleum engineer at a refinery is comparing different hydrocarbon fractions separated during distillation. The engineer notes a clear trend in density as the molecular weight increases. With increase in the number of carbon and hydrogen atoms in hydrocarbon molecules, the density of petroleum products",
+        "options": [
+          "Decrease",
+          "Increases",
+          "Remain same",
+          "Unpredictable from the data"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-52",
+        "question": "A refinery process engineer is reviewing the product quality from a Fluid Catalytic Cracking (FCC) unit. The engineer compares the gasoline product characteristics from catalytic cracking with those from other processes. In catalytic cracking, the",
+        "options": [
+          "Gasoline obtained has very high aromatic content",
+          "Gasoline obtained has a very low octane number",
+          "Pressure & temperature is very high",
+          "Gasoline obtained has very high amount of gum forming compounds"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-53",
+        "question": "A fuel quality inspector is evaluating diesel fuel samples from different suppliers for use in industrial diesel engines. One of the key specifications tested is the cetane number. The cetane number of a diesel fuel is the measure of its",
+        "options": [
+          "Smoke point",
+          "Viscosity",
+          "Ignition delay",
+          "Oxidation stability"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "chemical-54",
+        "question": "A corrosion engineer is investigating the damage on exposed iron pipelines at a coastal industrial facility. A thick layer of rust is found on the outer surface of the pipes. When iron is rusted, it is",
+        "options": [
+          "Oxidized",
+          "Converted to a fine powder",
+          "Reduced",
+          "None of these"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-55",
+        "question": "A mechanical engineer is designing the foundation and support system for a tall vertical storage vessel at a chemical plant. When reviewing support options, the engineer recalls that vertical storage vessels are never supported by __________ support.",
+        "options": [
+          "Saddle",
+          "Bracket",
+          "Skirt",
+          "Lug"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-56",
+        "question": "A heat exchanger design engineer is comparing triangular and square tube pitch arrangements for the shell side of a new heat exchanger. The engineer evaluates the impact on pressure drop and heat transfer. In a shell and tube heat exchanger, triangular pitch arrangement as compared to square pitch arrangement",
+        "options": [
+          "Can accomodate less number of tubes for a given shell diameter",
+          "Facilitates easier shell side cleaning; hence is more suitable for handling high dirt factor shell side fluid",
+          "Creates relatively lower turbulence on the shell side resulting in lower shell side heat transfer co-efficient",
+          "Results in higher shell side pressure drop"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "chemical-57",
+        "question": "A process engineer is reviewing heat exchanger options for a small-scale pilot plant application. One design under consideration is a compact exchanger commonly used for high-pressure or high-temperature services. The _________ heat exchanger is also known as ‘hair pin type’ exchanger.",
+        "options": [
+          "Finned",
+          "Double pipe",
+          "Plate type",
+          "Regenerative"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-58",
+        "question": "A distillation column designer is sizing a sieve tray column for a new separation unit. One of the critical design parameters is the column diameter. The diameter of the sieve tray column is determined by the",
+        "options": [
+          "Lower limit of vapor velocity",
+          "Hole diameter of the sieve tray",
+          "Upper limit of the vapor velocity",
+          "Height of the plate spacing"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-59",
+        "question": "A heat exchanger engineer is reviewing the baffle design specifications for the shell side of a shell-and-tube heat exchanger. The engineer must ensure the baffle spacing falls within accepted design limits relative to the shell inner diameter. Baffle spacing is generally _________ the I.D. of the shell.",
+        "options": [
+          "Both (c) and (d)",
+          "More than",
+          "Not greater than",
+          "Not less than one fifth of"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "chemical-60",
+        "question": "A flow measurement engineer is reviewing nozzle designs for a gas flow metering system. One nozzle design under consideration has a cross-sectional area that decreases continuously from the inlet to the exit. When the cross section of a nozzle decreases continuously from entrance to exit, it is called a",
+        "options": [
+          "Convergent nozzle",
+          "Divergent nozzle",
+          "Convergent-divergent nozzle",
+          "None of these"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-61",
+        "question": "A structural engineer is reviewing material specifications for support structures in a chemical plant. The specified material has a low carbon content, making it ductile and easy to weld. Mild steel is a/an __________ steel.",
+        "options": [
+          "Low carbon",
+          "Medium carbon",
+          "High carbon",
+          "High alloy"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "chemical-62",
+        "question": "A mechanical maintenance engineer is ordering replacement bearings for rotating equipment at a plant. To ensure durability and wear resistance, the engineer checks the standard material specification for ball bearings. Ball bearings are normally made of __________ steel.",
+        "options": [
+          "High speed",
+          "Chrome",
+          "High carbon",
+          "Silicon"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-63",
+        "question": "A materials engineer is selecting a material of construction for heat exchanger tubes that will be in contact with a highly corrosive acid mixture at elevated temperatures. Hastelloy C is recommended as a good material of construction in the chemical process industry, since it is",
+        "options": [
+          "Highly corrosion resistant and is readily fabricated",
+          "Light and resists attack by acids",
+          "Relatively inexpensive although it can be fabricated with some difficulty",
+          "Corrosion resistant to most alkalis, particularly because of its copper content"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-64",
+        "question": "A fired heater engineer is attempting to increase the combustion temperature in a process furnace that uses lean fuel gas. The engineer reviews different methods but identifies one that cannot achieve higher furnace temperature when lean fuel gas is used. Higher furnace temperature cannot be achieved by use of a lean fuel gas in the furnace by",
+        "options": [
+          "preheating the fuel gas",
+          "increasing the draft in the furnace",
+          "oxygen enrichment of combustion air",
+          "preheating the combustion air"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-65",
+        "question": "An energy auditor is reviewing a process furnace system and identifies significant heat losses through the flue gas stack. To reduce the stack loss, heat recovery from flue gas can be done by",
+        "options": [
+          ", (b) and (c)",
+          "preheating of cold stock",
+          "preheating of combustion air",
+          "steam generation in waste heat boilers"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-66",
+        "question": "A process engineer is specifying a gas compression system for a natural gas injection application. During a technical review, the engineer explains the fundamental operating principle. A compressor increases the _________ of a gas by __________ its _______________.",
+        "options": [
+          "pressure, reducing, volume",
+          "pressure, increasing, volume",
+          "pressure, reducing, temperature",
+          "pressure, increasing, temperature"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-67",
+        "question": "A mechanical engineer is preparing a performance report for a reciprocating compressor at a gas processing facility. When calculating one of the key performance indicators, the engineer refers to the ratio of work-done per cycle to the stroke volume of the compressor, which is known as",
+        "options": [
+          "Mean Effective Pressure",
+          "Compressor Capacity",
+          "Compression Ratio",
+          "Compressor Efficiency"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-68",
+        "question": "A plant engineer is reviewing the technical specifications of an air compressor for a new instrument air system. One of the key parameters listed in the datasheet refers to the actual volume of air delivered by the compressor at suction conditions. The volume of air delivered by the compressor is called ____________.",
+        "options": [
+          "Compressor capacity",
+          "Free air delivery",
+          "Swept volume",
+          "None of the above"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-69",
+        "question": "A process engineer is designing a utilities distribution system where compressed air at high pressure needs to be supplied at a lower pressure to instrument air consumers. A pressure reducing valve is included in the design. When is a pressure reducing valve used...",
+        "options": [
+          "It is used when lower pressure than system pressure is required",
+          "It is used when higher pressure than system pressure is required",
+          "when absolutely zero pressure is required",
+          "all of the above"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-70",
+        "question": "A plant maintenance engineer is troubleshooting a steam heating system that has reduced efficiency due to water accumulation in the steam lines. The engineer recommends installing steam traps at low points in the system. A steam trap is used to _________________...",
+        "options": [
+          "Remove water resulting from partial condensation of steam",
+          "Condense the steam flowing in the pipeline",
+          "Stop the supply of steam",
+          "None of these"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-71",
+        "question": "A heat exchanger optimization engineer is reviewing different flow configurations and conditions to maximize the thermal performance of a shell-and-tube heat exchanger. Maximum heat transfer rate can be expected in case of _________...",
+        "options": [
+          "Turbulent flow",
+          "Laminar flow",
+          "Co-current flow",
+          "Heat flow rate is independent of nature of flow"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-72",
+        "question": "A process engineer is operating a fine grinding and screening unit in a mineral processing plant. As smaller particle sizes are targeted, the engineer observes changes in screening performance. As particle size is reduced,",
+        "options": [
+          "Screening becomes progressively more difficult",
+          "Screening becomes progressively easier",
+          "Capacity and effectiveness of the screen is increased",
+          "None of these"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-73",
+        "question": "A safety officer at a petrochemical refinery is responding to a fire that has broken out in a fuel gas pipeline. The officer needs to select the most effective fire extinguishing method. Fire in fuel gas pipelines is extinguished most effectively by",
+        "options": [
+          "Blanketting the area with nitrogen atmosphere",
+          "Spraying water",
+          "Fire fighting foam",
+          "None of these"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-74",
+        "question": "A laboratory chemist is preparing samples for pH-sensitive chemical analysis and needs to maintain a constant pH throughout the experiment, even when small amounts of acids or alkalis are added. A solution which resists change in its pH value on addition of acid/alkali is called the __________ solution.",
+        "options": [
+          "Buffer",
+          "Neutral",
+          "Ideal",
+          "Zero pH"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-75",
+        "question": "A safety engineer is explaining the function of a tall structure located at the perimeter of a refinery to a group of new trainees. The structure routinely burns off gases with a visible flame at the top. The ‘Flare tower’ used in industry is meant for",
+        "options": [
+          "Venting off (after burning) the excess inflammable/toxic gases at high pressure",
+          "Absorbing the pollutant gases from the furnace exhaust",
+          "Cooling of furnace exhaust gases",
+          "None of these"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-76",
+        "question": "A field engineer is inspecting a domestic fuel storage facility and needs to identify the composition of the stored Liquefied Petroleum Gas (LPG). Liquefied Petroleum Gas (LPG) is mainly a mixture of _____________________...",
+        "options": [
+          "Propane & butane",
+          "Methane & ethane",
+          "High boiling olefins",
+          "High boiling naphthenes"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-77",
+        "question": "An aviation fuel quality specialist is reviewing fuel certification tests for a commercial airline fleet. Among all the physical and chemical properties tested, which property is considered the most important for a jet fuel...",
+        "options": [
+          "Viscosity",
+          "Freezing point",
+          "Calorific value",
+          "Flash point"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-78",
+        "question": "A boiler engineer is reviewing the energy balance for a fired boiler that burns natural gas. The engineer classifies the combustion process based on how energy is exchanged with the surroundings. Combustion reaction of fuels is a/an ______________ reaction.",
+        "options": [
+          "Exothermic",
+          "Auto catalytic",
+          "Endothermic",
+          "None of these"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-79",
+        "question": "An environmental compliance officer is conducting a pollution audit across different industrial sectors to identify sources of arsenic contamination in the local water supply. Arsenic pollutant is not generated in __________ industries.",
+        "options": [
+          "Beverages",
+          "Tanneries",
+          "Glass & ceramic",
+          "Any of these"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-80",
+        "question": "A water treatment plant operator observes that incoming water is forming scale deposits in the boiler tubes, indicating high mineral content. The operator recommends installing a zeolite treatment unit. In a water treatment plant, the zeolite process is used to remove the __________ of water.",
+        "options": [
+          "Acidity",
+          "Alkalinity",
+          "Hardness",
+          "Iron & zinc"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "chemical-81",
+        "question": "An environmental engineer is reviewing discharge permit conditions for a chemical manufacturing facility. One of the key parameters being regulated is Biological Oxygen Demand. The term Biological Oxygen Demand (BOD) is used in relation to",
+        "options": [
+          "Potable water",
+          "Cooling water",
+          "Distilled water",
+          "Industrial effluents"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-82",
+        "question": "A public health engineer is investigating an outbreak of typhoid fever in a community and suspects contamination of the drinking water supply. Presence of __________ bacteria in water causes disease like typhoid.",
+        "options": [
+          "Pathogenic",
+          "Aerobic",
+          "Anaerobic",
+          "Non-pathogenic"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-83",
+        "question": "A power plant engineer is comparing different steam turbine designs for a new power generation unit. The engineer reviews the pressure drop characteristics across the turbine stages. In an impulse turbine, steam expands",
+        "options": [
+          "Wholly in nozzle",
+          "Wholly in blades",
+          "Partly in the nozzle and partly in blades",
+          "None of these"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "chemical-84",
+        "question": "A steam power plant engineer is reviewing the major components in the steam cycle after the turbine. The engineer needs to identify the equipment where exhaust steam is collected and converted back to water. A vessel into which the steam is exhausted and condensed after doing work in an engine cylinder or turbine is known as",
+        "options": [
+          "Steam condenser",
+          "Steam boiler",
+          "Steam preheater",
+          "Economiser"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "chemical-85",
+        "question": "A boiler house engineer is reviewing the importance of the draught system during commissioning of a new steam boiler. The engineer explains why the draught system is essential for safe and efficient operation. The object of producing draught in a boiler is",
+        "options": [
+          "All of the above",
+          "To provide an adequate supply of air for the fuel combustion",
+          "To exhaust the gases of combustion from the combustion chamber",
+          "To discharge the gases of combustion to the atmosphere through the chimney"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-86",
+        "question": "A power plant engineer is selecting between fire tube and water tube boilers for a new high-pressure steam generation facility. The engineer reviews how each boiler type works. In water tube boilers,",
+        "options": [
+          "Water passes through the tubes which are surrounded by flames and hot gases",
+          "The flames and hot gases pass through the tubes which are surrounded by water",
+          "Forced circulation takes place",
+          "None of these"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "chemical-87",
+        "question": "A boiler maintenance technician is performing a routine service as part of a scheduled shutdown. One of the mandatory tasks involves operating the blow off cock. In a boiler, the blow off cock is used to",
+        "options": [
+          "Empty the boiler when required and to discharge the mud, scale or sediments which are accumulated at the bottom of the boiler",
+          "Control the flow of steam from the boiler to the main pipe and to shut off the steam completely when required",
+          "Put off fire in the furnace of the boiler when the level of water in the boiler falls to an unsafe limit",
+          "Increase the temperature of saturated steam without raising its pressure"
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "logical": [
+    {
+      "id": "logical-1",
+      "question": "All mammals are warm-blooded animals. Whales are mammals. Dolphins are also mammals. Fish are cold-blooded creatures that live in water. Some fish, like sharks, are very large. Unlike fish, mammals breathe air even when they live in the ocean. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Sharks are warm-blooded because they are large animals.",
+        "Whales and dolphins breathe air despite living in the ocean.",
+        "All animals that live in water are cold-blooded.",
+        "Fish are a type of mammal that evolved to live in water."
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "logical-2",
+      "question": "A company's revenue depends on its sales volume and pricing strategy. If sales volume increases while prices remain constant, revenue will rise. However, if prices are reduced significantly, revenue may fall even if sales volume increases. The relationship between price and demand is complex and varies by product type. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Increasing sales volume always leads to higher revenue.",
+        "Reducing prices never increases revenue for any product.",
+        "Revenue can fall even when sales volume increases.",
+        "A company should always keep prices constant to maximize revenue."
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "logical-3",
+      "question": "Exercise has been shown to improve mental health by reducing symptoms of depression and anxiety. Regular physical activity increases the release of endorphins in the brain. However, excessive exercise can lead to physical injury and mental burnout. Doctors recommend moderate exercise for most adults. From the information given above, it can be validly concluded that:",
+      "options": [
+        "All forms of depression can be cured by exercise alone.",
+        "There are cases in which exercise may have negative effects.",
+        "Doctors recommend exercise only for adults with depression.",
+        "Endorphins are released only during excessive exercise."
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "logical-4",
+      "question": "In a democratic election, the candidate with the most votes wins. Party A received 45% of votes, Party B received 35%, and Party C received 20%. No candidate received a majority of over 50%. According to the rules, if no candidate receives a majority, a runoff election is held between the top two candidates. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Party A has already won the election outright.",
+        "A runoff election will be held between Party A and Party B.",
+        "Party C will be included in the runoff election.",
+        "The election results will be declared invalid."
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "logical-5",
+      "question": "Water boils at 100 degrees Celsius at sea level. At higher altitudes, the boiling point of water decreases because atmospheric pressure is lower. Conversely, in a pressure cooker, water boils at a higher temperature because the pressure inside is increased. The boiling point of a liquid is directly related to the pressure exerted on it. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Water always boils at exactly 100 degrees Celsius regardless of location.",
+        "Pressure cookers work by reducing the boiling point of water.",
+        "At higher altitudes, food cooked in boiling water may require more time.",
+        "Atmospheric pressure has no relationship to the properties of water."
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "logical-6",
+      "question": "The human immune system protects the body against pathogens such as bacteria and viruses. Vaccines help the immune system by introducing a weakened or inactive form of a pathogen. This allows the body to build immunity without suffering from the full disease. Not all diseases currently have effective vaccines. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Vaccines cause the full disease before building immunity.",
+        "There are some diseases for which no vaccine currently exists.",
+        "The immune system only functions after a vaccine is administered.",
+        "Bacteria and viruses are the same type of pathogen."
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "logical-7",
+      "question": "Leadership in organizations can be classified as transformational or transactional. Transformational leaders inspire followers by creating a vision and motivating change. Transactional leaders focus on structured tasks, rewards, and penalties. Research shows that transformational leadership is more effective in rapidly changing environments. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Transactional leaders can never be effective in any environment.",
+        "Transformational leadership is the only valid form of leadership.",
+        "In stable environments, transactional leadership may not be less effective than transformational leadership.",
+        "Transformational leaders do not use rewards or penalties under any circumstances."
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "logical-8",
+      "question": "Solar energy is a renewable source of power that relies on sunlight to generate electricity. It produces no direct greenhouse gas emissions during operation. However, manufacturing solar panels requires energy and materials that can have environmental impacts. The efficiency of solar panels varies depending on location and weather conditions. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Solar energy has absolutely no environmental impact whatsoever.",
+        "Solar panels perform equally well in all locations around the world.",
+        "The production of solar panels may have some environmental costs.",
+        "Renewable energy sources always produce greenhouse gases."
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "logical-9",
+      "question": "Sleep is essential for human health and cognitive function. Adults require between 7 and 9 hours of sleep per night for optimal functioning. Chronic sleep deprivation has been linked to increased risk of cardiovascular disease, obesity, and impaired judgment. Some individuals claim to function well on fewer than 7 hours, but research suggests this is rare. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Every adult who sleeps less than 7 hours will develop cardiovascular disease.",
+        "Sleep deprivation always leads to obesity in adults.",
+        "At least some individuals may require more than 9 hours of sleep nightly.",
+        "Most people who believe they function well on little sleep may be mistaken about this."
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "logical-10",
+      "question": "Trade between nations increases when tariffs are reduced. Lower tariffs make imported goods cheaper for consumers. However, domestic industries may suffer if they cannot compete with cheaper imports. Governments must balance the benefits to consumers against the potential harm to local producers when setting trade policy. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Reducing tariffs always benefits a nation's economy without exception.",
+        "High tariffs always lead to improved conditions for domestic consumers.",
+        "Lowering tariffs can have both positive and negative economic consequences.",
+        "Governments should always prioritize domestic producers over consumers."
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "logical-11",
+      "question": "Learning a second language has cognitive benefits including improved memory, better multitasking ability, and delayed onset of dementia. The earlier a person begins learning a second language, the more easily they acquire native-like fluency. Adults can still learn second languages effectively, though the process may differ from childhood language acquisition. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Adults are entirely incapable of learning a second language effectively.",
+        "There are cognitive advantages to learning a second language at any age.",
+        "Learning a second language is equally easy for children and adults.",
+        "Dementia is caused exclusively by the failure to learn a second language."
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "logical-12",
+      "question": "Inflation occurs when the general price level of goods and services rises over time. Central banks typically respond to high inflation by raising interest rates. Higher interest rates make borrowing more expensive, which tends to reduce consumer spending and slow down the economy. However, raising interest rates too aggressively can lead to recession. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Raising interest rates always causes a recession.",
+        "Central banks can reduce inflation without any risk to economic growth.",
+        "There are situations in which the measures taken to fight inflation can harm the economy.",
+        "Inflation is only caused by excessive consumer spending."
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "logical-13",
+      "question": "A school has a policy that students who miss more than 10 classes without a valid excuse will fail the course. Students with documented medical conditions are exempt from this rule. John missed 12 classes due to a family emergency, which does not qualify as a medical condition under the school's policy. From the information given above, it can be validly concluded that:",
+      "options": [
+        "John will automatically be expelled from the school.",
+        "John's absences qualify as medically exempt under school policy.",
+        "John is at risk of failing the course under current school policy.",
+        "The school's policy treats medical and family emergencies equally."
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "logical-14",
+      "question": "Urban areas generally have higher levels of air pollution than rural areas due to vehicle emissions and industrial activity. Air pollution has been linked to respiratory diseases, heart disease, and premature death. Governments in several countries have introduced emission standards and clean energy initiatives to reduce pollution in cities. From the information given above, it can be validly concluded that:",
+      "options": [
+        "All people living in urban areas will develop respiratory diseases.",
+        "Rural areas have no air pollution of any kind.",
+        "Government initiatives to address air pollution exist in at least some countries.",
+        "Industrial activity is the sole cause of air pollution in all urban areas."
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "logical-15",
+      "question": "A restaurant's profitability depends on the difference between its revenue and costs. Costs include ingredients, staff wages, rent, and utilities. If a restaurant's revenue consistently falls below its costs, it will eventually close. Successful restaurants find ways to either increase revenue or reduce costs, or both. From the information given above, it can be validly concluded that:",
+      "options": [
+        "All restaurants that reduce costs will become profitable.",
+        "A restaurant with high revenue cannot have financial difficulties.",
+        "There are at least two distinct strategies a restaurant can use to improve profitability.",
+        "Staff wages are always the largest cost for any restaurant."
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "logical-16",
+      "question": "Antibiotics are used to treat bacterial infections but are ineffective against viral infections. Overuse and misuse of antibiotics has led to the development of antibiotic-resistant bacteria. This resistance poses a significant threat to global public health. Medical organizations urge doctors to prescribe antibiotics only when necessary. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Antibiotics should be prescribed for all types of infections to prevent complications.",
+        "Antibiotic resistance is a consequence of how antibiotics have been used.",
+        "Viral infections can be cured more effectively with newer types of antibiotics.",
+        "Antibiotic resistance is only a concern in developing countries."
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "logical-17",
+      "question": "Online learning platforms have expanded access to education globally. Students in remote areas can now access courses from top universities. However, online learning requires reliable internet access and self-discipline. Studies show that completion rates for online courses are generally lower than for traditional classroom courses. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Online learning is superior to traditional classroom learning in all respects.",
+        "Students in remote areas with poor internet cannot benefit from online education.",
+        "Online education has both advantages and limitations compared to traditional education.",
+        "All students who enroll in online courses will fail to complete them."
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "logical-18",
+      "question": "Biodiversity refers to the variety of life on Earth, including all species of plants, animals, and microorganisms. High biodiversity in an ecosystem makes it more resilient to environmental changes and disturbances. Human activities such as deforestation, pollution, and climate change are reducing biodiversity at an alarming rate. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Ecosystems with low biodiversity are always more stable than those with high biodiversity.",
+        "Human activity has had no measurable impact on biodiversity worldwide.",
+        "A reduction in biodiversity may make ecosystems more vulnerable to environmental change.",
+        "Microorganisms are not considered part of Earth's biodiversity."
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "logical-19",
+      "question": "A country's gross domestic product (GDP) is a measure of the total value of goods and services produced within its borders. GDP growth is often used as an indicator of economic health. However, GDP does not measure income distribution, environmental sustainability, or quality of life. Some economists argue that alternative measures are needed for a complete picture of societal well-being. From the information given above, it can be validly concluded that:",
+      "options": [
+        "GDP growth always means that all citizens in a country are better off.",
+        "A high GDP guarantees an equal distribution of wealth among citizens.",
+        "GDP alone may not be sufficient to fully assess a society's overall well-being.",
+        "Environmental sustainability is always considered in calculations of GDP."
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "logical-20",
+      "question": "Reading fiction has been shown to increase empathy by allowing readers to experience the perspectives and emotions of characters different from themselves. Studies suggest that frequent fiction readers score higher on tests measuring empathy and social understanding. Non-fiction reading also has benefits but does not produce the same empathy-building effects. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Reading non-fiction has no educational or intellectual benefits.",
+        "Fiction and non-fiction reading produce identical effects on empathy.",
+        "There are measurable social benefits associated with reading fiction regularly.",
+        "People who do not read fiction are incapable of feeling empathy."
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "logical-21",
+      "question": "Public transportation reduces traffic congestion and carbon emissions by moving large numbers of people in fewer vehicles. However, building and maintaining public transportation infrastructure requires significant government investment. In cities where public transport is underfunded, it often becomes unreliable, leading people to prefer private vehicles. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Public transportation is always more efficient than private vehicles in every city.",
+        "Insufficient funding for public transport can undermine its effectiveness and usage.",
+        "Carbon emissions are not affected by the type of transportation people use.",
+        "Government investment in public transport guarantees a reduction in traffic congestion."
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "logical-22",
+      "question": "All members of the committee must vote on proposals before they are passed. The committee has seven members. A proposal requires at least four votes to pass. The committee recently voted on Proposal X. Three members voted in favour and four voted against. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Proposal X was passed by a narrow margin.",
+        "The committee will reconsider Proposal X at the next meeting.",
+        "Proposal X did not receive enough votes to be passed.",
+        "The members who voted against Proposal X were in the minority."
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "logical-23",
+      "question": "Nutrition science indicates that a balanced diet includes appropriate amounts of carbohydrates, proteins, fats, vitamins, and minerals. Diets that eliminate entire food groups may lead to nutritional deficiencies over time. However, some people must avoid certain foods due to allergies, intolerances, or medical conditions. From the information given above, it can be validly concluded that:",
+      "options": [
+        "All restrictive diets will necessarily lead to nutritional deficiencies.",
+        "Medical reasons may justify the avoidance of certain foods for some individuals.",
+        "Carbohydrates are not a necessary component of any healthy diet.",
+        "Vitamins and minerals are more important than carbohydrates and proteins."
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "logical-24",
+      "question": "Technology companies invest heavily in research and development (R&D) to create new products and maintain a competitive advantage. Companies that reduce R&D spending may see short-term cost savings, but risk falling behind competitors in innovation. In fast-moving technology markets, failure to innovate can lead to loss of market share. From the information given above, it can be validly concluded that:",
+      "options": [
+        "Every technology company that invests in R&D will dominate its market.",
+        "Reducing R&D spending always leads to immediate financial failure.",
+        "In rapidly evolving markets, lack of innovation may have long-term negative consequences.",
+        "R&D investment is equally important in all industries, regardless of pace of change."
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "logical-25",
+      "question": "Crime rates in a city are influenced by many factors including unemployment, education levels, poverty, and law enforcement effectiveness. Studies show that cities with higher unemployment tend to have higher rates of property crime. Improving educational opportunities and reducing poverty are considered long-term strategies for crime reduction. From the information given above, it can be validly concluded that:",
+      "options": [
+        "All individuals who are unemployed will commit property crimes.",
+        "Law enforcement is the only effective method of reducing crime.",
+        "Crime reduction strategies may need to address social and economic factors.",
+        "Education has no proven relationship to crime rates in any city."
+      ],
+      "answer": "C"
+    }
+  ],
+  "math": [
+    {
+      "id": "math-1",
+      "question": "A train travels 360 km in 4 hours. At the same speed, how far will it travel in 6.5 hours...",
+      "options": [
+        "540 km",
+        "585 km",
+        "600 km",
+        "520 km"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "math-2",
+      "question": "A shop reduces the price of a jacket from £80 to £60. What is the percentage decrease...",
+      "options": [
+        "20%",
+        "25%",
+        "33%",
+        "15%"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "math-3",
+      "question": "If 5 workers can complete a task in 12 days, how many days will it take 3 workers to complete the same task...",
+      "options": [
+        "15 days",
+        "18 days",
+        "20 days",
+        "16 days"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "math-4",
+      "question": "A rectangular room is 7.5 m long and 4.8 m wide. What is the area of the room...",
+      "options": [
+        "34 m²",
+        "36 m²",
+        "38 m²",
+        "40 m²"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "math-5",
+      "question": "The ratio of boys to girls in a class is 3:5. If there are 40 students in total, how many boys are there...",
+      "options": [
+        "12",
+        "15",
+        "16",
+        "18"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "math-6",
+      "question": "What is 15% of 240...",
+      "options": [
+        "30",
+        "36",
+        "40",
+        "45"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "math-7",
+      "question": "A car uses 6 litres of fuel per 100 km. How many litres does it use for a journey of 350 km...",
+      "options": [
+        "18 litres",
+        "20 litres",
+        "21 litres",
+        "24 litres"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "math-8",
+      "question": "If a = 4 and b = 7, what is the value of 3a² − 2b...",
+      "options": [
+        "30",
+        "34",
+        "38",
+        "48"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "math-9",
+      "question": "A water tank holds 1,200 litres. It is currently 35% full. How many litres are needed to fill it completely...",
+      "options": [
+        "780 litres",
+        "800 litres",
+        "820 litres",
+        "760 litres"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "math-10",
+      "question": "What is the next number in the sequence: 3, 7, 13, 21, 31, ...",
+      "options": [
+        "41",
+        "43",
+        "45",
+        "47"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "math-11",
+      "question": "A laptop is priced at £720 after a 10% discount. What was the original price...",
+      "options": [
+        "£780",
+        "£792",
+        "£800",
+        "£810"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "math-12",
+      "question": "Two pipes fill a tank. Pipe A fills it in 6 hours, Pipe B in 9 hours. How long do both pipes together take to fill the tank...",
+      "options": [
+        "3 hours",
+        "3 hours 12 minutes",
+        "3 hours 36 minutes",
+        "4 hours"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "math-13",
+      "question": "A square has a perimeter of 52 cm. What is its area...",
+      "options": [
+        "144 cm²",
+        "156 cm²",
+        "169 cm²",
+        "196 cm²"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "math-14",
+      "question": "If the average of five numbers is 18, and four of the numbers are 12, 20, 22, and 16, what is the fifth number...",
+      "options": [
+        "18",
+        "20",
+        "22",
+        "24"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "math-15",
+      "question": "A factory produces 450 units per day. After upgrading machinery, production increases by 20%. How many units are produced per day after the upgrade...",
+      "options": [
+        "510",
+        "520",
+        "540",
+        "560"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "math-16",
+      "question": "Maria invests £5,000 at a simple interest rate of 4% per annum. How much interest does she earn in 3 years...",
+      "options": [
+        "£400",
+        "£500",
+        "£600",
+        "£624"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "math-17",
+      "question": "What is the value of x if 4x − 9 = 23...",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "11"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "math-18",
+      "question": "A bus departs at 08:45 and arrives at 11:20. A train on the same route takes 40% less time. How long does the train journey take...",
+      "options": [
+        "1 hr 15 min",
+        "1 hr 27 min",
+        "1 hr 33 min",
+        "1 hr 40 min"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "math-19",
+      "question": "A triangle has sides of 9 cm, 12 cm, and 15 cm. What is the area of the triangle...",
+      "options": [
+        "48 cm²",
+        "54 cm²",
+        "60 cm²",
+        "72 cm²"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "math-20",
+      "question": "In a sale, a sofa is reduced by 30% to £595. What is the next price after an additional 10% is taken off the sale price...",
+      "options": [
+        "£535.50",
+        "£546.00",
+        "£555.00",
+        "£563.50"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "math-21",
+      "question": "A box contains 4 red, 6 blue, and 2 green balls. One ball is picked at random. What is the probability that it is NOT blue...",
+      "options": [
+        "1/2",
+        "1/3",
+        "2/3",
+        "1/6"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "math-22",
+      "question": "A recipe requires 250 g of flour to make 20 biscuits. How many grams of flour are needed to make 35 biscuits...",
+      "options": [
+        "375 g",
+        "400 g",
+        "412 g",
+        "437.5 g"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "math-23",
+      "question": "The number 48 is increased by 12.5%. What is the result...",
+      "options": [
+        "52",
+        "54",
+        "56",
+        "58"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "math-24",
+      "question": "A map has a scale of 1:25,000. Two towns on the map are 8 cm apart. What is the actual distance between the towns...",
+      "options": [
+        "1.5 km",
+        "2 km",
+        "2.5 km",
+        "3 km"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "math-25",
+      "question": "What is the value of (2³ × 5) − (4² ÷ 2)...",
+      "options": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "answer": "A"
+    }
+  ],
+  "reasoning": [
+    {
+      "id": "reasoning-1",
+      "question": "Pattern Rule: The shape gains one additional side as you move left to right (triangle → square → pentagon → hexagon → ...). Which shape completes the pattern...",
+      "options": [
+        "Pentagon",
+        "Circle",
+        "Heptagon (7-sided)",
+        "Triangle"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "reasoning-2",
+      "question": "Pattern Rule: A small circle moves clockwise from corner to corner inside a square across each box. If the circle starts at the top-left and moves clockwise, where is it in the 5th box...",
+      "options": [
+        "Top-left",
+        "Bottom-right",
+        "Top-right",
+        "Bottom-left"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "reasoning-3",
+      "question": "Pattern Rule: Each row contains three shapes — a triangle, square, and circle — each in a different shading: white, grey, and black. No shape or shading repeats in the same row or column. In the bottom-right cell, the column has a white circle and grey circle above it. The row has a white triangle and grey square. What belongs in the bottom-right cell...",
+      "options": [
+        "White circle",
+        "Grey triangle",
+        "Black circle",
+        "Black square"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "reasoning-4",
+      "question": "Pattern Rule: The number of dots inside a shape doubles with each box from left to right (1 → 2 → 4 → 8 → ...). How many dots will be in the 5th box...",
+      "options": [
+        "10",
+        "12",
+        "16",
+        "14"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "reasoning-5",
+      "question": "Pattern Rule: Each row has shapes that rotate 45° clockwise from one box to the next. An arrow points up in the first box. In what direction does the arrow point in the 4th box...",
+      "options": [
+        "Up",
+        "Down-right (diagonal)",
+        "Left",
+        "Down"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "reasoning-6",
+      "question": "Pattern Rule: In a 3×3 grid, the shading of each shape gets progressively darker moving from left to right across each row. White → Grey → Black. If the middle row starts with a grey pentagon, what is the shading of the last shape in the middle row...",
+      "options": [
+        "White",
+        "Grey",
+        "Light grey",
+        "Black"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "reasoning-7",
+      "question": "Pattern Rule: The outer shape stays the same across each row, but the inner shape changes from circle → triangle → square moving left to right. If the outer shape is a hexagon and the first box has a circle inside, what is inside the third box...",
+      "options": [
+        "Circle",
+        "Hexagon",
+        "Triangle",
+        "Square"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "reasoning-8",
+      "question": "Pattern Rule: In each column, the number of sides of the shape increases by one going downward (3 → 4 → 5). The top of a column has a triangle and the middle has a square. What shape is at the bottom of that column...",
+      "options": [
+        "Triangle",
+        "Hexagon",
+        "Pentagon",
+        "Square"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "reasoning-9",
+      "question": "Pattern Rule: A diagonal line rotates 90° counterclockwise from one figure to the next. If the diagonal line points from bottom-left to top-right in the 1st figure, in which direction does it point in the 3rd figure...",
+      "options": [
+        "Horizontal (left to right)",
+        "Bottom-left to top-right",
+        "Vertical (top to bottom)",
+        "Bottom-right to top-left"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "reasoning-10",
+      "question": "Pattern Rule: The size of the shape decreases from large to medium to small across each row. A row begins with a large circle, followed by a medium circle. What comes next...",
+      "options": [
+        "Large circle",
+        "Small triangle",
+        "Medium circle",
+        "Small circle"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "reasoning-11",
+      "question": "Pattern Rule: Each figure contains a shape with a number of sides that equals its row number multiplied by its column number (Row × Column = sides). What shape appears in Row 2, Column 3...",
+      "options": [
+        "Pentagon (5 sides)",
+        "Hexagon (6 sides)",
+        "Triangle (3 sides)",
+        "Square (4 sides)"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "reasoning-12",
+      "question": "Pattern Rule: Each row contains three shapes. Moving right, one shape is removed and one new shape is added, while one remains constant. Row contains: [Circle, Triangle, Square] → [Triangle, Square, Pentagon] → [..., ..., ...]",
+      "options": [
+        "Circle, Triangle, Square",
+        "Square, Pentagon, Hexagon",
+        "Triangle, Pentagon, Square",
+        "Pentagon, Circle, Hexagon"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "reasoning-13",
+      "question": "Pattern Rule: The shading alternates: every even-numbered box is black and every odd-numbered box is white. What is the shading of the 6th box...",
+      "options": [
+        "White",
+        "Grey",
+        "Striped",
+        "Black"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "reasoning-14",
+      "question": "Pattern Rule: Each figure has a shape inside a shape. The outer shape gains one side per column; the inner shape loses one side per row. In Row 1, Column 1: outer = square (4), inner = pentagon (5). What is the inner shape in Row 2, Column 1...",
+      "options": [
+        "Triangle",
+        "Square",
+        "Hexagon",
+        "Circle"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "reasoning-15",
+      "question": "Pattern Rule: In each row, the shape is reflected (mirrored) horizontally from one box to the next. An arrow pointing to the upper-right is in box 1. What direction does the arrow point in box 2...",
+      "options": [
+        "Upper-right",
+        "Lower-left",
+        "Upper-left",
+        "Lower-right"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "reasoning-16",
+      "question": "Pattern Rule: The total number of shapes in each box increases by one from left to right (1 shape → 2 shapes → 3 shapes → ...). How many shapes are in the 5th box...",
+      "options": [
+        "4",
+        "6",
+        "5",
+        "7"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "reasoning-17",
+      "question": "Pattern Rule: In a 3×3 matrix, each row and column contains exactly one each of: a cross (+), an X, and a circle. No symbol repeats in any row or column. Row 1: [+, X, O]; Row 2: [X, O, ...]. What goes in Row 2, Column 3...",
+      "options": [
+        "X",
+        "O",
+        "+ (Cross)",
+        "Triangle"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "reasoning-18",
+      "question": "Pattern Rule: A square's corners are progressively filled in — starting from the top-left and moving clockwise — with one additional filled corner per box. In box 3, how many corners of the square are filled...",
+      "options": [
+        "1",
+        "4",
+        "2",
+        "3"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "reasoning-19",
+      "question": "Pattern Rule: The pattern alternates between two shapes every box: pentagon and hexagon. Pentagons are always shaded; hexagons are always white. What is the shape and shading of the 7th box...",
+      "options": [
+        "Shaded hexagon",
+        "White pentagon",
+        "White hexagon",
+        "Shaded pentagon"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "reasoning-20",
+      "question": "Pattern Rule: In each figure, there is one more line of symmetry than the previous figure (1 → 2 → 3 → ...). The first figure has 1 line of symmetry and the third has 3. Which shape in the 4th figure has 4 lines of symmetry...",
+      "options": [
+        "Equilateral triangle",
+        "Rectangle",
+        "Square",
+        "Regular pentagon"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "reasoning-21",
+      "question": "Pattern Rule: The shape in each box rotates 90° clockwise and decreases in size with each step. If a large triangle points upward in box 1, which direction does the medium triangle point in box 2...",
+      "options": [
+        "Left",
+        "Upward",
+        "Downward",
+        "Right"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "reasoning-22",
+      "question": "Pattern Rule: Each row contains: a shape with vertical stripes, a shape with horizontal stripes, and a solid shape — in some order. No shading type repeats in the same column. Column 1 has: vertical stripes (row 1), horizontal stripes (row 2). What shading is in column 1, row 3...",
+      "options": [
+        "Vertical stripes",
+        "Dotted",
+        "Horizontal stripes",
+        "Solid"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "reasoning-23",
+      "question": "Pattern Rule: The shape's fill pattern changes from white to grey to black in each column going downward. The shape itself changes from circle to square to triangle in each row going right. What is in Row 3, Column 2...",
+      "options": [
+        "White square",
+        "Black square",
+        "Grey triangle",
+        "White circle"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "reasoning-24",
+      "question": "Pattern Rule: A small black dot orbits around the inside of a large square, moving one corner clockwise per figure: top-right → bottom-right → bottom-left → top-left → top-right. The dot is at the bottom-left corner in figure 3. Where is the dot in figure 5...",
+      "options": [
+        "Bottom-right",
+        "Top-left",
+        "Top-right",
+        "Bottom-left"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "reasoning-25",
+      "question": "Pattern Rule: Each figure has an outer shape and an inner shape. Moving across the row: (1) the outer shape rotates 45° clockwise, (2) the inner shape alternates between filled and unfilled. Figure 1 has a white square (outer, straight) with a filled circle (inner). Figure 2 has a white square (outer, 45° rotated = diamond) with an unfilled circle. What does Figure 3 look like...",
+      "options": [
+        "Rotated square (outer) with unfilled circle (inner)",
+        "Straight square (outer) with filled circle (inner)",
+        "Pentagon (outer) with filled circle (inner)",
+        "Triangle (outer) with unfilled triangle (inner)"
+      ],
+      "answer": "B"
+    }
+  ]
+}

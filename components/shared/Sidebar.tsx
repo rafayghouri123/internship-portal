@@ -2,11 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Building2, LayoutDashboard, Leaf, Settings, Users } from "lucide-react";
+import { BookOpenCheck, Building2, FileBarChart2, LayoutDashboard, Leaf, Link2, Settings, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navigation = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { label: "Test Links", href: "/test-links", icon: Link2 },
+  { label: "Test Results", href: "/dashboard/test-results", icon: FileBarChart2 },
+  { label: "Question Bank", href: "/question-bank", icon: BookOpenCheck },
   { label: "Interns", href: "/interns", icon: Users },
   { label: "Departments", href: "/departments", icon: Building2 },
   { label: "Settings", href: "/settings", icon: Settings }

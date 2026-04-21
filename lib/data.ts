@@ -14,6 +14,11 @@ type DashboardFilterRange = {
   toYear?: number;
 };
 
+type TestResultFilters = {
+  department?: string;
+  sort?: "score" | "date";
+};
+
 async function withFallback<T>(query: () => Promise<T>, fallback: T): Promise<T> {
   if (!process.env.DATABASE_URL) {
     return fallback;
@@ -480,4 +485,44 @@ export function mapInternToExportRow(intern: {
 
 export function getDaysRemaining(endDate: Date) {
   return differenceInCalendarDays(endDate, new Date());
+}
+
+export async function getTestResults(filters: TestResultFilters = {}) {
+  const sort = filters.sort === "score" ? "score" : "date";
+
+  return withFallback(
+    () =>
+      prisma.testSubmission.findMany({
+        where:
+          filters.department && filters.department !== "ALL"
+            ? {
+                department: filters.department
+              }
+            : undefined,
+        orderBy:
+          sort === "score"
+            ? [{ score: "desc" }, { submittedAt: "desc" }]
+            : [{ submittedAt: "desc" }, { score: "desc" }]
+      }),
+    []
+  );
+}
+
+export async function getTestResultDepartments() {
+  return withFallback(
+    async () => {
+      const groups = await prisma.testSubmission.groupBy({
+        by: ["department"],
+        _count: {
+          _all: true
+        },
+        orderBy: {
+          department: "asc"
+        }
+      });
+
+      return groups.map((group) => group.department);
+    },
+    []
+  );
 }
