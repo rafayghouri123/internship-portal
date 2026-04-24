@@ -62,7 +62,9 @@ export function TestDoneClient() {
         </div>
       </CardHeader>
       <CardContent className="space-y-3">
-        <p className="text-sm text-dalda-gray-100">Thank you. Your assessment has been submitted successfully.</p>
+        <p className="text-sm text-dalda-gray-100">Thank you for your time. If you qualify, we will reach out you soon regarding the next step. Stay connected to your email for updates.
+
+.</p>
         <p className="text-sm text-dalda-gray-100">Time taken: {formatDuration(result.timeTakenSeconds)}</p>
         {result.autoSubmitted ? (
           <p className="text-sm text-rose-300">Your test was auto-submitted because the timer ended.</p>
