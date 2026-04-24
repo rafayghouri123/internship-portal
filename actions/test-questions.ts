@@ -6,6 +6,7 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import bank from "@/lib/test/question-bank.generated.json";
 import { financeQuestions } from "@/lib/test/finance-bank";
+import { hrQuestions } from "@/lib/test/hr-bank";
 import { testDepartments } from "@/lib/test/types";
 
 const questionDepartmentValues = [...testDepartments, "LOGICAL", "REASONING", "MATH"] as const;
@@ -100,7 +101,12 @@ export async function importDefaultQuestionBank() {
   }> = [];
 
   for (const department of testDepartments) {
-    const source = department === "FINANCE" ? financeQuestions : generated.functional[department] ?? [];
+    const source =
+      department === "FINANCE"
+        ? financeQuestions
+        : department === "HR"
+          ? hrQuestions
+          : generated.functional[department] ?? [];
     for (const item of source) {
       rows.push({
         section: "FUNCTIONAL",

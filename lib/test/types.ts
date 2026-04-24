@@ -1,5 +1,6 @@
 export const testDepartments = [
   "IT",
+  "HR",
   "MARKETING",
   "ELECTRONICS",
   "CHEMICAL",
@@ -13,6 +14,7 @@ export type TestDepartment = (typeof testDepartments)[number];
 
 export const testDepartmentLabels: Record<TestDepartment, string> = {
   IT: "IT",
+  HR: "HR",
   MARKETING: "Marketing",
   ELECTRONICS: "Electronics",
   CHEMICAL: "Chemical",
@@ -29,6 +31,9 @@ export type CandidateInfo = {
   fatherName: string;
   university: string;
   department: TestDepartment;
+  semester: "6TH" | "7TH" | "8TH";
+  internshipTrack: "INTERNSHIP" | "MTO";
+  studyLevel: "BACHELORS" | "MASTERS";
 };
 
 export type QuestionOption = {

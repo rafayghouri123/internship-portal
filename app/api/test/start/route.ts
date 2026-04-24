@@ -48,7 +48,10 @@ export async function POST(request: Request) {
     fullName: parsed.data.fullName,
     fatherName: parsed.data.fatherName,
     university: parsed.data.university,
-    department: parsed.data.department
+    department: parsed.data.department,
+    semester: parsed.data.semester,
+    internshipTrack: parsed.data.internshipTrack,
+    studyLevel: parsed.data.studyLevel
   };
   const { questions, questionIds } = await buildAttemptQuestions(parsed.data.department);
   const token = createSignedTestSession({

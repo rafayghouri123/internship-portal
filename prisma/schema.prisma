@@ -195,6 +195,9 @@ model TestSubmission {
   fatherName      String
   university      String
   department      String
+  semester        String?
+  internshipTrack String?
+  studyLevel      String?
   score           Int
   totalQuestions  Int
   timeTaken       Int

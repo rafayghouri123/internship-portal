@@ -7,6 +7,21 @@ function formatMinutes(seconds: number) {
   return `${(seconds / 60).toFixed(1)} min`;
 }
 
+function formatSemester(value: string | null | undefined) {
+  if (!value) return "-";
+  return value === "6TH" ? "6th" : value === "7TH" ? "7th" : value === "8TH" ? "8th" : value;
+}
+
+function formatStudyLevel(value: string | null | undefined) {
+  if (!value) return "-";
+  return value === "BACHELORS" ? "Bachelors" : value === "MASTERS" ? "Masters" : value;
+}
+
+function formatInternshipTrack(value: string | null | undefined) {
+  if (!value) return "-";
+  return value === "MTO" ? "Management Trainee Officer" : value === "INTERNSHIP" ? "Internship" : value;
+}
+
 export default async function TestResultsPage({
   searchParams
 }: {
@@ -97,6 +112,9 @@ export default async function TestResultsPage({
                   <TableHead>Father&apos;s Name</TableHead>
                   <TableHead>University</TableHead>
                   <TableHead>Department</TableHead>
+                  <TableHead>Semester</TableHead>
+                  <TableHead>Study Level</TableHead>
+                  <TableHead>Internship Type</TableHead>
                   <TableHead>Score</TableHead>
                   <TableHead>Percentage</TableHead>
                   <TableHead>Time Taken</TableHead>
@@ -111,6 +129,9 @@ export default async function TestResultsPage({
                       <TableCell>{row.fatherName}</TableCell>
                       <TableCell>{row.university}</TableCell>
                       <TableCell>{row.department.replaceAll("_", " ")}</TableCell>
+                      <TableCell>{formatSemester((row as any).semester)}</TableCell>
+                      <TableCell>{formatStudyLevel((row as any).studyLevel)}</TableCell>
+                      <TableCell>{formatInternshipTrack((row as any).internshipTrack)}</TableCell>
                       <TableCell>
                         {row.score}/{row.totalQuestions}
                       </TableCell>
@@ -121,7 +142,7 @@ export default async function TestResultsPage({
                   ))
                 ) : (
                   <TableRow>
-                    <TableCell className="text-center text-dalda-gray-500" colSpan={8}>
+                    <TableCell className="text-center text-dalda-gray-500" colSpan={11}>
                       No test submissions found.
                     </TableCell>
                   </TableRow>

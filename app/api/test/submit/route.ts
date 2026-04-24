@@ -64,11 +64,14 @@ export async function POST(request: Request) {
       fatherName: session.candidate.fatherName,
       university: session.candidate.university,
       department: session.candidate.department,
+      semester: session.candidate.semester,
+      internshipTrack: session.candidate.internshipTrack,
+      studyLevel: session.candidate.studyLevel,
       score,
       totalQuestions: total,
       timeTaken: parsed.data.timeTakenSeconds,
       answers: parsed.data.answers
-    }
+    } as any
   });
 
   const response = NextResponse.json({

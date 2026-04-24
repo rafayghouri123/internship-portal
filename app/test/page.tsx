@@ -1,4 +1,5 @@
 import { TestIntakeForm } from "@/components/test/TestIntakeForm";
+import { TestAnimatedBackground } from "@/components/test/TestAnimatedBackground";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 
@@ -13,10 +14,11 @@ export default async function TestStartPage({
   if (!linkToken) {
     return (
       <main className="test-background px-4 py-10 sm:px-6 lg:px-8">
+        <TestAnimatedBackground />
         <div className="mx-auto w-full max-w-4xl">
-          <div className="surface-card border-dalda-gray-100 p-6">
-          <h1 className="text-xl font-semibold text-dalda-gray-900">Invalid test link</h1>
-          <p className="mt-2 text-sm text-dalda-gray-600">
+          <div className="test-panel rounded-2xl p-6">
+          <h1 className="text-xl font-semibold text-dalda-gray-50">Invalid test link</h1>
+          <p className="mt-2 text-sm text-dalda-gray-200/90">
             This test link is missing. Please contact HR for a valid test link.
           </p>
         </div>
@@ -35,10 +37,11 @@ export default async function TestStartPage({
   if (!link) {
     return (
       <main className="test-background px-4 py-10 sm:px-6 lg:px-8">
+        <TestAnimatedBackground />
         <div className="mx-auto w-full max-w-4xl">
-          <div className="surface-card border-dalda-gray-100 p-6">
-          <h1 className="text-xl font-semibold text-dalda-gray-900">Link not active</h1>
-          <p className="mt-2 text-sm text-dalda-gray-600">
+          <div className="test-panel rounded-2xl p-6">
+          <h1 className="text-xl font-semibold text-dalda-gray-50">Link not active</h1>
+          <p className="mt-2 text-sm text-dalda-gray-200/90">
             This test link is invalid or has been deleted by HR.
           </p>
         </div>
@@ -49,17 +52,20 @@ export default async function TestStartPage({
 
   return (
     <main className="test-background px-4 py-10 sm:px-6 lg:px-8">
+      <TestAnimatedBackground />
       <div className="mx-auto w-full max-w-4xl">
-        <div className="mb-6 overflow-hidden rounded-2xl border border-dalda-green-muted bg-white shadow-card">
-          <div className="h-2 bg-gradient-to-r from-dalda-green to-dalda-green-mid" />
-          <div className="flex items-center gap-4 px-5 py-5 sm:px-6">
+        <div className="test-panel mb-6 overflow-hidden rounded-2xl shadow-card">
+          <div className="h-2 bg-gradient-to-r from-dalda-green-dark via-dalda-green to-dalda-green-mid" />
+          <div className="flex items-center gap-4 px-5 py-6 sm:px-6">
             <Image alt="Dalda Foods" className="h-14 w-20 object-contain" height={56} src="/dalda-logo.png" width={80} />
             <div>
-              <h1 className="text-2xl font-semibold text-dalda-gray-900">Internship Assessment Test</h1>
-              <p className="text-sm text-dalda-gray-600">Dalda Foods Candidate Screening Portal</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-dalda-green">Dalda Foods</p>
+              <h1 className="text-2xl font-semibold text-dalda-gray-50">Welcome to Dalda Future Leadership Program</h1>
+              <p className="text-sm font-medium text-dalda-green-light">DFLP 2026</p>
+              <p className="text-sm text-dalda-gray-200/90">Candidate Screening Portal</p>
             </div>
           </div>
-          <p className="border-t border-dalda-gray-100 bg-dalda-gray-50 px-5 py-3 text-sm text-dalda-gray-700 sm:px-6">
+          <p className="border-t border-dalda-green-muted/30 bg-dalda-green/10 px-5 py-3 text-sm text-dalda-gray-100 sm:px-6">
             Please fill in your details to start. You will get 30 questions and 30 minutes.
           </p>
         </div>

@@ -5,18 +5,14 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TEST_RESULT_STORAGE_KEY } from "@/lib/test/constants";
+import { CandidateInfo } from "@/lib/test/types";
 
 type ResultState = {
   score: number;
   total: number;
   timeTakenSeconds: number;
   autoSubmitted: boolean;
-  candidate: {
-    fullName: string;
-    fatherName: string;
-    university: string;
-    department: string;
-  };
+  candidate: CandidateInfo;
 };
 
 function formatDuration(seconds: number) {
@@ -49,27 +45,27 @@ export function TestDoneClient() {
 
   if (!result) {
     return (
-      <Card className="surface-card">
+      <Card className="test-panel rounded-2xl">
         <CardContent className="p-6">
-          <p className="text-sm text-dalda-gray-600">Loading result...</p>
+          <p className="text-sm text-dalda-gray-200/90">Loading result...</p>
         </CardContent>
       </Card>
     );
   }
 
   return (
-    <Card className="surface-card overflow-hidden border-dalda-gray-100">
-      <CardHeader>
+    <Card className="test-panel overflow-hidden rounded-2xl">
+      <CardHeader className="border-b border-dalda-green-muted/30 bg-dalda-green/10">
         <div className="flex items-center gap-3">
           <Image alt="Dalda Foods" className="h-10 w-14 object-contain" height={40} src="/dalda-logo.png" width={56} />
-          <CardTitle>Test Submitted</CardTitle>
+          <CardTitle className="text-dalda-gray-50">Test Submitted</CardTitle>
         </div>
       </CardHeader>
       <CardContent className="space-y-3">
-        <p className="text-sm text-dalda-gray-700">Thank you. Your assessment has been submitted successfully.</p>
-        <p className="text-sm text-dalda-gray-700">Time taken: {formatDuration(result.timeTakenSeconds)}</p>
+        <p className="text-sm text-dalda-gray-100">Thank you. Your assessment has been submitted successfully.</p>
+        <p className="text-sm text-dalda-gray-100">Time taken: {formatDuration(result.timeTakenSeconds)}</p>
         {result.autoSubmitted ? (
-          <p className="text-sm text-dalda-red">Your test was auto-submitted because the timer ended.</p>
+          <p className="text-sm text-rose-300">Your test was auto-submitted because the timer ended.</p>
         ) : null}
       </CardContent>
     </Card>
