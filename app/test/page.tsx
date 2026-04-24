@@ -12,7 +12,7 @@ export default async function TestStartPage({
 
   if (!linkToken) {
     return (
-      <main className="min-h-screen bg-gradient-to-b from-dalda-green-light/40 via-dalda-off-white to-white px-4 py-10 sm:px-6 lg:px-8">
+      <main className="test-background px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-4xl">
           <div className="surface-card border-dalda-gray-100 p-6">
           <h1 className="text-xl font-semibold text-dalda-gray-900">Invalid test link</h1>
@@ -34,7 +34,7 @@ export default async function TestStartPage({
 
   if (!link) {
     return (
-      <main className="min-h-screen bg-gradient-to-b from-dalda-green-light/40 via-dalda-off-white to-white px-4 py-10 sm:px-6 lg:px-8">
+      <main className="test-background px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-4xl">
           <div className="surface-card border-dalda-gray-100 p-6">
           <h1 className="text-xl font-semibold text-dalda-gray-900">Link not active</h1>
@@ -48,7 +48,7 @@ export default async function TestStartPage({
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-dalda-green-light/40 via-dalda-off-white to-white px-4 py-10 sm:px-6 lg:px-8">
+    <main className="test-background px-4 py-10 sm:px-6 lg:px-8">
       <div className="mx-auto w-full max-w-4xl">
         <div className="mb-6 overflow-hidden rounded-2xl border border-dalda-green-muted bg-white shadow-card">
           <div className="h-2 bg-gradient-to-r from-dalda-green to-dalda-green-mid" />
