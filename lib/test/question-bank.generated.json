@@ -281,278 +281,278 @@
     "MARKETING": [
       {
         "id": "marketing-1",
-        "question": "A brand’s recent Instagram post receives a high-engagement but mostly negative comment regarding a product flaw. How should the social media intern respond...",
+        "question": "You have recently joined Samsung as a social media intern you task is to handle all its engagement responses. With the recent Samsung Galaxy Note 7 launch. Instagram received a high engagement but mostly negative comment regarding battery explosion a product flaw. Being a social media intern, what would be smart move to respond to the negative comments?",
         "options": [
+          "Acknowledge the feedback publicly and offer a direct channel (DM/Email) to resolve the issue.",
           "Delete the comments immediately to protect the brand image.",
           "Ignore the comments; responding only gives them more visibility.",
-          "Acknowledge the feedback publicly and offer a direct channel (DM/Email) to resolve the issue.",
-          "Argue with the commenters to prove the product is high quality."
+          "respond to the commenters to prove the product is high quality."
         ],
-        "answer": "C"
+        "answer": "A"
       },
       {
         "id": "marketing-2",
-        "question": "You are running a Facebook Ad campaign. The \"Click-Through Rate\" (CTR) is very high, but the \"Conversion Rate\" on the website is almost zero. What is the most likely problem...",
+        "question": "Sarah is working in a marketing agency handling client Glossier; a direct-to-consumer beauty brand. Sarah ran a new Facebook ad campaign which was worked overnight. The \"Click-Through Rate\" (CTR) is very high, but the \"Conversion Rate\" on the website is almost zero, this concerns the sales team. During a meeting What is the most likely problem?",
         "options": [
-          "The ad creative is boring and needs more color.",
-          "The ad is misleading, or the landing page is difficult to navigate/irrelevant.",
+          "The ad creatives are boring and need more color.",
           "You aren't spending enough money on the ads.",
+          "The ad is misleading, or the landing page is difficult to navigate/irrelevant.",
           "Facebook’s servers are down."
         ],
-        "answer": "B"
+        "answer": "C"
       },
       {
         "id": "marketing-3",
-        "question": "You are asked to write a \"Meta Description\" for a new blog post about eco-friendly packaging. What is your primary goal...",
+        "question": "You are writing a \"Meta Description\" for TK Max new blog post about eco-friendly plastic free packaging. What is your primary goal?",
         "options": [
-          "To fit as many keywords as possible until the character limit is reached.",
-          "To write a compelling summary that encourages users to click from the search results.",
-          "To explain the entire history of the company.",
-          "To write something poetic that doesn't mention the product."
+          "To fit in 150 keywords until the character limit is reached.",
+          "To explain the summary which creates low connection between blogger & the reader.",
+          "To write meta description similar of other clothing brands.",
+          "To write a compelling summary that encourages users to click from the search results."
         ],
-        "answer": "B"
+        "answer": "D"
       },
       {
         "id": "marketing-4",
-        "question": "A local coffee shop wants to target Gen Z customers. Which platform and content style would you recommend...",
+        "question": "A Pakistani social media Influencer decided to step into coffee business his target market is Gen Z customers. Which platform and content style would you recommend?",
         "options": [
-          "Long-form articles on LinkedIn about coffee beans.",
-          "Short-form, \"behind-the-scenes\" vertical videos on TikTok or Reels.",
-          "Daily static image posts on Facebook with long captions.",
-          "Local newspaper print advertisements."
+          "A snappy, \"behind-the-scenes\" vertical videos on TikTok or Reels.",
+          "Endorsement from a 5M follower celebrity.",
+          "A perfect ad featuring himself introducing his coffee business",
+          "A static post on social media highlighting price friendliness."
         ],
-        "answer": "B"
+        "answer": "A"
       },
       {
         "id": "marketing-5",
-        "question": "You are choosing an influencer for a niche \"Indie Skincare\" brand. Who is the better choice for high engagement...",
+        "question": "You are choosing an influencer for a niche \"Indie Skincare\" brand. Who is the better choice for high engagement?",
         "options": [
           "A celebrity with 5 million followers who posts about everything.",
-          "A \"Micro-influencer\" with 15k followers who specifically reviews organic skincare.",
           "A parody account with 500k followers that makes jokes about makeup.",
-          "An account with 1 million followers that has disabled comments."
+          "A \"Micro-influencer\" with 15k followers who specifically review organic skincare.",
+          "A static post that asks to tag 5 followers for a luck draw gifting of the products"
         ],
-        "answer": "B"
+        "answer": "C"
       },
       {
         "id": "marketing-6",
-        "question": "You notice that 70% of users are adding items to their cart on your e-commerce site but leaving before paying. What marketing tactic should you implement...",
+        "question": "You run a business of bulk buying from Shein and sell it to Pakistan, recently you noticed that 70% of users are adding items to their cart on your e-commerce website but leaving before paying. What tactic should you implement for better sales?",
         "options": [
-          "Post more photos on Instagram.",
-          "Send an automated \"Abandoned Cart\" email with a small discount or reminder.",
-          "Call every customer individually on their mobile phone.",
-          "Increase the prices to make the products feel more \"premium.\""
+          "Fix a 10% sale on 2nd purchase each month.",
+          "Call every customer individually on their mobile phone for reminder",
+          "Increase the prices to make the products feel more \"premium.\"",
+          "Send an automated \"Abandoned Cart\" email with a 20% discount or reminder."
         ],
-        "answer": "B"
+        "answer": "D"
       },
       {
         "id": "marketing-7",
-        "question": "A competitor just lowered their prices by 20%. Your manager asks you how to respond without lowering your prices. What is a valid marketing strategy...",
+        "question": "In the fast-food market Pizza Hut & Domino’s had their own challenges & wins. Pizza Hut lowered its prices by 20%, taking advantage over domino’s declined quality & taste. You have been part of their marketing team, what would be right way to respond without lowering the price?",
         "options": [
-          "Send an email blast telling customers the competitor is bad.",
-          "Emphasize your brand’s \"Unique Value Proposition\" (quality, service, or ethics).",
+          "level up the quality and focus on operational excellency to win over",
+          "Send an email blast telling customers about company legacy",
           "Stop all advertising until the competitor raises their prices again.",
-          "Buy the competitor's products and hide them."
+          "introduce more pizza flavors & expand marketing budget to market it."
         ],
-        "answer": "B"
+        "answer": "A"
       },
       {
         "id": "marketing-8",
-        "question": "You are A/B testing two email subject lines. Line A: \"Flash Sale: 50% Off!\" Line B: \"Your exclusive discount is waiting...\" After two hours, Line A has a 10% open rate and Line B has a 25% open rate. What do you do...",
+        "question": "Its mid-season sale time in Daraz. The marketing team is testing two email subject lines. Line A: \"Flash Sale: 50% Off!\" Line B: \"Your exclusive discount is waiting...\" After two hours of rollout, Line A has a 10% open rate and Line B has a 25% open rate. What do you do?",
         "options": [
           "Send the rest of the emails using Line A.",
-          "Send the rest of the emails using Line B.",
-          "Delete the entire email campaign.",
-          "Wait another 48 hours before doing anything."
+          "Delete the entire email campaign, and send again with only line B",
+          "Send the rest of the emails using Line B immediately.",
+          "Wait another 24 hours before doing anything to check if the response rate stays the same"
         ],
-        "answer": "B"
+        "answer": "C"
       },
       {
         "id": "marketing-9",
-        "question": "When creating a \"Customer Persona,\" which information is the most useful for targeting ads...",
+        "question": "When creating a \"Customer Persona,\" which information is the most useful for targeting ads?",
         "options": [
           "The customer’s favorite childhood pet.",
-          "Demographic data, interests, pain points, and buying habits.",
-          "The customer's high school graduation year only.",
-          "The name of the customer’s local grocery store."
+          "The customer's Demographics data, age, job & graduation year only.",
+          "The name of the customer’s local grocery store.",
+          "Psychographics data, interests, pain points, and buying habits."
         ],
-        "answer": "B"
+        "answer": "D"
       },
       {
         "id": "marketing-10",
-        "question": "You are launching a new energy drink. You want to create \"Brand Awareness\" rather than immediate sales. Which metric should you focus on...",
+        "question": "Pepsi Co. planned to increase its energy drink product line and is launching a new energy drink “Revive”. They want to increase \"Brand Awareness\" rather than immediate sales. Which metric should you focus on?",
         "options": [
-          "Return on Ad Spend (ROAS)",
           "Total Reach and Impressions",
+          "Return on Ad Spend (ROAS)",
           "Number of items returned",
           "Average order value"
         ],
-        "answer": "B"
+        "answer": "A"
       },
       {
         "id": "marketing-11",
-        "question": "A luxury watch brand uses very minimal text and high-end photography in its ads. Why...",
+        "question": "Rolex, A luxury watch brand. Ad campaign has a simple background and high-end photography which states “A crown for every day” what is the most appropriate interpretation about brand positioning?",
         "options": [
-          "They are trying to save money on copywriters.",
-          "To create an \"Aspiritual\" and \"Exclusive\" brand image.",
-          "Because they forgot to write the descriptions.",
-          "Because the watches don't actually work."
+          "Rolex emphasizes that their watches are readily available for sale at all their retail stores",
+          "Rolex is positioning its watch as fast depreciating fashion accessory to be worn daily",
+          "Rolex is focusing on cost of its timepieces compared to other luxury brands.",
+          "Rolex is highlighting exclusivity and personal achievement."
         ],
-        "answer": "B"
+        "answer": "D"
       },
       {
         "id": "marketing-12",
-        "question": "You are asked to perform a \"SWOT Analysis\" for a new startup. What does the \"O\" stand for...",
+        "question": "In early 2025, Netflix reported 325 million subscribers and successful expansions into live events (WWE/NFL Christmas games) and ad supported tiers. However, the company faces rising production costs ($20B + annually), market saturation in North America and intensifying competition from bundled services like Amazon prime. Which of the following represents most crucial strategic opportunity for Netflix long-term growth while mitigating the threat of subscriber price sensitivity?",
         "options": [
-          "Operations",
-          "Opportunities",
-          "Obstacles",
-          "Objectives"
+          "Investing in more original content to maintain a 90% exclusive library in the US.",
+          "Returning to a higher percentage of licensed content from other studios to reduce production costs.",
+          "Eliminating the ad-supported tier to force price-sensitive users onto premium plans.",
+          "Expanding ad-tier targeting capabilities to reach a projected $3B+ in advertising revenue in 2026."
         ],
-        "answer": "B"
+        "answer": "D"
       },
       {
         "id": "marketing-13",
-        "question": "Your \"Organic\" reach on Facebook has dropped significantly. What is the most likely reason...",
+        "question": "Your \"Organic\" reach on Facebook has dropped significantly. What is the most likely reason?",
         "options": [
-          "People have stopped using the internet.",
           "Platform algorithm changes favoring \"Paid\" content or high-engagement video.",
-          "Your posts are too high quality.",
+          "People have stopped using the internet.",
+          "You have more static posts while trend has changed towards short form reels.",
           "You haven't posted in the last 2 hours."
         ],
-        "answer": "B"
+        "answer": "A"
       },
       {
         "id": "marketing-14",
-        "question": "A SaaS (Software as a Service) company wants to get \"High Quality Leads.\" Which platform is generally best for B2B (Business to Business) marketing...",
+        "question": "A SaaS (Software as a Service) company wants to get \"High Quality Leads.\" Which platform is generally best for B2B (Business to Business) marketing?",
         "options": [
           "Snapchat",
-          "LinkedIn",
           "Pinterest",
-          "YouTube Kids"
+          "LinkedIn",
+          "Zoominfo"
         ],
-        "answer": "B"
+        "answer": "C"
       },
       {
         "id": "marketing-15",
-        "question": "You are designing a \"Call to Action\" (CTA) button for a newsletter. Which text is most likely to get clicks...",
+        "question": "You are designing a \"Call to Action\" (CTA) button for a newsletter. Which text is most likely to get clicks?",
         "options": [
           "\"Submit Information Here\"",
           "\"Click if you want\"",
-          "\"Get My Free Guide\"",
-          "\"Terms and Conditions\""
+          "\"Terms and Conditions\"",
+          "\"Get My Free Guide\""
         ],
-        "answer": "C"
+        "answer": "D"
       },
       {
         "id": "marketing-16",
-        "question": "A brand uses a \"Freemium\" model (Basic service is free, features cost money). What is the primary marketing goal of the \"Free\" version...",
+        "question": "Spotify uses \"Freemium\" model (Basic service is free, while ad free features cost money and have individual up to family plans). What is the primary marketing goal of the \"Free\" version?",
         "options": [
-          "To lose as much money as possible.",
           "To lower the \"Barrier to Entry\" and build a user base for future conversion.",
-          "To trick customers into giving their home addresses.",
+          "listening to new songs everyone is talking about, even if I must listen to a few ads.",
+          "To lower the threat of new entrants by patenting the freemium technology.",
           "To show that the paid version isn't necessary."
         ],
-        "answer": "B"
+        "answer": "A"
       },
       {
         "id": "marketing-17",
-        "question": "You are looking at a \"Heatmap\" of your website. It shows that users are clicking on a non-clickable image of a dog. What should you do...",
+        "question": "Tony the tiger, Energizer Bunny, 7up Fiddo and the GEICO Gecko are all examples of:",
         "options": [
-          "Remove the dog image.",
-          "Make the dog image a link to a relevant product or page.",
-          "Ignore it; users are just confused.",
-          "Change the dog to a cat."
-        ],
-        "answer": "B"
-      },
-      {
-        "id": "marketing-18",
-        "question": "A \"Viral\" marketing campaign is successful, but the traffic it brings doesn't buy anything. Was the campaign successful...",
-        "options": [
-          "Yes, because it was funny.",
-          "No, because the \"Targeting\" was likely too broad and didn't attract potential buyers.",
-          "Yes, because more followers always equals more money.",
-          "No, because the video was too short."
-        ],
-        "answer": "B"
-      },
-      {
-        "id": "marketing-19",
-        "question": "You are managing a budget of $1,000. You spend $500 on Google Ads and get 10 sales. You spend $500 on TikTok Ads and get 2 sales. Where should you move the remaining budget...",
-        "options": [
-          "TikTok Ads, because they are more \"trendy.\"",
-          "Split it evenly again to be fair.",
-          "Google Ads, as they show a higher \"ROI\" (Return on Investment).",
-          "Save the money and don't spend it."
+          "Brand names",
+          "Brand Loyalty",
+          "Trade Characters",
+          "Trademarks"
         ],
         "answer": "C"
       },
       {
-        "id": "marketing-20",
-        "question": "A customer leaves a 5-star review but mentions the packaging was hard to open. How should Marketing use this...",
+        "id": "marketing-18",
+        "question": "A \"Viral\" marketing campaign is successful, but the traffic it brings doesn't buy anything. Was the campaign successful?",
         "options": [
-          "Hide the review so no one sees the negative part.",
-          "Use the \"5-star\" part in an ad and pass the feedback to the Product Development team.",
-          "Reply and tell the customer they opened it wrong.",
-          "Delete the review."
+          "Yes, because it was a mobile friendly design",
+          "Yes, because more followers always equal more money.",
+          "No, because the slow load speed costing the rate of conversion",
+          "No, because the Targeting was likely too broad and didn't attract potential buyers."
         ],
-        "answer": "B"
+        "answer": "D"
+      },
+      {
+        "id": "marketing-19",
+        "question": "You are managing a budget of $1,000. You spend $500 on Google Ads and get 10 sales. You spend $500 on TikTok Ads and get 2 sales. Where should you move the remaining budget?",
+        "options": [
+          "Google Ads, as they show a higher \"ROI\" (Return on Investment).",
+          "TikTok Ads, because they are more \"trendy.\"",
+          "Split it evenly again to be fair.",
+          "Save the money and don't spend it."
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "marketing-20",
+        "question": "Vaseline launches a premium organic face-cream line targeted and eco-friendly millennials. To position as high end, they used glass jar for packaging. Initially people love the look and feel and luxury skin care brand perception. A 5-star review mentions the jars were difficult to recycle. Being the Brand Manager for this product you realized Eco-conscious buyers might not repurchase it and there is a mismatch between Brand positioning and Packaging reality. What should be the most appropriate and quick move to correct this?",
+        "options": [
+          "Transition to a lightweight, durable 100% post-consumer recycled plastic with a minimalist less is more design",
+          "Maintain the current design but offer a refill only discount option to reduce wastage",
+          "Use the \"5-star\" part in an ad and pass the feedback to the Product Development team.",
+          "Continue using glass but add a label highlighting that glass is \"premium\" and \"safe.\""
+        ],
+        "answer": "C"
       },
       {
         "id": "marketing-21",
-        "question": "What is the main benefit of \"Content Marketing\" (blogs, videos, podcasts) over traditional ads...",
+        "question": "What is the main benefit of \"Content Marketing\" (blogs, videos, podcasts) over traditional ads?",
         "options": [
           "It is always 100% free.",
-          "It builds \"Authority\" and \"Trust\" with the audience over time.",
           "It works instantly the second you post it.",
-          "It doesn't require any creativity."
+          "It doesn't require any creativity.",
+          "It builds \"Authority\" and \"Trust\" with the audience over time."
         ],
-        "answer": "B"
+        "answer": "D"
       },
       {
         "id": "marketing-22",
-        "question": "You are asked to \"Segment\" an email list for a clothing brand. Which segments make the most sense...",
+        "question": "Ethnc uses email marketing for its e-commerce. The team realized a declining click through rates in order to improve this which of the segmentation strategies would likely yield highest rate in conversion.",
         "options": [
-          "People who like blue vs. people who like red.",
-          "Men's wear buyers, Women's wear buyers, and High-spenders.",
-          "People who use Gmail vs. people who use Outlook.",
-          "People who live in houses vs. people who live in apartments."
+          "Segmenting by Purchase Behavior (e.g., VIPs, lapsed customers, sale shoppers) to personalize offers.",
+          "Segmenting by Geographic Location (e.g., city, state) to send local weather-related clothing recommendations.",
+          "Segmenting by Sign-up Source (e.g., website popup vs. Instagram ad) to analyze marketing reach.",
+          "Segmenting by Date of Birth to send a \"Happy Birthday\" discount code."
         ],
-        "answer": "B"
+        "answer": "A"
       },
       {
         "id": "marketing-23",
-        "question": "A video ad has a \"Hook,\" a \"Body,\" and a \"CTA.\" If people are scrolling past the video in the first 2 seconds, which part needs to be fixed...",
+        "question": "A video ad has a \"Hook,\" a \"Body,\" and a \"CTA.\" If people are scrolling past the video in the first 2 seconds, which part needs to be fixed?",
         "options": [
           "The Call to Action",
-          "The Hook",
           "The Body",
+          "The Hook",
           "The background music"
         ],
-        "answer": "B"
+        "answer": "C"
       },
       {
         "id": "marketing-24",
-        "question": "Your brand is accused of \"Greenwashing.\" What does this mean...",
+        "question": "Your brand is accused of \"Greenwashing.\" What does this mean?",
         "options": [
           "You are using too much green in your logo.",
-          "You are making misleading claims about how environmentally friendly your products are.",
           "You are giving away free plants to customers.",
-          "Your website is powered by solar energy."
+          "Your website is powered by solar energy.",
+          "You are making misleading claims about how environmentally friendly your products are."
         ],
-        "answer": "B"
+        "answer": "D"
       },
       {
         "id": "marketing-25",
-        "question": "In the \"Marketing Funnel,\" which stage comes after \"Awareness\"...",
+        "question": "You see a new TV commercial for corn oil by Dalda. You understood they were focusing on healthier eating, ad talks about the quality & heart health which makes you ask at home for the oil which is used. A few days later, you watch the ad again and notice the dishes that were being cooked using it for the entire family, this made you feel more inclined to bring heathier option for your family. On the next grocery run you choose Dalda Corn oil over any other brand. In terms of order what is the step-by-step form to buy Dalda.",
         "options": [
-          "Purchase",
-          "Consideration/Interest",
-          "Retention",
-          "Advocacy"
+          "Awareness – Desire – Interest – Action",
+          "Interest – Action – Awareness – Desire",
+          "Desire – Interest – Awareness – Action",
+          "Awareness – Interest – Desire – Action"
         ],
-        "answer": "B"
+        "answer": "A"
       }
     ],
     "SUPPLY_CHAIN": [

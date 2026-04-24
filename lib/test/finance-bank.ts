@@ -102,5 +102,80 @@ export const financeQuestions: InternalQuestion[] = [
     question: "Straight-Line Depreciation (a): Depreciation Expense for Year 2020 is:",
     options: ["$2,000", "$4,000", "$28,000", "None of the above"],
     answer: "B"
+  },
+  {
+    id: "finance-18",
+    question:
+      "You are Finance Manager at Dalda Foods Ltd. while reviewing the balance sheet to assess short-term liquidity. Which of the following assets should you classify as current asset?",
+    options: [
+      "Goodwill arising from a past acquisition",
+      "Property, plant, and equipment used in production",
+      "Inventory held for sale",
+      "Long-term investment in bond"
+    ],
+    answer: "C"
+  },
+  {
+    id: "finance-19",
+    question:
+      "An investment analyst is assessing a target company using a Discounted Cash Flow (DCF) model. Which of the following represents the correct sequence of steps to complete the DCF analysis?",
+    options: ["II -> IV -> V -> I -> III", "II -> V -> IV -> I -> III", "V -> II -> IV -> I -> III", "II -> IV -> I -> V -> III"],
+    answer: "A"
+  },
+  {
+    id: "finance-20",
+    question:
+      "Ali's accountant applies the separate entity concept while preparing statements. Which statement does NOT relate to this concept?",
+    options: [
+      "Business and owner are treated as separate entities",
+      "Personal affairs of the owner should not be considered",
+      "Business should not be dissolved in the near future",
+      "This concept is followed in all types of businesses"
+    ],
+    answer: "C"
+  },
+  {
+    id: "finance-21",
+    question:
+      "A retail store owner sells goods for Rs. 2,000 and says profit is 25% on cost. What is the cost of goods sold (COGS)?",
+    options: ["Rs. 1,500", "Rs. 1,600", "Rs. 1,700", "Rs. 1,800"],
+    answer: "B"
+  },
+  {
+    id: "finance-22",
+    question:
+      "A startup is entirely financed through equity and has no debt. In this situation, what would the company’s WACC be equal to?",
+    options: ["Cost of Equity", "Cost of Debt", "Tax-effected cost of equity", "Zero, since there is no debt in the capital structure"],
+    answer: "A"
+  },
+  {
+    id: "finance-23",
+    question: "Which of the following is NOT an example of the materiality concept?",
+    options: [
+      "Ignoring insignificant amounts like small office supplies",
+      "Focusing on transactions that could influence decision-making",
+      "Recording all transactions with equal importance, regardless of size",
+      "Simplifying accounting treatment for immaterial items"
+    ],
+    answer: "C"
+  },
+  {
+    id: "finance-24",
+    question:
+      "An investor wants to identify the type of cash flow stream that continues forever. Which of the following best describes this situation?",
+    options: ["Ordinary annuity", "Special annuity", "Annuity due", "Delayed perpetuity"],
+    answer: "D"
+  },
+  {
+    id: "finance-25",
+    question:
+      "If you want to ensure that your money will be secured if cheques sent are wasted in the post, you should:",
+    options: [
+      "Always pay by cash",
+      "Cross your Cheques ‘Account Payee only, Not Negotiable.’",
+      "Always get the money in person",
+      "Not use the postal service in future"
+    ],
+    answer: "B"
   }
 ];

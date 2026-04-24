@@ -220,9 +220,9 @@ export function TestAttemptClient() {
 
   return (
     <div className="space-y-4">
-      <div className="surface-card flex flex-wrap items-center justify-between gap-3 p-4">
+      <div className="surface-card flex flex-wrap items-center justify-between gap-3 border-dalda-gray-100 bg-gradient-to-r from-white to-dalda-green-light/30 p-4">
         <div className="flex items-center gap-3">
-          <Image alt="Dalda Foods" className="h-10 w-10 rounded-md object-cover" height={40} src="/dalda-logo.jfif" width={40} />
+          <Image alt="Dalda Foods" className="h-10 w-14 object-contain" height={40} src="/dalda-logo.png" width={56} />
           <div>
             <p className="text-xs font-medium uppercase tracking-wide text-dalda-gray-400">Internship Assessment Test</p>
             <p className="text-sm font-semibold text-dalda-gray-900">
@@ -239,7 +239,7 @@ export function TestAttemptClient() {
         </div>
       </div>
 
-      <div className="surface-card p-4">
+      <div className="surface-card border-dalda-gray-100 p-4">
         <div className="mb-3 flex flex-wrap gap-2">
           {sectionEntries.map(({ section, range }, sectionIndex) => {
             const isActive = currentIndex >= range.start && currentIndex <= range.end;
@@ -332,7 +332,7 @@ export function TestAttemptClient() {
         </div>
       </div>
 
-      <div className="surface-card flex flex-wrap items-center justify-between gap-2 p-4">
+      <div className="surface-card flex flex-wrap items-center justify-between gap-2 border-dalda-gray-100 p-4">
         <div className="flex gap-2">
           <Button
             disabled={currentIndex === 0 || submitted}

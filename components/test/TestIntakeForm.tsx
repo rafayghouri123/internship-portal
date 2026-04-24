@@ -75,8 +75,8 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
   };
 
   return (
-    <Card className="surface-card">
-      <CardHeader>
+    <Card className="surface-card overflow-hidden border-dalda-gray-100">
+      <CardHeader className="border-b border-dalda-gray-100 bg-gradient-to-r from-dalda-green-light to-white">
         <CardTitle>Candidate Intake</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -124,7 +124,7 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
 
         {error ? <p className="text-sm text-dalda-red">{error}</p> : null}
 
-        <Button disabled={!isReady || isPending} onClick={onStart} type="button">
+        <Button className="bg-dalda-green hover:bg-dalda-green-dark" disabled={!isReady || isPending} onClick={onStart} type="button">
           {isPending ? "Starting..." : "Start Test"}
         </Button>
       </CardContent>

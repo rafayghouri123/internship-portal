@@ -58,10 +58,10 @@ export function TestDoneClient() {
   }
 
   return (
-    <Card className="surface-card">
+    <Card className="surface-card overflow-hidden border-dalda-gray-100">
       <CardHeader>
         <div className="flex items-center gap-3">
-          <Image alt="Dalda Foods" className="h-10 w-10 rounded-md object-cover" height={40} src="/dalda-logo.jfif" width={40} />
+          <Image alt="Dalda Foods" className="h-10 w-14 object-contain" height={40} src="/dalda-logo.png" width={56} />
           <CardTitle>Test Submitted</CardTitle>
         </div>
       </CardHeader>
