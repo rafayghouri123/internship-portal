@@ -1,4 +1,5 @@
 import { TestLinkManager } from "@/components/test/TestLinkManager";
+import { headers } from "next/headers";
 import { prisma } from "@/lib/prisma";
 
 export default async function TestLinksPage() {
@@ -7,10 +8,17 @@ export default async function TestLinksPage() {
     orderBy: { createdAt: "desc" }
   });
 
-  const baseUrl =
-    process.env.APP_URL?.replace(/\/$/, "") ||
-    process.env.NEXTAUTH_URL?.replace(/\/$/, "") ||
-    "http://localhost:3000";
+  const headerStore = await headers();
+  const forwardedProto = headerStore.get("x-forwarded-proto");
+  const forwardedHost = headerStore.get("x-forwarded-host") || headerStore.get("host");
+  const headerBaseUrl =
+    forwardedProto && forwardedHost ? `${forwardedProto}://${forwardedHost}`.replace(/\/$/, "") : null;
+
+  const envBaseUrlCandidate = (process.env.APP_URL || process.env.NEXTAUTH_URL || "").replace(/\/$/, "");
+  const envBaseUrl =
+    envBaseUrlCandidate && !envBaseUrlCandidate.includes("localhost") ? envBaseUrlCandidate : null;
+
+  const baseUrl = headerBaseUrl || envBaseUrl || "http://localhost:3000";
 
   return (
     <div className="space-y-6">
