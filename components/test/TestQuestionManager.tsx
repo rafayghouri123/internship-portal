@@ -41,7 +41,8 @@ export function TestQuestionManager({
         onSubmit={(event) => {
           event.preventDefault();
           setError("");
-          const formData = new FormData(event.currentTarget);
+          const form = event.currentTarget;
+          const formData = new FormData(form);
 
           startTransition(async () => {
             try {
@@ -55,7 +56,7 @@ export function TestQuestionManager({
                 correctOption: String(formData.get("correctOption") || "A") as "A" | "B" | "C" | "D"
               });
               toast.success("Question added.");
-              event.currentTarget.reset();
+              form.reset();
               router.refresh();
             } catch (caughtError) {
               if (caughtError instanceof ZodError) {
