@@ -5,7 +5,12 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { TEST_ATTEMPT_STORAGE_KEY, TEST_GUIDE_ACK_STORAGE_KEY, TEST_RESULT_STORAGE_KEY } from "@/lib/test/constants";
+import {
+  TEST_ATTEMPT_STORAGE_KEY,
+  TEST_EXAMPLES_ACK_STORAGE_KEY,
+  TEST_GUIDE_ACK_STORAGE_KEY,
+  TEST_RESULT_STORAGE_KEY
+} from "@/lib/test/constants";
 import { testDepartmentLabels, testDepartments, TestQuestion } from "@/lib/test/types";
 
 type StartResponse = {
@@ -72,6 +77,7 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
       const successPayload = payload as StartResponse;
       localStorage.removeItem(TEST_RESULT_STORAGE_KEY);
       localStorage.removeItem(TEST_GUIDE_ACK_STORAGE_KEY);
+      localStorage.removeItem(TEST_EXAMPLES_ACK_STORAGE_KEY);
       localStorage.setItem(
         TEST_ATTEMPT_STORAGE_KEY,
         JSON.stringify({
@@ -188,7 +194,7 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
 
           <div className="space-y-2">
             <label className="text-sm font-medium text-dalda-gray-50" htmlFor="internshipTrack">
-              Intership Type
+              Internship Type
             </label>
             <select
               className="flex h-10 w-full rounded-md border border-dalda-green-muted/35 bg-white/95 px-3 py-2 text-sm text-dalda-gray-900 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dalda-green"
@@ -198,7 +204,7 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
             >
               <option value="">Select type</option>
               <option value="INTERNSHIP">Summer Internship</option>
-              <option value="MTO">Management Trainee Officer</option>
+              <option value="MTO">Management Trainee</option>
             </select>
           </div>
         </div>

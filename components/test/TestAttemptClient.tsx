@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -35,7 +35,7 @@ type SubmitResponse = {
   timeTakenSeconds: number;
 };
 
-type GuideContent = {
+export type GuideContent = {
   title: string;
   description: string;
   sampleQuestion: string;
@@ -44,7 +44,7 @@ type GuideContent = {
   explanation: string;
 };
 
-const sharedSectionGuides: Record<"LOGICAL" | "REASONING" | "MATH", GuideContent> = {
+export const sharedSectionGuides: Record<"LOGICAL" | "REASONING" | "MATH", GuideContent> = {
   LOGICAL: {
     title: "Logical Section Guide",
     description:
@@ -95,7 +95,7 @@ const sharedSectionGuides: Record<"LOGICAL" | "REASONING" | "MATH", GuideContent
   }
 };
 
-const functionalDepartmentGuides: Record<TestDepartment, GuideContent> = {
+export const functionalDepartmentGuides: Record<TestDepartment, GuideContent> = {
   IT: {
     title: "IT Functional Guide",
     description:
@@ -259,9 +259,12 @@ export function TestAttemptClient() {
   const [remainingSeconds, setRemainingSeconds] = useState(TEST_DURATION_SECONDS);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
-  const [highlightGuide, setHighlightGuide] = useState(false);
-  const previousSectionRef = useRef<TestQuestion["section"] | null>(null);
-  const highlightTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [seenSectionExamples, setSeenSectionExamples] = useState<Record<TestQuestion["section"], boolean>>({
+    FUNCTIONAL: false,
+    LOGICAL: false,
+    REASONING: false,
+    MATH: false
+  });
 
   useEffect(() => {
     const guideAck = localStorage.getItem(TEST_GUIDE_ACK_STORAGE_KEY);
@@ -292,7 +295,9 @@ export function TestAttemptClient() {
   }, [router]);
 
   useEffect(() => {
-    if (!attempt || submitted) {
+    const currentSection = attempt?.questions?.[currentIndex]?.section;
+    const isSectionExampleOpen = currentSection ? !seenSectionExamples[currentSection] : false;
+    if (!attempt || submitted || isSectionExampleOpen) {
       return;
     }
 
@@ -308,7 +313,7 @@ export function TestAttemptClient() {
     }, 1000);
 
     return () => window.clearInterval(id);
-  }, [attempt, submitted]);
+  }, [attempt, submitted, currentIndex, seenSectionExamples]);
 
   useEffect(() => {
     if (submitted) {
@@ -341,32 +346,15 @@ export function TestAttemptClient() {
     return attempt.questions[currentIndex] ?? null;
   }, [attempt, currentIndex]);
 
-  useEffect(() => {
-    if (!current) {
-      return;
-    }
-
-    if (previousSectionRef.current && previousSectionRef.current !== current.section) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      setHighlightGuide(true);
-      if (highlightTimeoutRef.current) {
-        clearTimeout(highlightTimeoutRef.current);
-      }
-      highlightTimeoutRef.current = setTimeout(() => {
-        setHighlightGuide(false);
-      }, 3500);
-    }
-
-    previousSectionRef.current = current.section;
-  }, [current]);
-
-  useEffect(() => {
-    return () => {
-      if (highlightTimeoutRef.current) {
-        clearTimeout(highlightTimeoutRef.current);
-      }
-    };
-  }, []);
+  const sectionGuideContent: GuideContent | null =
+    current?.section === "FUNCTIONAL"
+      ? attempt
+        ? functionalDepartmentGuides[attempt.candidate.department]
+        : null
+      : current?.section === "LOGICAL" || current?.section === "REASONING" || current?.section === "MATH"
+        ? sharedSectionGuides[current.section]
+        : null;
+  const showSectionExample = current ? !seenSectionExamples[current.section] : false;
 
   const orderedSections: TestQuestion["section"][] = ["FUNCTIONAL", "LOGICAL", "REASONING", "MATH"];
 
@@ -460,13 +448,6 @@ export function TestAttemptClient() {
   const activeSection = currentSectionIndex >= 0 ? sectionEntries[currentSectionIndex] : null;
   const isAtSectionEnd = activeSection ? currentIndex >= activeSection.range.end : false;
   const canLeaveCurrentSection = activeSection ? isSectionComplete(activeSection.range) : true;
-  const guideContent: GuideContent | null =
-    current.section === "FUNCTIONAL"
-      ? functionalDepartmentGuides[attempt.candidate.department]
-      : current.section === "LOGICAL" || current.section === "REASONING" || current.section === "MATH"
-        ? sharedSectionGuides[current.section]
-        : null;
-
   return (
     <div className="space-y-4">
       <div className="test-panel flex flex-wrap items-center justify-between gap-3 rounded-2xl p-4">
@@ -488,38 +469,39 @@ export function TestAttemptClient() {
         </div>
       </div>
 
-      {guideContent ? (
-        <div
-          className={`test-panel rounded-2xl p-4 transition-all duration-300 ${
-            highlightGuide ? "animate-pulse border-2 border-dalda-green shadow-lg shadow-dalda-green/20" : ""
-          }`}
-        >
-          <p
-            className={`uppercase tracking-wide text-dalda-green transition-all duration-300 ${
-              highlightGuide ? "text-sm font-extrabold" : "text-xs font-semibold"
-            }`}
-          >
-            {guideContent.title}
-          </p>
-          <p className="mt-2 text-sm text-dalda-gray-100">{guideContent.description}</p>
+      {showSectionExample && sectionGuideContent ? (
+        <div className="test-panel rounded-2xl p-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-dalda-green">{sectionGuideContent.title}</p>
+          <p className="mt-2 text-sm text-dalda-gray-100">{sectionGuideContent.description}</p>
           <div className="mt-3 rounded-md border border-dalda-green-muted/35 bg-black/20 p-3">
             <p className="text-xs font-semibold text-dalda-gray-300">Sample question (for understanding)</p>
-            <p className="mt-2 text-sm font-medium text-dalda-gray-50">{guideContent.sampleQuestion}</p>
+            <p className="mt-2 text-sm font-medium text-dalda-gray-50">{sectionGuideContent.sampleQuestion}</p>
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
-              {guideContent.options.map((option) => (
+              {sectionGuideContent.options.map((option) => (
                 <div className="rounded-md border border-dalda-green-muted/30 bg-black/25 px-3 py-2 text-xs text-dalda-gray-100" key={option.id}>
                   <strong>{option.id}.</strong> {option.label}
                 </div>
               ))}
             </div>
-            <p className="mt-3 text-xs font-semibold text-dalda-green">
-              Correct answer: {guideContent.correctAnswer}
-            </p>
-            <p className="mt-1 text-xs text-dalda-gray-200/90">{guideContent.explanation}</p>
+            <p className="mt-3 text-xs font-semibold text-dalda-green">Correct answer: {sectionGuideContent.correctAnswer}</p>
+            <p className="mt-1 text-xs text-dalda-gray-200/90">{sectionGuideContent.explanation}</p>
+          </div>
+          <div className="mt-4 flex justify-end">
+            <Button
+              onClick={() => {
+                if (!current) return;
+                setSeenSectionExamples((prev) => ({ ...prev, [current.section]: true }));
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              type="button"
+            >
+              Continue to {current.section}
+            </Button>
           </div>
         </div>
       ) : null}
 
+      {!showSectionExample ? (
       <div className="test-panel rounded-2xl p-4">
         <div className="mb-3 flex flex-wrap gap-2">
           {sectionEntries.map(({ section, range }, sectionIndex) => {
@@ -612,7 +594,9 @@ export function TestAttemptClient() {
           })}
         </div>
       </div>
+      ) : null}
 
+      {!showSectionExample ? (
       <div className="test-panel flex flex-wrap items-center justify-between gap-2 rounded-2xl p-4">
         <div className="flex gap-2">
           <Button
@@ -663,6 +647,7 @@ export function TestAttemptClient() {
           </Dialog>
         ) : null}
       </div>
+      ) : null}
 
       {!allAnswered ? (
         <p className="text-sm text-dalda-gray-100">Submit will be enabled after you answer all questions.</p>

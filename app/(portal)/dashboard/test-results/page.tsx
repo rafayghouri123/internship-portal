@@ -19,7 +19,7 @@ function formatStudyLevel(value: string | null | undefined) {
 
 function formatInternshipTrack(value: string | null | undefined) {
   if (!value) return "-";
-  return value === "MTO" ? "Management Trainee Officer" : value === "INTERNSHIP" ? "Internship" : value;
+  return value === "MTO" ? "Management Trainee" : value === "INTERNSHIP" ? "Internship" : value;
 }
 
 export default async function TestResultsPage({
