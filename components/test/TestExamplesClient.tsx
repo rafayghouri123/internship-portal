@@ -69,25 +69,25 @@ export function TestExamplesClient() {
   return (
     <div className="space-y-5">
       <div className="test-panel rounded-2xl p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-dalda-green">Section Example {index + 1} of {cards.length}</p>
-        <h1 className="mt-1 text-xl font-semibold text-dalda-gray-50">{current.guide.title}</h1>
-        <p className="mt-2 text-sm text-dalda-gray-100">{current.guide.description}</p>
+        <p className="text-sm font-semibold uppercase tracking-wide text-dalda-green">Section Example {index + 1} of {cards.length}</p>
+        <h1 className="mt-1 text-2xl font-semibold text-dalda-gray-50">{current.guide.title}</h1>
+        <p className="mt-2 text-base text-dalda-gray-100">{current.guide.description}</p>
       </div>
 
       <div className="test-panel rounded-2xl p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-dalda-gray-300">Sample Question</p>
-        <p className="mt-2 text-sm font-medium text-dalda-gray-50">{current.guide.sampleQuestion}</p>
+        <p className="text-sm font-semibold uppercase tracking-wide text-dalda-gray-300">Sample Question</p>
+        <p className="mt-2 text-lg font-medium text-dalda-gray-50">{current.guide.sampleQuestion}</p>
 
         <div className="mt-4 grid gap-2 sm:grid-cols-2">
           {current.guide.options.map((option) => (
-            <div className="rounded-md border border-dalda-green-muted/30 bg-black/25 px-3 py-2 text-xs text-dalda-gray-100" key={option.id}>
+            <div className="rounded-md border border-dalda-green-muted/30 bg-black/25 px-3 py-2 text-sm text-dalda-gray-100" key={option.id}>
               <strong>{option.id}.</strong> {option.label}
             </div>
           ))}
         </div>
 
-        <p className="mt-4 text-xs font-semibold text-dalda-green">Correct answer: {current.guide.correctAnswer}</p>
-        <p className="mt-1 text-xs text-dalda-gray-200/90">{current.guide.explanation}</p>
+        <p className="mt-4 text-sm font-semibold text-dalda-green">Correct answer: {current.guide.correctAnswer}</p>
+        <p className="mt-1 text-sm text-dalda-gray-200/90">{current.guide.explanation}</p>
       </div>
 
       <div className="flex justify-end gap-2">
@@ -118,4 +118,3 @@ export function TestExamplesClient() {
     </div>
   );
 }
-

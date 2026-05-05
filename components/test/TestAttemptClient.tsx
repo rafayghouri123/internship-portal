@@ -339,6 +339,37 @@ export function TestAttemptClient() {
     };
   }, [submitted]);
 
+  useEffect(() => {
+    if (!attempt || submitted) {
+      return;
+    }
+
+    const onCopy = (event: ClipboardEvent) => event.preventDefault();
+    const onCut = (event: ClipboardEvent) => event.preventDefault();
+    const onContextMenu = (event: MouseEvent) => event.preventDefault();
+    const onKeyDown = (event: KeyboardEvent) => {
+      const key = event.key.toLowerCase();
+      if ((event.ctrlKey || event.metaKey) && ["c", "x", "a", "u", "s", "p"].includes(key)) {
+        event.preventDefault();
+      }
+      if (event.key === "F12") {
+        event.preventDefault();
+      }
+    };
+
+    window.addEventListener("copy", onCopy);
+    window.addEventListener("cut", onCut);
+    window.addEventListener("contextmenu", onContextMenu);
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("copy", onCopy);
+      window.removeEventListener("cut", onCut);
+      window.removeEventListener("contextmenu", onContextMenu);
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [attempt, submitted]);
+
   const current = useMemo(() => {
     if (!attempt) {
       return null;
@@ -470,21 +501,26 @@ export function TestAttemptClient() {
       </div>
 
       {showSectionExample && sectionGuideContent ? (
-        <div className="test-panel rounded-2xl p-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-dalda-green">{sectionGuideContent.title}</p>
-          <p className="mt-2 text-sm text-dalda-gray-100">{sectionGuideContent.description}</p>
+        <div
+          className="test-panel test-protected rounded-2xl p-4"
+          onContextMenu={(event) => event.preventDefault()}
+          onCopy={(event) => event.preventDefault()}
+          onCut={(event) => event.preventDefault()}
+        >
+          <p className="text-sm font-semibold uppercase tracking-wide text-dalda-green">{sectionGuideContent.title}</p>
+          <p className="mt-2 text-base text-dalda-gray-100">{sectionGuideContent.description}</p>
           <div className="mt-3 rounded-md border border-dalda-green-muted/35 bg-black/20 p-3">
-            <p className="text-xs font-semibold text-dalda-gray-300">Sample question (for understanding)</p>
-            <p className="mt-2 text-sm font-medium text-dalda-gray-50">{sectionGuideContent.sampleQuestion}</p>
+            <p className="text-sm font-semibold text-dalda-gray-300">Sample question (for understanding)</p>
+            <p className="mt-2 text-lg font-medium text-dalda-gray-50">{sectionGuideContent.sampleQuestion}</p>
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
               {sectionGuideContent.options.map((option) => (
-                <div className="rounded-md border border-dalda-green-muted/30 bg-black/25 px-3 py-2 text-xs text-dalda-gray-100" key={option.id}>
+                <div className="rounded-md border border-dalda-green-muted/30 bg-black/25 px-3 py-2 text-sm text-dalda-gray-100" key={option.id}>
                   <strong>{option.id}.</strong> {option.label}
                 </div>
               ))}
             </div>
-            <p className="mt-3 text-xs font-semibold text-dalda-green">Correct answer: {sectionGuideContent.correctAnswer}</p>
-            <p className="mt-1 text-xs text-dalda-gray-200/90">{sectionGuideContent.explanation}</p>
+            <p className="mt-3 text-sm font-semibold text-dalda-green">Correct answer: {sectionGuideContent.correctAnswer}</p>
+            <p className="mt-1 text-sm text-dalda-gray-200/90">{sectionGuideContent.explanation}</p>
           </div>
           <div className="mt-4 flex justify-end">
             <Button
@@ -502,7 +538,12 @@ export function TestAttemptClient() {
       ) : null}
 
       {!showSectionExample ? (
-      <div className="test-panel rounded-2xl p-4">
+      <div
+        className="test-panel test-protected rounded-2xl p-4"
+        onContextMenu={(event) => event.preventDefault()}
+        onCopy={(event) => event.preventDefault()}
+        onCut={(event) => event.preventDefault()}
+      >
         <div className="mb-3 flex flex-wrap gap-2">
           {sectionEntries.map(({ section, range }, sectionIndex) => {
             const isActive = currentIndex >= range.start && currentIndex <= range.end;
