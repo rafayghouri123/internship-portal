@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { universityOptions } from "@/lib/intern-options";
 import {
   TEST_ATTEMPT_STORAGE_KEY,
   TEST_EXAMPLES_ACK_STORAGE_KEY,
@@ -40,6 +41,7 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
   const [internshipTrack, setInternshipTrack] = useState("");
   const [studyLevel, setStudyLevel] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const universityListId = "test-university-options";
 
   const isReady =
     fullName.trim().length > 1 &&
@@ -135,9 +137,15 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
             <Input
               className="border-dalda-green-muted/35 bg-white/95 focus-visible:ring-dalda-green"
               id="university"
+              list={universityListId}
               onChange={(event) => setUniversity(event.target.value)}
               value={university}
             />
+            <datalist id={universityListId}>
+              {universityOptions.map((option) => (
+                <option key={option} value={option} />
+              ))}
+            </datalist>
           </div>
           <div className="space-y-2">
             <label className="text-sm font-medium text-dalda-gray-50" htmlFor="department">
