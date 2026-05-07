@@ -252,6 +252,12 @@ function formatSeconds(total: number) {
   return `${minutes}:${seconds}`;
 }
 
+function formatSectionLabel(section: TestQuestion["section"]) {
+  if (section === "LOGICAL") return "REASONING";
+  if (section === "REASONING") return "LOGICAL";
+  return section;
+}
+
 export function TestAttemptClient() {
   const router = useRouter();
   const [attempt, setAttempt] = useState<AttemptState | null>(null);
@@ -531,7 +537,7 @@ export function TestAttemptClient() {
               }}
               type="button"
             >
-              Continue to {current.section}
+              Continue to {formatSectionLabel(current.section)}
             </Button>
           </div>
         </div>
@@ -563,7 +569,7 @@ export function TestAttemptClient() {
                 }}
                 type="button"
               >
-                {section}
+                {formatSectionLabel(section)}
               </button>
             );
           })}
