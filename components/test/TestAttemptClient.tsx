@@ -127,6 +127,22 @@ export const functionalDepartmentGuides: Record<TestDepartment, GuideContent> = 
     explanation:
       "A job description primarily defines role duties, responsibilities, and scope."
   },
+  DATA_ANALYTICS: {
+    title: "Data Analytics Functional Guide",
+    description:
+      "These questions assess data literacy, SQL thinking, visualization choices, basic Python/Pandas usage, and analytical judgment. Focus on evidence-based decisions and practical business interpretation.",
+    sampleQuestion:
+      "A campaign dashboard shows strong impressions but very low click-through rate. Which first action is most appropriate?",
+    options: [
+      { id: "A", label: "Increase budget immediately." },
+      { id: "B", label: "Test new ad creative and messaging relevance for target audience." },
+      { id: "C", label: "Delete historical data to reset metrics." },
+      { id: "D", label: "Stop all future reporting." }
+    ],
+    correctAnswer: "B",
+    explanation:
+      "Low CTR usually points to weak message-audience fit, so creative and hook testing is the best first step."
+  },
   MARKETING: {
     title: "Marketing Functional Guide",
     description:

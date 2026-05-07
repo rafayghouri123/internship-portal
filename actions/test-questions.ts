@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import { dataAnalyticsQuestions } from "@/lib/test/data-analytics-bank";
 import bank from "@/lib/test/question-bank.generated.json";
 import { financeQuestions } from "@/lib/test/finance-bank";
 import { hrQuestions } from "@/lib/test/hr-bank";
@@ -106,6 +107,8 @@ export async function importDefaultQuestionBank() {
         ? financeQuestions
         : department === "HR"
           ? hrQuestions
+          : department === "DATA_ANALYTICS"
+            ? dataAnalyticsQuestions
           : generated.functional[department] ?? [];
     for (const item of source) {
       rows.push({

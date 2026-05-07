@@ -1,4 +1,5 @@
 import bank from "@/lib/test/question-bank.generated.json";
+import { dataAnalyticsQuestions } from "@/lib/test/data-analytics-bank";
 import { financeQuestions } from "@/lib/test/finance-bank";
 import { hrQuestions } from "@/lib/test/hr-bank";
 import { prisma } from "@/lib/prisma";
@@ -15,6 +16,7 @@ const generated = bank as GeneratedBank;
 const functionalPools: Record<TestDepartment, InternalQuestion[]> = {
   IT: generated.functional.IT ?? [],
   HR: hrQuestions,
+  DATA_ANALYTICS: dataAnalyticsQuestions,
   MARKETING: generated.functional.MARKETING ?? [],
   ELECTRONICS: generated.functional.ELECTRONICS ?? [],
   CHEMICAL: generated.functional.CHEMICAL ?? [],

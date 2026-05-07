@@ -1,6 +1,7 @@
 export const testDepartments = [
   "IT",
   "HR",
+  "DATA_ANALYTICS",
   "MARKETING",
   "ELECTRONICS",
   "CHEMICAL",
@@ -15,6 +16,7 @@ export type TestDepartment = (typeof testDepartments)[number];
 export const testDepartmentLabels: Record<TestDepartment, string> = {
   IT: "IT",
   HR: "HR",
+  DATA_ANALYTICS: "Data Analytics",
   MARKETING: "Marketing",
   ELECTRONICS: "Electronics",
   CHEMICAL: "Chemical",
