@@ -9,6 +9,7 @@ const studyLevelEnum = z.enum(["BACHELORS", "MASTERS"]);
 export const candidateSchema = z.object({
   fullName: z.string().trim().min(2, "Full name is required."),
   fatherName: z.string().trim().min(2, "Father's name is required."),
+  email: z.string().trim().email("Valid email is required."),
   university: z.string().trim().min(2, "University is required."),
   department: testDepartmentEnum,
   semester: semesterEnum,

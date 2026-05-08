@@ -57,7 +57,7 @@ export default async function TestStartPage({
         <div className="test-panel mb-6 overflow-hidden rounded-2xl shadow-card">
           <div className="h-2 bg-gradient-to-r from-dalda-green-dark via-dalda-green to-dalda-green-mid" />
           <div className="flex items-center gap-4 px-5 py-6 sm:px-6">
-            <Image alt="Dalda Foods" className="h-14 w-20 object-contain" height={56} src="/dalda-logo.png" width={80} />
+            <Image alt="Dalda Foods DFLP" className="h-16 w-24 object-contain" height={64} src="/dflp-logo.png" width={96} />
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-dalda-green">Dalda Foods</p>
               <h1 className="text-2xl font-semibold text-dalda-gray-50">Welcome to Dalda Foods Future Leadership Program Online Assessment</h1>

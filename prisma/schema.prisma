@@ -193,6 +193,7 @@ model TestSubmission {
   sessionTokenHash String  @unique
   fullName        String
   fatherName      String
+  email           String?  @unique
   university      String
   department      String
   semester        String?

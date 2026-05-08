@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { scoreAttempt } from "@/lib/test/question-bank";
 import { sessionTokenHash, testSessionCookieName, verifySignedTestSession } from "@/lib/test/session";
@@ -57,22 +58,33 @@ export async function POST(request: Request) {
     });
   }
 
-  const saved = await prisma.testSubmission.create({
-    data: {
-      sessionTokenHash: tokenHash,
-      fullName: session.candidate.fullName,
-      fatherName: session.candidate.fatherName,
-      university: session.candidate.university,
-      department: session.candidate.department,
-      semester: session.candidate.semester,
-      internshipTrack: session.candidate.internshipTrack,
-      studyLevel: session.candidate.studyLevel,
-      score,
-      totalQuestions: total,
-      timeTaken: parsed.data.timeTakenSeconds,
-      answers: parsed.data.answers
-    } as any
-  });
+  try {
+    await prisma.testSubmission.create({
+      data: {
+        sessionTokenHash: tokenHash,
+        fullName: session.candidate.fullName,
+        fatherName: session.candidate.fatherName,
+        email: session.candidate.email.trim().toLowerCase(),
+        university: session.candidate.university,
+        department: session.candidate.department,
+        semester: session.candidate.semester,
+        internshipTrack: session.candidate.internshipTrack,
+        studyLevel: session.candidate.studyLevel,
+        score,
+        totalQuestions: total,
+        timeTaken: parsed.data.timeTakenSeconds,
+        answers: parsed.data.answers
+      }
+    });
+  } catch (error) {
+    if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002") {
+      return NextResponse.json(
+        { error: "This email has already been used for a test submission. You can only attempt once." },
+        { status: 409 }
+      );
+    }
+    throw error;
+  }
 
   const response = NextResponse.json({
     score,

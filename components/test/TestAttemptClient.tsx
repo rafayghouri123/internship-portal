@@ -505,7 +505,7 @@ export function TestAttemptClient() {
     <div className="space-y-4">
       <div className="test-panel flex flex-wrap items-center justify-between gap-3 rounded-2xl p-4">
         <div className="flex items-center gap-3">
-          <Image alt="Dalda Foods" className="h-10 w-14 object-contain" height={40} src="/dalda-logo.png" width={56} />
+          <Image alt="Dalda Foods DFLP" className="h-12 w-16 object-contain" height={48} src="/dflp-logo.png" width={64} />
           <div>
             <p className="text-xs font-medium uppercase tracking-wide text-dalda-gray-300">Internship Assessment Test</p>
             <p className="text-sm font-semibold text-dalda-gray-50">

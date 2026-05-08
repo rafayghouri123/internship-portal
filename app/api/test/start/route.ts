@@ -43,10 +43,28 @@ export async function POST(request: Request) {
     );
   }
 
+  const normalizedEmail = parsed.data.email.trim().toLowerCase();
+  const existingAttempt = await prisma.testSubmission.findFirst({
+    where: {
+      email: normalizedEmail
+    },
+    select: { id: true }
+  });
+
+  if (existingAttempt) {
+    return NextResponse.json(
+      {
+        error: "This email has already been used for a test submission. You can only attempt once."
+      },
+      { status: 409 }
+    );
+  }
+
   const startedAt = Date.now();
   const candidate = {
     fullName: parsed.data.fullName,
     fatherName: parsed.data.fatherName,
+    email: normalizedEmail,
     university: parsed.data.university,
     department: parsed.data.department,
     semester: parsed.data.semester,

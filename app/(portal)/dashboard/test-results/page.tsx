@@ -110,6 +110,7 @@ export default async function TestResultsPage({
                 <TableRow>
                   <TableHead>Name</TableHead>
                   <TableHead>Father&apos;s Name</TableHead>
+                  <TableHead>Email</TableHead>
                   <TableHead>University</TableHead>
                   <TableHead>Department</TableHead>
                   <TableHead>Semester</TableHead>
@@ -127,6 +128,7 @@ export default async function TestResultsPage({
                     <TableRow key={row.id}>
                       <TableCell>{row.fullName}</TableCell>
                       <TableCell>{row.fatherName}</TableCell>
+                      <TableCell>{(row as any).email ?? "-"}</TableCell>
                       <TableCell>{row.university}</TableCell>
                       <TableCell>{row.department.replaceAll("_", " ")}</TableCell>
                       <TableCell>{formatSemester((row as any).semester)}</TableCell>
@@ -142,7 +144,7 @@ export default async function TestResultsPage({
                   ))
                 ) : (
                   <TableRow>
-                    <TableCell className="text-center text-dalda-gray-500" colSpan={11}>
+                    <TableCell className="text-center text-dalda-gray-500" colSpan={12}>
                       No test submissions found.
                     </TableCell>
                   </TableRow>

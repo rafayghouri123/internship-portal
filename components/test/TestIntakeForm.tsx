@@ -21,6 +21,7 @@ type StartResponse = {
   candidate: {
     fullName: string;
     fatherName: string;
+    email: string;
     university: string;
     department: string;
     semester: "6TH" | "7TH" | "8TH";
@@ -35,6 +36,7 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
   const [isPending, startTransition] = useTransition();
   const [fullName, setFullName] = useState("");
   const [fatherName, setFatherName] = useState("");
+  const [email, setEmail] = useState("");
   const [university, setUniversity] = useState("");
   const [department, setDepartment] = useState("");
   const [semester, setSemester] = useState("");
@@ -46,6 +48,7 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
   const isReady =
     fullName.trim().length > 1 &&
     fatherName.trim().length > 1 &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()) &&
     university.trim().length > 1 &&
     department.trim().length > 0 &&
     semester.trim().length > 0 &&
@@ -61,6 +64,7 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
         body: JSON.stringify({
           fullName: fullName.trim(),
           fatherName: fatherName.trim(),
+          email: email.trim().toLowerCase(),
           university: university.trim(),
           department,
           semester,
@@ -127,6 +131,22 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
               value={fatherName}
             />
           </div>
+        </div>
+
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-dalda-gray-50" htmlFor="email">
+            Registered email address
+          </label>
+          <Input
+            className="border-dalda-green-muted/35 bg-white/95 focus-visible:ring-dalda-green"
+            id="email"
+            onChange={(event) => setEmail(event.target.value)}
+            type="email"
+            value={email}
+          />
+          <p className="text-xs text-dalda-gray-200/90">
+            Please use the same email address you used during registration.
+          </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">

@@ -57,7 +57,7 @@ export function TestDoneClient() {
     <Card className="test-panel overflow-hidden rounded-2xl">
       <CardHeader className="border-b border-dalda-green-muted/30 bg-dalda-green/10">
         <div className="flex items-center gap-3">
-          <Image alt="Dalda Foods" className="h-10 w-14 object-contain" height={40} src="/dalda-logo.png" width={56} />
+          <Image alt="Dalda Foods DFLP" className="h-12 w-16 object-contain" height={48} src="/dflp-logo.png" width={64} />
           <CardTitle className="text-dalda-gray-50">Test Submitted</CardTitle>
         </div>
       </CardHeader>
