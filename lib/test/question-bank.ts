@@ -12,6 +12,13 @@ type GeneratedBank = {
   math: InternalQuestion[];
 };
 
+type DbPools = {
+  functional: InternalQuestion[];
+  logical: InternalQuestion[];
+  reasoning: InternalQuestion[];
+  math: InternalQuestion[];
+};
+
 const generated = bank as GeneratedBank;
 const functionalPools: Record<TestDepartment, InternalQuestion[]> = {
   IT: generated.functional.IT ?? [],
@@ -27,6 +34,10 @@ const functionalPools: Record<TestDepartment, InternalQuestion[]> = {
 };
 
 const optionIds: Array<"A" | "B" | "C" | "D"> = ["A", "B", "C", "D"];
+const DB_POOL_CACHE_TTL_MS = Number(process.env.TEST_DB_POOL_CACHE_TTL_MS ?? 20_000);
+const FUNCTIONAL_COUNT_CACHE_TTL_MS = Number(process.env.TEST_DB_COUNT_CACHE_TTL_MS ?? 20_000);
+const dbPoolCache = new Map<TestDepartment, { expiresAt: number; data: DbPools }>();
+const functionalCountCache = new Map<TestDepartment, { expiresAt: number; count: number }>();
 
 function toPublicQuestion(question: InternalQuestion, section: TestSection): TestQuestion {
   return {
@@ -105,12 +116,27 @@ function toInternalQuestion(row: {
 }
 
 async function getDbPools(department: TestDepartment) {
+  const now = Date.now();
+  const cached = dbPoolCache.get(department);
+  if (cached && cached.expiresAt > now) {
+    return cached.data;
+  }
+
   const [functionalRows, logicalRows, reasoningRows, mathRows] = await Promise.all([
     prisma.testQuestion.findMany({
       where: {
         isActive: true,
         section: "FUNCTIONAL",
         department
+      },
+      select: {
+        id: true,
+        question: true,
+        optionA: true,
+        optionB: true,
+        optionC: true,
+        optionD: true,
+        correctOption: true
       }
     }),
     prisma.testQuestion.findMany({
@@ -118,6 +144,15 @@ async function getDbPools(department: TestDepartment) {
         isActive: true,
         section: "LOGICAL",
         OR: [{ department: "SHARED" }, { department: null }]
+      },
+      select: {
+        id: true,
+        question: true,
+        optionA: true,
+        optionB: true,
+        optionC: true,
+        optionD: true,
+        correctOption: true
       }
     }),
     prisma.testQuestion.findMany({
@@ -125,6 +160,15 @@ async function getDbPools(department: TestDepartment) {
         isActive: true,
         section: "REASONING",
         OR: [{ department: "SHARED" }, { department: null }]
+      },
+      select: {
+        id: true,
+        question: true,
+        optionA: true,
+        optionB: true,
+        optionC: true,
+        optionD: true,
+        correctOption: true
       }
     }),
     prisma.testQuestion.findMany({
@@ -132,16 +176,32 @@ async function getDbPools(department: TestDepartment) {
         isActive: true,
         section: "MATH",
         OR: [{ department: "SHARED" }, { department: null }]
+      },
+      select: {
+        id: true,
+        question: true,
+        optionA: true,
+        optionB: true,
+        optionC: true,
+        optionD: true,
+        correctOption: true
       }
     })
   ]);
 
-  return {
+  const pools = {
     functional: functionalRows.map(toInternalQuestion),
     logical: logicalRows.map(toInternalQuestion),
     reasoning: reasoningRows.map(toInternalQuestion),
     math: mathRows.map(toInternalQuestion)
   };
+
+  dbPoolCache.set(department, {
+    expiresAt: now + DB_POOL_CACHE_TTL_MS,
+    data: pools
+  });
+
+  return pools;
 }
 
 export async function buildAttemptQuestions(department: TestDepartment) {
@@ -249,16 +309,29 @@ export async function scoreAttempt(questionIds: string[], answers: Record<string
 export async function hasFunctionalPool(department: TestDepartment) {
   if (process.env.DATABASE_URL) {
     try {
-      const dbCount = await prisma.testQuestion.count({
-        where: {
-          section: "FUNCTIONAL",
-          department,
-          isActive: true
+      const now = Date.now();
+      const cached = functionalCountCache.get(department);
+      if (cached && cached.expiresAt > now) {
+        if (cached.count >= 15) {
+          return true;
         }
-      });
+      } else {
+        const dbCount = await prisma.testQuestion.count({
+          where: {
+            section: "FUNCTIONAL",
+            department,
+            isActive: true
+          }
+        });
 
-      if (dbCount >= 15) {
-        return true;
+        functionalCountCache.set(department, {
+          expiresAt: now + FUNCTIONAL_COUNT_CACHE_TTL_MS,
+          count: dbCount
+        });
+
+        if (dbCount >= 15) {
+          return true;
+        }
       }
     } catch {
       // ignore and fall back

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -44,6 +44,19 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
   const [studyLevel, setStudyLevel] = useState("");
   const [error, setError] = useState<string | null>(null);
   const universityListId = "test-university-options";
+
+  useEffect(() => {
+    const controller = new AbortController();
+    void fetch("/api/test/warmup", {
+      method: "GET",
+      cache: "no-store",
+      signal: controller.signal
+    }).catch(() => {
+      // best-effort warm-up; no UX impact on failure
+    });
+
+    return () => controller.abort();
+  }, []);
 
   const isReady =
     fullName.trim().length > 1 &&

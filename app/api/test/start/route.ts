@@ -18,12 +18,24 @@ export async function POST(request: Request) {
     );
   }
 
-  const link = await prisma.testLink.findFirst({
-    where: {
-      token: parsed.data.linkToken,
-      isActive: true
-    }
-  });
+  const normalizedEmail = parsed.data.email.trim().toLowerCase();
+
+  const [link, hasPool, existingAttempt] = await Promise.all([
+    prisma.testLink.findFirst({
+      where: {
+        token: parsed.data.linkToken,
+        isActive: true
+      },
+      select: { id: true }
+    }),
+    hasFunctionalPool(parsed.data.department),
+    prisma.testSubmission.findFirst({
+      where: {
+        email: normalizedEmail
+      },
+      select: { id: true }
+    })
+  ]);
 
   if (!link) {
     return NextResponse.json(
@@ -34,7 +46,7 @@ export async function POST(request: Request) {
     );
   }
 
-  if (!(await hasFunctionalPool(parsed.data.department))) {
+  if (!hasPool) {
     return NextResponse.json(
       {
         error: "Question bank for this department is not ready yet."
@@ -42,14 +54,6 @@ export async function POST(request: Request) {
       { status: 422 }
     );
   }
-
-  const normalizedEmail = parsed.data.email.trim().toLowerCase();
-  const existingAttempt = await prisma.testSubmission.findFirst({
-    where: {
-      email: normalizedEmail
-    },
-    select: { id: true }
-  });
 
   if (existingAttempt) {
     return NextResponse.json(
