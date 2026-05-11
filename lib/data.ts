@@ -19,6 +19,34 @@ type TestResultFilters = {
   sort?: "score" | "date";
 };
 
+type PaginationMeta = {
+  page: number;
+  pageSize: number;
+  total: number;
+  totalPages: number;
+};
+
+type PaginatedResult<T> = PaginationMeta & {
+  items: T[];
+};
+
+const DEFAULT_INTERNS_PAGE_SIZE = 12;
+const DEFAULT_TEST_RESULTS_PAGE_SIZE = 20;
+
+function normalizePage(value: number | undefined) {
+  if (!value || !Number.isFinite(value)) {
+    return 1;
+  }
+  return Math.max(1, Math.floor(value));
+}
+
+function normalizePageSize(value: number | undefined, fallback: number) {
+  if (!value || !Number.isFinite(value)) {
+    return fallback;
+  }
+  return Math.max(1, Math.floor(value));
+}
+
 async function withFallback<T>(query: () => Promise<T>, fallback: T): Promise<T> {
   if (!process.env.DATABASE_URL) {
     return fallback;
@@ -441,6 +469,99 @@ export async function getInterns(filters: InternListFilters = {}) {
   );
 }
 
+export async function getInternsPage(
+  filters: InternListFilters = {},
+  page = 1,
+  pageSize = DEFAULT_INTERNS_PAGE_SIZE
+): Promise<PaginatedResult<any>> {
+  const qValue = Array.isArray(filters.q) ? filters.q[0] : filters.q;
+  const statusValue = Array.isArray(filters.status) ? filters.status[0] : filters.status;
+  const search = qValue?.trim();
+  const safePage = normalizePage(page);
+  const safePageSize = normalizePageSize(pageSize, DEFAULT_INTERNS_PAGE_SIZE);
+
+  return withFallback(
+    async () => {
+      const where: Prisma.InternWhereInput = {
+        ...(statusValue && statusValue !== "ALL"
+          ? statusValue === "COMPLETING_SOON"
+            ? {
+                status: { in: [InternStatus.ACTIVE, InternStatus.EXTENDED] },
+                endDate: { lte: addDays(new Date(), 7) }
+              }
+            : { status: statusValue as InternStatus }
+          : {}),
+        ...(search
+          ? {
+              OR: [
+                { fullName: { contains: search, mode: Prisma.QueryMode.insensitive } },
+                { cnicNumber: { contains: search, mode: Prisma.QueryMode.insensitive } },
+                { university: { contains: search, mode: Prisma.QueryMode.insensitive } },
+                { major: { contains: search, mode: Prisma.QueryMode.insensitive } },
+                { officeLocation: { contains: search, mode: Prisma.QueryMode.insensitive } },
+                { supervisorName: { contains: search, mode: Prisma.QueryMode.insensitive } },
+                { email: { contains: search, mode: Prisma.QueryMode.insensitive } },
+                { department: { name: { contains: search, mode: Prisma.QueryMode.insensitive } } }
+              ]
+            }
+          : {})
+      };
+
+      const total = await prisma.intern.count({ where });
+      const totalPages = Math.max(1, Math.ceil(total / safePageSize));
+      const currentPage = Math.min(safePage, totalPages);
+
+      const items = await prisma.intern.findMany({
+        where,
+        orderBy: { joiningDate: "desc" },
+        include: {
+          department: true
+        },
+        skip: (currentPage - 1) * safePageSize,
+        take: safePageSize
+      });
+
+      return {
+        items,
+        total,
+        page: currentPage,
+        pageSize: safePageSize,
+        totalPages
+      };
+    },
+    (() => {
+      const filtered = mockInterns.filter((intern) => {
+        const matchesStatus =
+          !statusValue ||
+          statusValue === "ALL" ||
+          (statusValue === "COMPLETING_SOON"
+            ? (intern.status === InternStatus.ACTIVE || intern.status === InternStatus.EXTENDED) &&
+              intern.endDate <= addDays(new Date(), 7)
+            : intern.status === statusValue);
+
+        const haystack =
+          `${intern.fullName} ${intern.cnicNumber} ${intern.university} ${intern.major ?? ""} ${intern.officeLocation ?? ""} ${intern.supervisorName ?? ""} ${intern.email ?? ""} ${intern.department?.name ?? ""}`.toLowerCase();
+        const matchesSearch = !search || haystack.includes(search.toLowerCase());
+
+        return matchesStatus && matchesSearch;
+      });
+
+      const total = filtered.length;
+      const totalPages = Math.max(1, Math.ceil(total / safePageSize));
+      const currentPage = Math.min(safePage, totalPages);
+      const items = filtered.slice((currentPage - 1) * safePageSize, currentPage * safePageSize);
+
+      return {
+        items: items as any[],
+        total,
+        page: currentPage,
+        pageSize: safePageSize,
+        totalPages
+      };
+    })()
+  );
+}
+
 export async function getInternById(id: string) {
   return withFallback(
     () =>
@@ -505,6 +626,58 @@ export async function getTestResults(filters: TestResultFilters = {}) {
             : [{ submittedAt: "desc" }, { score: "desc" }]
       }),
     []
+  );
+}
+
+export async function getTestResultsPage(
+  filters: TestResultFilters = {},
+  page = 1,
+  pageSize = DEFAULT_TEST_RESULTS_PAGE_SIZE
+): Promise<PaginatedResult<any>> {
+  const sort = filters.sort === "score" ? "score" : "date";
+  const safePage = normalizePage(page);
+  const safePageSize = normalizePageSize(pageSize, DEFAULT_TEST_RESULTS_PAGE_SIZE);
+
+  return withFallback(
+    async () => {
+      const where =
+        filters.department && filters.department !== "ALL"
+          ? {
+              department: filters.department
+            }
+          : undefined;
+
+      const orderBy =
+        sort === "score"
+          ? [{ score: "desc" as const }, { submittedAt: "desc" as const }]
+          : [{ submittedAt: "desc" as const }, { score: "desc" as const }];
+
+      const total = await prisma.testSubmission.count({ where });
+      const totalPages = Math.max(1, Math.ceil(total / safePageSize));
+      const currentPage = Math.min(safePage, totalPages);
+
+      const items = await prisma.testSubmission.findMany({
+        where,
+        orderBy,
+        skip: (currentPage - 1) * safePageSize,
+        take: safePageSize
+      });
+
+      return {
+        items,
+        total,
+        page: currentPage,
+        pageSize: safePageSize,
+        totalPages
+      };
+    },
+    {
+      items: [],
+      total: 0,
+      page: 1,
+      pageSize: safePageSize,
+      totalPages: 1
+    }
   );
 }
 

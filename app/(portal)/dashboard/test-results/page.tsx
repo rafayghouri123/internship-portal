@@ -1,7 +1,9 @@
 import { format } from "date-fns";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { getTestResultDepartments, getTestResults } from "@/lib/data";
+import { getTestResultDepartments, getTestResultsPage } from "@/lib/data";
 
 function formatMinutes(seconds: number) {
   return `${(seconds / 60).toFixed(1)} min`;
@@ -25,16 +27,28 @@ function formatInternshipTrack(value: string | null | undefined) {
 export default async function TestResultsPage({
   searchParams
 }: {
-  searchParams?: Promise<{ department?: string; sort?: string }>;
+  searchParams?: Promise<{ department?: string; sort?: string; page?: string }>;
 }) {
   const params = (await searchParams) ?? {};
+  const currentPage = Math.max(1, Number(params.page) || 1);
   const department = params.department ?? "ALL";
   const sort = params.sort === "score" ? "score" : "date";
 
-  const [results, departments] = await Promise.all([
-    getTestResults({ department, sort }),
+  const [paged, departments] = await Promise.all([
+    getTestResultsPage({ department, sort }, currentPage, 20),
     getTestResultDepartments()
   ]);
+
+  const results = paged.items;
+  const from = paged.total === 0 ? 0 : (paged.page - 1) * paged.pageSize + 1;
+  const to = Math.min(paged.total, paged.page * paged.pageSize);
+  const buildPageHref = (page: number) => {
+    const query = new URLSearchParams();
+    query.set("department", department);
+    query.set("sort", sort);
+    query.set("page", String(page));
+    return `/dashboard/test-results?${query.toString()}`;
+  };
 
   return (
     <div className="space-y-6">
@@ -151,6 +165,34 @@ export default async function TestResultsPage({
                 )}
               </TableBody>
             </Table>
+          </div>
+          <div className="flex flex-wrap items-center justify-between gap-3 border-t border-dalda-gray-100 px-4 py-3">
+            <p className="text-sm text-dalda-gray-600">
+              Showing {from}-{to} of {paged.total} submissions
+            </p>
+            <div className="flex items-center gap-2">
+              {paged.page <= 1 ? (
+                <Button disabled size="sm" variant="secondary">
+                  Previous
+                </Button>
+              ) : (
+                <Button asChild size="sm" variant="secondary">
+                  <Link href={buildPageHref(paged.page - 1)}>Previous</Link>
+                </Button>
+              )}
+              <span className="text-sm text-dalda-gray-700">
+                Page {paged.page} of {paged.totalPages}
+              </span>
+              {paged.page >= paged.totalPages ? (
+                <Button disabled size="sm" variant="secondary">
+                  Next
+                </Button>
+              ) : (
+                <Button asChild size="sm" variant="secondary">
+                  <Link href={buildPageHref(paged.page + 1)}>Next</Link>
+                </Button>
+              )}
+            </div>
           </div>
         </CardContent>
       </Card>

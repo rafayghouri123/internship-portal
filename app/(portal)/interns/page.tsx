@@ -3,19 +3,22 @@ import Link from "next/link";
 import { InternTable } from "@/components/interns/InternTable";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getInterns } from "@/lib/data";
+import { getInternsPage } from "@/lib/data";
 
 export default async function InternsPage({
   searchParams
 }: {
-  searchParams?: Promise<{ q?: string | string[]; status?: string | string[] }>;
+  searchParams?: Promise<{ q?: string | string[]; status?: string | string[]; page?: string | string[] }>;
 }) {
   const rawParams = (await searchParams) ?? {};
+  const pageValue = Array.isArray(rawParams.page) ? rawParams.page[0] : rawParams.page;
+  const currentPage = Math.max(1, Number(pageValue) || 1);
   const params = {
     q: Array.isArray(rawParams.q) ? rawParams.q[0] : rawParams.q,
     status: Array.isArray(rawParams.status) ? rawParams.status[0] : rawParams.status
   };
-  const interns: any[] = await getInterns(params);
+  const paged = await getInternsPage(params, currentPage, 12);
+  const interns: any[] = paged.items;
   const rows = interns.map((intern) => ({
     id: intern.id,
     fullName: intern.fullName,
@@ -27,6 +30,17 @@ export default async function InternsPage({
     endDate: format(intern.endDate, "PPP"),
     status: intern.status
   }));
+
+  const from = paged.total === 0 ? 0 : (paged.page - 1) * paged.pageSize + 1;
+  const to = Math.min(paged.total, paged.page * paged.pageSize);
+
+  const buildPageHref = (page: number) => {
+    const query = new URLSearchParams();
+    if (params.q) query.set("q", params.q);
+    if (params.status) query.set("status", params.status);
+    query.set("page", String(page));
+    return `/interns?${query.toString()}`;
+  };
 
   const statuses = ["ALL", "ACTIVE", "EXTENDED", "COMPLETING_SOON", "COMPLETED", "TERMINATED"];
 
@@ -76,6 +90,34 @@ export default async function InternsPage({
         </CardHeader>
         <CardContent>
           <InternTable data={rows} />
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+            <p className="text-sm text-dalda-gray-600">
+              Showing {from}-{to} of {paged.total} interns
+            </p>
+            <div className="flex items-center gap-2">
+              {paged.page <= 1 ? (
+                <Button disabled size="sm" variant="secondary">
+                  Previous
+                </Button>
+              ) : (
+                <Button asChild size="sm" variant="secondary">
+                  <Link href={buildPageHref(paged.page - 1)}>Previous</Link>
+                </Button>
+              )}
+              <span className="text-sm text-dalda-gray-700">
+                Page {paged.page} of {paged.totalPages}
+              </span>
+              {paged.page >= paged.totalPages ? (
+                <Button disabled size="sm" variant="secondary">
+                  Next
+                </Button>
+              ) : (
+                <Button asChild size="sm" variant="secondary">
+                  <Link href={buildPageHref(paged.page + 1)}>Next</Link>
+                </Button>
+              )}
+            </div>
+          </div>
         </CardContent>
       </Card>
     </div>
