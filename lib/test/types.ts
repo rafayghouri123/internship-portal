@@ -18,7 +18,7 @@ export const testDepartmentLabels: Record<TestDepartment, string> = {
   HR: "HR",
   DATA_ANALYTICS: "Data Analytics",
   MARKETING: "Marketing",
-  ELECTRONICS: "Electronics",
+  ELECTRONICS: "Electronics/Electrical",
   CHEMICAL: "Chemical",
   FINANCE: "Finance",
   QUALITY_ASSURANCE: "Quality Assurance",
