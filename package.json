@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma migrate deploy && next build",
+    "build": "prisma generate && prisma db execute --file prisma/migrations/20260918143000_add_contact_number_to_test_submissions/migration.sql && next build",
     "start": "next start",
     "postinstall": "prisma generate",
     "lint": "next lint",
