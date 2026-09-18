@@ -8,7 +8,8 @@ export const testDepartments = [
   "FINANCE",
   "QUALITY_ASSURANCE",
   "SUPPLY_CHAIN",
-  "MECHANICAL"
+  "MECHANICAL",
+  "MECHATRONICS"
 ] as const;
 
 export type TestDepartment = (typeof testDepartments)[number];
@@ -23,7 +24,8 @@ export const testDepartmentLabels: Record<TestDepartment, string> = {
   FINANCE: "Finance",
   QUALITY_ASSURANCE: "Quality Assurance",
   SUPPLY_CHAIN: "Supply Chain",
-  MECHANICAL: "Mechanical"
+  MECHANICAL: "Mechanical",
+  MECHATRONICS: "Mechatronics"
 };
 
 export type TestSection = "FUNCTIONAL" | "LOGICAL" | "REASONING" | "MATH";

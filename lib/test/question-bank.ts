@@ -2,6 +2,7 @@ import bank from "@/lib/test/question-bank.generated.json";
 import { dataAnalyticsQuestions } from "@/lib/test/data-analytics-bank";
 import { financeQuestions } from "@/lib/test/finance-bank";
 import { hrQuestions } from "@/lib/test/hr-bank";
+import { mechatronicsQuestions } from "@/lib/test/mechatronics-bank";
 import { prisma } from "@/lib/prisma";
 import { InternalQuestion, TestDepartment, TestQuestion, TestSection, testDepartments } from "@/lib/test/types";
 
@@ -30,7 +31,8 @@ const functionalPools: Record<TestDepartment, InternalQuestion[]> = {
   FINANCE: financeQuestions,
   QUALITY_ASSURANCE: generated.functional.QUALITY_ASSURANCE ?? [],
   SUPPLY_CHAIN: generated.functional.SUPPLY_CHAIN ?? [],
-  MECHANICAL: generated.functional.MECHANICAL ?? []
+  MECHANICAL: generated.functional.MECHANICAL ?? [],
+  MECHATRONICS: mechatronicsQuestions
 };
 
 const optionIds: Array<"A" | "B" | "C" | "D"> = ["A", "B", "C", "D"];

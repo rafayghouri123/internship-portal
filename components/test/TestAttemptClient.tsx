@@ -254,6 +254,22 @@ export const functionalDepartmentGuides: Record<TestDepartment, GuideContent> = 
     correctAnswer: "A",
     explanation:
       "Overheating with vibration commonly indicates bearing wear or alignment issues."
+  },
+  MECHATRONICS: {
+    title: "Mechatronics Functional Guide",
+    description:
+      "The following questions assess your understanding of mechanical systems, electrical fundamentals, electronics, and machine control. Select the answer that best applies the relevant engineering principle.",
+    sampleQuestion:
+      "A motor-driven machine requires fixed timing between its driving and driven shafts without belt slip. Which drive is most suitable?",
+    options: [
+      { id: "A", label: "Flat belt drive" },
+      { id: "B", label: "V-belt drive" },
+      { id: "C", label: "Crossed belt drive" },
+      { id: "D", label: "Timing belt drive" }
+    ],
+    correctAnswer: "D",
+    explanation:
+      "A timing belt engages with pulley teeth, maintaining a fixed relationship without relative slip."
   }
 };
 

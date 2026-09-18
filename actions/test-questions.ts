@@ -8,6 +8,7 @@ import { dataAnalyticsQuestions } from "@/lib/test/data-analytics-bank";
 import bank from "@/lib/test/question-bank.generated.json";
 import { financeQuestions } from "@/lib/test/finance-bank";
 import { hrQuestions } from "@/lib/test/hr-bank";
+import { mechatronicsQuestions } from "@/lib/test/mechatronics-bank";
 import { testDepartments } from "@/lib/test/types";
 
 const questionDepartmentValues = [...testDepartments, "LOGICAL", "REASONING", "MATH"] as const;
@@ -109,6 +110,8 @@ export async function importDefaultQuestionBank() {
           ? hrQuestions
           : department === "DATA_ANALYTICS"
             ? dataAnalyticsQuestions
+          : department === "MECHATRONICS"
+            ? mechatronicsQuestions
           : generated.functional[department] ?? [];
     for (const item of source) {
       rows.push({
