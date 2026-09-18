@@ -81,6 +81,31 @@ export async function importDefaultQuestionBank() {
 
   const currentCount = await prisma.testQuestion.count();
   if (currentCount > 0) {
+    const mechatronicsCount = await prisma.testQuestion.count({
+      where: {
+        section: "FUNCTIONAL",
+        department: "MECHATRONICS"
+      }
+    });
+
+    if (mechatronicsCount === 0) {
+      await prisma.testQuestion.createMany({
+        data: mechatronicsQuestions.map((item) => ({
+          section: "FUNCTIONAL",
+          department: "MECHATRONICS",
+          question: item.question,
+          optionA: item.options[0] ?? "",
+          optionB: item.options[1] ?? "",
+          optionC: item.options[2] ?? "",
+          optionD: item.options[3] ?? "",
+          correctOption: item.answer
+        }))
+      });
+
+      revalidatePath("/question-bank");
+      return { imported: mechatronicsQuestions.length, skipped: false };
+    }
+
     return { imported: 0, skipped: true };
   }
 
