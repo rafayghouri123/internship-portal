@@ -36,6 +36,7 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
   const [isPending, startTransition] = useTransition();
   const [fullName, setFullName] = useState("");
   const [fatherName, setFatherName] = useState("");
+  const [contactNumber, setContactNumber] = useState("");
   const [email, setEmail] = useState("");
   const [university, setUniversity] = useState("");
   const [department, setDepartment] = useState("");
@@ -61,6 +62,7 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
   const isReady =
     fullName.trim().length > 1 &&
     fatherName.trim().length > 1 &&
+    /^[+()\d\s-]{10,20}$/.test(contactNumber.trim()) &&
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()) &&
     university.trim().length > 1 &&
     department.trim().length > 0 &&
@@ -77,6 +79,7 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
         body: JSON.stringify({
           fullName: fullName.trim(),
           fatherName: fatherName.trim(),
+          contactNumber: contactNumber.trim(),
           email: email.trim().toLowerCase(),
           university: university.trim(),
           department,
@@ -146,21 +149,36 @@ export function TestIntakeForm({ linkToken }: { linkToken: string }) {
           </div>
         </div>
 
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-dalda-gray-50" htmlFor="email">
-            Registered email address
-          </label>
-          <Input
-            className="border-dalda-green-muted/35 bg-white/95 focus-visible:ring-dalda-green"
-            id="email"
-            onChange={(event) => setEmail(event.target.value)}
-            type="email"
-            value={email}
-          />
-          <p className="text-xs text-dalda-gray-200/90">
-            Please use the same email address you used during registration.
-          </p>
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-dalda-gray-50" htmlFor="contactNumber">
+              Contact number
+            </label>
+            <Input
+              className="border-dalda-green-muted/35 bg-white/95 focus-visible:ring-dalda-green"
+              id="contactNumber"
+              onChange={(event) => setContactNumber(event.target.value)}
+              placeholder="03XXXXXXXXX"
+              type="tel"
+              value={contactNumber}
+            />
+          </div>
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-dalda-gray-50" htmlFor="email">
+              Registered email address
+            </label>
+            <Input
+              className="border-dalda-green-muted/35 bg-white/95 focus-visible:ring-dalda-green"
+              id="email"
+              onChange={(event) => setEmail(event.target.value)}
+              type="email"
+              value={email}
+            />
+          </div>
         </div>
+        <p className="text-xs text-dalda-gray-200/90">
+          Please use the same email address you used during registration.
+        </p>
 
         <div className="grid gap-4 md:grid-cols-2">
           <div className="space-y-2">

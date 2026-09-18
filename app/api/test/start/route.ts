@@ -68,6 +68,7 @@ export async function POST(request: Request) {
   const candidate = {
     fullName: parsed.data.fullName,
     fatherName: parsed.data.fatherName,
+    contactNumber: parsed.data.contactNumber || undefined,
     email: normalizedEmail,
     university: parsed.data.university,
     department: parsed.data.department,

@@ -33,6 +33,7 @@ export type TestSection = "FUNCTIONAL" | "LOGICAL" | "REASONING" | "MATH";
 export type CandidateInfo = {
   fullName: string;
   fatherName: string;
+  contactNumber?: string;
   email: string;
   university: string;
   department: TestDepartment;

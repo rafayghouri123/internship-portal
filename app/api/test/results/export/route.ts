@@ -24,6 +24,7 @@ export async function GET(request: Request) {
     results.map((row) => ({
       Name: row.fullName,
       "Father Name": row.fatherName,
+      "Contact Number": (row as any).contactNumber ?? "",
       Email: (row as any).email ?? "",
       University: row.university,
       Department: row.department,

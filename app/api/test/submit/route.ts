@@ -64,6 +64,7 @@ export async function POST(request: Request) {
         sessionTokenHash: tokenHash,
         fullName: session.candidate.fullName,
         fatherName: session.candidate.fatherName,
+        contactNumber: session.candidate.contactNumber?.trim() || null,
         email: session.candidate.email.trim().toLowerCase(),
         university: session.candidate.university,
         department: session.candidate.department,

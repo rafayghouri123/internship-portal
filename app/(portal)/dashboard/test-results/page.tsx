@@ -124,6 +124,7 @@ export default async function TestResultsPage({
                 <TableRow>
                   <TableHead>Name</TableHead>
                   <TableHead>Father&apos;s Name</TableHead>
+                  <TableHead>Contact Number</TableHead>
                   <TableHead>Email</TableHead>
                   <TableHead>University</TableHead>
                   <TableHead>Department</TableHead>
@@ -142,6 +143,7 @@ export default async function TestResultsPage({
                     <TableRow key={row.id}>
                       <TableCell>{row.fullName}</TableCell>
                       <TableCell>{row.fatherName}</TableCell>
+                      <TableCell>{(row as any).contactNumber ?? "-"}</TableCell>
                       <TableCell>{(row as any).email ?? "-"}</TableCell>
                       <TableCell>{row.university}</TableCell>
                       <TableCell>{row.department.replaceAll("_", " ")}</TableCell>

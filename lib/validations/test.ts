@@ -9,6 +9,13 @@ const studyLevelEnum = z.enum(["BACHELORS", "MASTERS"]);
 export const candidateSchema = z.object({
   fullName: z.string().trim().min(2, "Full name is required."),
   fatherName: z.string().trim().min(2, "Father's name is required."),
+  contactNumber: z.preprocess(
+    (value) => {
+      if (value == null) return "";
+      return typeof value === "string" ? value.trim() : String(value).trim();
+    },
+    z.string().refine((value) => value === "" || /^[+()\d\s-]{10,20}$/.test(value), "Enter a valid contact number.")
+  ),
   email: z.string().trim().email("Valid email is required."),
   university: z.string().trim().min(2, "University is required."),
   department: testDepartmentEnum,
